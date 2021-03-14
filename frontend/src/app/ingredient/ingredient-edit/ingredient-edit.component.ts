@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { IngredientService } from '../ingredient.service';
@@ -61,4 +61,5 @@ export class IngredientEditComponent implements OnInit {
   cancel() {
     this.router.navigate(['/ingredients']);
   }
+
 }

@@ -25,10 +25,18 @@
         <input [(ngModel)]="ingredient.brand" id="brand" name="brand" class="form-control">
       </div>
 
+
+
       <div class="form-group">
-        <label for="purchaseDate">Purchase Date</label>
-        <input [(ngModel)]="ingredient.purchaseDate" id="purchaseDate" name="purchaseDate" class="form-control">
+
+        <div class="input-group">
+          <input id="purchaseDate" class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="ingredient.purchaseDate">
+
+        </div>
       </div>
+
+
+      <pre>Model: {{ingredient.purchaseDate | json}}</pre>
 
       <div class="form-group">
         <label for="purchaseLocation">Purchase Location</label>

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { IngredientModule } from './ingredient/ingredient.module';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     IngredientModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
