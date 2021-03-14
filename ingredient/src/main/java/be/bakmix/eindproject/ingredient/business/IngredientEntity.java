@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name="Ingredients")
 @Data
 public class IngredientEntity {
     @Id

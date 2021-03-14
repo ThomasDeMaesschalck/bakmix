@@ -1,0 +1,49 @@
+import { Component, OnInit } from '@angular/core';
+import { IngredientFilter } from '../ingredient-filter';
+import { IngredientService } from '../ingredient.service';
+import { Ingredient } from '../ingredient';
+
+@Component({
+  selector: 'app-ingredient',
+  templateUrl: 'ingredient-list.component.html'
+})
+export class IngredientListComponent implements OnInit {
+
+  filter = new IngredientFilter();
+  selectedIngredient: Ingredient;
+  feedback: any = {};
+
+  get ingredientList(): Ingredient[] {
+    return this.ingredientService.ingredientList;
+  }
+
+  constructor(private ingredientService: IngredientService) {
+  }
+
+  ngOnInit() {
+    this.search();
+  }
+
+  search(): void {
+    this.ingredientService.load(this.filter);
+  }
+
+  select(selected: Ingredient): void {
+    this.selectedIngredient = selected;
+  }
+
+  delete(ingredient: Ingredient): void {
+    if (confirm('Are you sure?')) {
+      this.ingredientService.delete(ingredient).subscribe(() => {
+          this.feedback = {type: 'success', message: 'Delete was successful!'};
+          setTimeout(() => {
+            this.search();
+          }, 1000);
+        },
+        err => {
+          this.feedback = {type: 'warning', message: 'Error deleting.'};
+        }
+      );
+    }
+  }
+}

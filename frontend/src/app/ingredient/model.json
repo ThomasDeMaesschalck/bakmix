@@ -1,0 +1,59 @@
+{
+  "title": "Ingredient",
+  "entity": "ingredient",
+  "api": {
+    "url": "http://localhost:7777/api/ingredients/"
+  },
+  "filter": [
+    "id"
+  ],
+  "fields": [
+    {
+      "name": "id",
+      "label": "Id",
+      "isId": true,
+      "readonly": true,
+      "type": "number"
+    },
+    {
+      "name": "uniqueCode",
+      "type": "string",
+      "label": "Unique #"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "label": "Type"
+    },
+    {
+      "name": "brand",
+      "type": "string",
+      "label": "Brand"
+    },
+    {
+      "name": "purchaseDate",
+      "type": "string",
+      "label": "Purchase Date"
+    },
+    {
+      "name": "purchaseLocation",
+      "type": "string",
+      "label": "Purchase Location"
+    },
+    {
+      "name": "lotNumber",
+      "type": "string",
+      "label": "Lot Number"
+    },
+    {
+      "name": "volume",
+      "type": "string",
+      "label": "Volume"
+    },
+    {
+      "name": "available",
+      "type": "string",
+      "label": "Available"
+    }
+  ]
+}
