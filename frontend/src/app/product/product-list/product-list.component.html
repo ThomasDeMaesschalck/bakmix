@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="header">
+    <h2 class="title">Product List</h2>
+  </div>
+
+</div>
+<div class="card" *ngIf="productList.length > 0">
+  <div *ngIf="feedback" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
+  <div class="table-responsive">
+    <table class="table table-centered table-hover mb-0" id="datatable">
+      <thead>
+        <tr>
+          <th class="border-top-0" scope="col">Id</th>
+          <th class="border-top-0" scope="col">Name</th>
+          <th class="border-top-0" scope="col">price</th>
+          <th class="border-top-0" scope="col">Vat Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of productList" [class.active]="item === selectedProduct">
+
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.vat}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -7,16 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="product" />
         <module name="ingredient" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ingredient" target="11" />
+      <module name="product" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ingredient" options="-parameters" />
+      <module name="product" options="-parameters" />
     </option>
   </component>
 </project>

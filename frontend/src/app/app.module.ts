@@ -7,6 +7,7 @@ import { IngredientModule } from './ingredient/ingredient.module';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ProductModule } from './product/product.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule,
     NgbModule,
+    ProductModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
