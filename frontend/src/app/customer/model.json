@@ -1,0 +1,58 @@
+{
+  "title": "Customer",
+  "entity": "customer",
+  "api": {
+    "url": "http://localhost:7779/api/customers/"
+  },
+  "filter": [
+    "id"
+  ],
+  "fields": [
+    {
+      "name": "id",
+      "label": "Id",
+      "isId": true,
+      "readonly": true,
+      "type": "number"
+    },
+    {
+      "name": "firstName",
+      "type": "string",
+      "label": "First Name"
+    },
+    {
+      "name": "lastName",
+      "type": "string",
+      "label": "Last Name"
+    },
+    {
+      "name": "address",
+      "type": "string",
+      "label": "Address line"
+    }
+  ,
+    {
+      "name": "zipCode",
+      "type": "string",
+      "label": "Zip code"
+    }
+  ,
+    {
+      "name": "city",
+      "type": "string",
+      "label": "City"
+    }
+  ,
+    {
+      "name": "phone",
+      "type": "string",
+      "label": "Phone #"
+    }
+  ,
+    {
+      "name": "email",
+      "type": "string",
+      "label": "email"
+    }
+  ]
+}
