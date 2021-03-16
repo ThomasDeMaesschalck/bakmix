@@ -4,8 +4,15 @@
     <file url="file://$PROJECT_DIR$/customers/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/customers/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ingredient/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ingredient/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ingredienttracing/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ingredienttracing/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/orderline/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/orderline/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/product/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/product/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user/src/main/resources" charset="UTF-8" />
   </component>
 </project>

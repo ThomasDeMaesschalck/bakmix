@@ -7,22 +7,34 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="orderline" />
         <module name="product" />
         <module name="ingredient" />
+        <module name="ingredienttracing" />
         <module name="customers" />
+        <module name="user" />
+        <module name="order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="customers" target="11" />
       <module name="ingredient" target="11" />
+      <module name="ingredienttracing" target="11" />
+      <module name="order" target="11" />
+      <module name="orderline" target="11" />
       <module name="product" target="11" />
+      <module name="user" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="customers" options="-parameters" />
       <module name="ingredient" options="-parameters" />
+      <module name="ingredienttracing" options="-parameters" />
+      <module name="order" options="-parameters" />
+      <module name="orderline" options="-parameters" />
       <module name="product" options="-parameters" />
+      <module name="user" options="-parameters" />
     </option>
   </component>
 </project>
