@@ -1,0 +1,34 @@
+{
+  "title": "Product",
+  "entity": "product",
+  "api": {
+    "url": "http://localhost:7778/api/products/"
+  },
+  "filter": [
+    "id"
+  ],
+  "fields": [
+    {
+      "name": "id",
+      "label": "Id",
+      "isId": true,
+      "readonly": true,
+      "type": "number"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "label": "Name"
+    },
+    {
+      "name": "price",
+      "type": "number",
+      "label": "price"
+    },
+    {
+      "name": "vat",
+      "type": "number",
+      "label": "Vat Rate"
+    }
+  ]
+}
