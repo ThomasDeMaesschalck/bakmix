@@ -11,4 +11,6 @@ public class Orderline {
     private Long productId;
     private Long qty;
     private BigDecimal purchasePrice;
+
+    private Product product;
 }
