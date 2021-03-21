@@ -38,4 +38,16 @@ public class OrderlineResource {
         log.info("Retrieved orderline number " + id);
         return ResponseEntity.ok(orderline);
     }
+
+    @GetMapping("/orderlines/getbyorder/{id}")
+    public ResponseEntity<List<Orderline>> getByOrderId(@PathVariable Long id){
+        List<Orderline> orderline = orderlineService.getByOrderId(id);
+        if(orderline == null){
+            log.error("Failed to find orderlines with order id number " + id);
+
+            return ResponseEntity.notFound().build();
+        }
+        log.info("Retrieved orderline with order id number " + id);
+        return ResponseEntity.ok(orderline);
+    }
 }

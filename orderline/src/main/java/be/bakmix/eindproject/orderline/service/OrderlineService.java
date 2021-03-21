@@ -53,6 +53,23 @@ import java.util.stream.StreamSupport;
         return orderlines;
     }
 
+    public List<Orderline> getByOrderId(Long id){
+        List<Orderline> orderlines = StreamSupport
+                .stream(orderlineRepository.findAll().spliterator(), false)
+                .filter(o -> o.getOrderId() == id)
+                .map(e -> orderlineMapper.toDTO(e))
+                .collect(Collectors.toList());
+
+        for(Orderline orderline : orderlines){
+
+            RestTemplate rtProduct = new RestTemplate();
+            Product product = rtProduct.getForObject(urlProducts+orderline.getProductId(), Product.class);
+            orderline.setProductId(product.getId());
+            orderline.setProduct(product);
+        }
+        return orderlines;
+    }
+
     public Orderline getById(Long id){
         Optional<OrderlineEntity> orderlineEntityOptional = orderlineRepository.findById(id);
         if(orderlineEntityOptional.isPresent()){

@@ -20,4 +20,7 @@ public class OrderlineEntity {
     private Long productId;
     private Long qty;
     private BigDecimal purchasePrice;
+
 }
+
+
