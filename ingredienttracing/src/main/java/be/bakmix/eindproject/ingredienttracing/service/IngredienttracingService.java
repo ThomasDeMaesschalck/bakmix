@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -40,4 +41,25 @@ public class IngredienttracingService {
         }
         return null;
     }
+
+    public void save(Ingredienttracing ingredienttracing) {
+        IngredienttracingEntity ingredientToSave = ingredienttracingMapper.toEntity(ingredienttracing);
+        ingredienttracingRepository.save(ingredientToSave);
+    }
+
+
+    public Ingredienttracing delete(Long id) {
+        Iterator<IngredienttracingEntity> it = ingredienttracingRepository.findAll().iterator();
+        while (it.hasNext())   {
+            IngredienttracingEntity ingredienttracing = it.next();
+            if(ingredienttracing.getId() == id)
+            {
+                ingredienttracingRepository.delete(ingredienttracing);
+                it.remove();
+                return ingredienttracingMapper.toDTO(ingredienttracing);
+            }
+        }
+        return null;
+    }
+
 }

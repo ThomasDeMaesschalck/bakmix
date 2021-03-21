@@ -1,13 +1,16 @@
 package be.bakmix.eindproject.ingredienttracing.web.rest;
 
+import be.bakmix.eindproject.ingredienttracing.business.IngredienttracingEntity;
 import be.bakmix.eindproject.ingredienttracing.service.IngredienttracingService;
 import be.bakmix.eindproject.ingredienttracing.service.dto.Ingredienttracing;
+import be.bakmix.eindproject.ingredienttracing.web.rest.exceptions.IngredienttracingNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @CrossOrigin
@@ -38,4 +41,26 @@ public class IngredienttracingResource {
         log.info("Retrieved ingredienttracing number " + id);
         return ResponseEntity.ok(ingredienttracing);
     }
+
+
+    @PostMapping("/ingredienttracings")
+    public ResponseEntity<Ingredienttracing> createIngredienttracing(@Valid @RequestBody Ingredienttracing ingredienttracing)
+    {
+        ingredienttracingService.save(ingredienttracing);
+        log.info("Saved ingredienttracing " + ingredienttracing);
+        return ResponseEntity.ok(ingredienttracing);
+    }
+
+
+    @DeleteMapping("/ingredienttracings/{id}")
+    public ResponseEntity<Ingredienttracing> deleteIngredienttracing(@PathVariable Long id) {
+        Ingredienttracing ingredienttracing =  ingredienttracingService.delete(id);
+        if (ingredienttracing == null) {
+            log.error("Failed to delete ingredienttracing number " + id);
+            throw new IngredienttracingNotFoundException("id-" + id);
+        }
+        log.info("Deleted ingredienttracing number " + id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

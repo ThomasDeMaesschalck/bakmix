@@ -4,15 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IngredientModule } from './ingredient/ingredient.module';
-import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ProductModule } from './product/product.module';
 import { CustomerModule } from './customer/customer.module';
+import {HomeModule} from './home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +24,7 @@ import { CustomerModule } from './customer/customer.module';
     NgbModule,
     ProductModule,
     CustomerModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
