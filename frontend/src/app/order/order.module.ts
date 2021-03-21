@@ -8,7 +8,6 @@ import {ORDER_ROUTES} from './order.routes';
 import {OrderService} from './order.service';
 
 
-
 @NgModule({
   declarations: [OrderListComponent, OrderViewComponent],
   imports: [

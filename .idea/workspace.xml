@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/home/home.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/order/order.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/order/order.routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/order/order.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +205,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615929913755</updated>
       <workItem from="1615929916701" duration="829000" />
-      <workItem from="1616102007845" duration="26555000" />
+      <workItem from="1616102007845" duration="32522000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -243,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616334895039</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="angular order">
+      <created>1616356932530</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616356932530</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +254,7 @@
     <MESSAGE value="orderline added product" />
     <MESSAGE value="first version of order microservice" />
     <MESSAGE value="homepage angular first version" />
-    <option name="LAST_COMMIT_MESSAGE" value="homepage angular first version" />
+    <MESSAGE value="angular order" />
+    <option name="LAST_COMMIT_MESSAGE" value="angular order" />
   </component>
 </project>

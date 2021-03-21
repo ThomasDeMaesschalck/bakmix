@@ -1,4 +1,5 @@
 import {Customer} from '../customer/customer';
+import {Orderline} from './orderline';
 
 export class Order {
   id: number;
@@ -8,4 +9,5 @@ export class Order {
   shippingCost: number;
 
   customer: Customer;
+  orderlines: Orderline[];
 }

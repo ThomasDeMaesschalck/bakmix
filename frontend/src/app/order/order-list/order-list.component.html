@@ -19,13 +19,12 @@
       </thead>
       <tbody>
       <tr *ngFor="let item of orderList" [class.active]="item === selectedOrder">
-
         <td>{{item.id}}</td>
         <td>{{item.status}}</td>
         <td>{{item.discount}}</td>
         <td>{{item.shippingCost}}</td>
         <td>{{item.customer.firstName}}</td>
-
+        <td *ngFor="let orderline of item.orderlines">{{orderline.product.name}} </td>
       </tr>
       </tbody>
     </table>
