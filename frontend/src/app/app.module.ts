@@ -10,6 +10,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ProductModule } from './product/product.module';
 import { CustomerModule } from './customer/customer.module';
 import {HomeModule} from './home/home.module';
+import {OrderModule} from "./order/order.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HomeModule} from './home/home.module';
     NgbModule,
     ProductModule,
     CustomerModule,
-    HomeModule
+    HomeModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
