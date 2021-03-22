@@ -61,21 +61,25 @@ public class OrderService {
         for(Order order : orders){
             RestTemplate rtOrderlines = new RestTemplate();
             Orderline[] orderlines = rtOrderlines.getForObject(urlOrderlines+order.getId(), Orderline[].class);
-
-
-                order.setOrderlines(Arrays.asList(orderlines));
-
-
+            order.setOrderlines(Arrays.asList(orderlines));
         }
-
-
         return orders;
     }
 
     public Order getById(Long id){
         Optional<OrderEntity> optionalOrderEntity = orderRepository.findById(id);
         if(optionalOrderEntity.isPresent()){
-            return orderMapper.toDTO(optionalOrderEntity.get());
+            Order order = orderMapper.toDTO(optionalOrderEntity.get());
+
+            RestTemplate rtCustomer = new RestTemplate();
+            Customer customer = rtCustomer.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
+            order.setCustomer(customer);
+
+            RestTemplate rtOrderlines = new RestTemplate();
+            Orderline[] orderlines = rtOrderlines.getForObject(urlOrderlines+order.getId(), Orderline[].class);
+
+            order.setOrderlines(Arrays.asList(orderlines));
+            return order;
         }
         return null;
     }
