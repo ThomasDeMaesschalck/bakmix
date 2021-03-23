@@ -45,7 +45,6 @@ export class OrderViewComponent implements OnInit {
         }
       );
   }
-
   getStatusType(status: number): string{
     return Orderstatus[status];
   }

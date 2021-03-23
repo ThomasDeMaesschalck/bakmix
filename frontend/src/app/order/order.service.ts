@@ -2,6 +2,7 @@ import { Order } from './order';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import {Orderstatus} from "./orderstatus";
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
@@ -36,6 +37,5 @@ export class OrderService {
 
     return this.http.get<Order[]>(this.api, {params, headers});
   }
-
 }
 

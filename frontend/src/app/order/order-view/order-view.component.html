@@ -38,7 +38,7 @@
                   <th class="border-top-0" scope="col">ProductID</th>
                   <th class="border-top-0" scope="col">Name</th>
                   <th class="border-top-0" scope="col">Purchase Price</th>
-
+                  <th class="border-top-0" scope="col" style="width:120px"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -50,7 +50,9 @@
                   <td> {{orderline.productId}}</td>
                   <td> {{orderline.product.name}}</td>
                   <td> {{orderline.purchasePrice}}</td>
-
+                  <td style="white-space: nowrap">
+                    <a [routerLink]="['../orderline', orderline.id ]" class="btn btn-secondary">View</a>&nbsp;
+                  </td>
                 </tr>
                 </tbody>
               </table>
