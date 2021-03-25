@@ -34,7 +34,7 @@ export class IngredientService {
 
   find(filter: IngredientFilter): Observable<Ingredient[]> {
     const params = {
-      'id': filter.id,
+      id: filter.id,
     };
 
     return this.http.get<Ingredient[]>(this.api, {params, headers});

@@ -6,10 +6,11 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {ORDER_ROUTES} from './order.routes';
 import {OrderService} from './order.service';
+import { OrderlineViewComponent } from './orderline-view/orderline-view.component';
 
 
 @NgModule({
-  declarations: [OrderListComponent, OrderViewComponent],
+  declarations: [OrderListComponent, OrderViewComponent, OrderlineViewComponent],
   imports: [
     CommonModule,
     FormsModule,

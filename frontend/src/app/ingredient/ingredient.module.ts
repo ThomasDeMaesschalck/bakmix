@@ -6,8 +6,7 @@ import { IngredientListComponent } from './ingredient-list/ingredient-list.compo
 import { IngredientEditComponent } from './ingredient-edit/ingredient-edit.component';
 import {IngredientService} from './ingredient.service';
 import { INGREDIENT_ROUTES } from './ingredient.routes';
-import {NgbDateAdapter, NgbDateParserFormatter, NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
-import {CustomAdapter, CustomDateParserFormatter} from "../formatting/ngbDateStringAdapter";
+import {NgbDatepickerModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -20,9 +19,7 @@ import {CustomAdapter, CustomDateParserFormatter} from "../formatting/ngbDateStr
     IngredientListComponent,
     IngredientEditComponent
   ],
-  providers: [IngredientService,
-    {provide: NgbDateAdapter, useClass: CustomAdapter},
-    {provide: NgbDateParserFormatter, useClass: CustomDateParserFormatter}
+  providers: [IngredientService
     ],
   exports: []
 })

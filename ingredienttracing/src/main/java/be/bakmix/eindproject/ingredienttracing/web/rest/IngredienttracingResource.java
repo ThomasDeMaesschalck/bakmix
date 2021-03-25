@@ -30,18 +30,29 @@ public class IngredienttracingResource {
         return ResponseEntity.ok(ingredienttracings);
     }
 
-    @GetMapping("/ingredienttracings/{id}")
-    public ResponseEntity<Ingredienttracing> getById(@PathVariable Long id){
-        Ingredienttracing ingredienttracing = ingredienttracingService.getById(id);
+  //  @GetMapping("/ingredienttracings/{id}")
+  //  public ResponseEntity<Ingredienttracing> getById(@PathVariable Long id){
+ //       Ingredienttracing ingredienttracing = ingredienttracingService.getById(id);
+   //     if(ingredienttracing == null){
+ //          log.error("Failed to find ingredienttracing number " + id);
+
+    //        return ResponseEntity.notFound().build();
+ //       }
+    //    log.info("Retrieved ingredienttracing number " + id);
+  //      return ResponseEntity.ok(ingredienttracing);
+ //   }
+
+    @GetMapping("/ingredienttracings/{id}") //works by orderlineId
+    public ResponseEntity<List<Ingredienttracing>> getByOrderlineId(@PathVariable Long id){
+        List<Ingredienttracing> ingredienttracing = ingredienttracingService.getByOrderlineId(id);
         if(ingredienttracing == null){
-            log.error("Failed to find ingredienttracing number " + id);
+            log.error("Failed to find ingredienttracing for oderline number " + id);
 
             return ResponseEntity.notFound().build();
         }
-        log.info("Retrieved ingredienttracing number " + id);
+        log.info("Retrieved ingredienttracing for oderline number " + id);
         return ResponseEntity.ok(ingredienttracing);
     }
-
 
     @PostMapping("/ingredienttracings")
     public ResponseEntity<Ingredienttracing> createIngredienttracing(@Valid @RequestBody Ingredienttracing ingredienttracing)

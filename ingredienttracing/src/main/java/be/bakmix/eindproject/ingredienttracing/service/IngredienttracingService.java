@@ -42,6 +42,16 @@ public class IngredienttracingService {
         return null;
     }
 
+    public List<Ingredienttracing> getByOrderlineId(Long id){
+        List<Ingredienttracing> ingredienttracings = StreamSupport
+                .stream(ingredienttracingRepository.findAll().spliterator(), false)
+                .filter(i -> i.getOrderlineId() == id)
+                .map (e -> ingredienttracingMapper.toDTO(e))
+                .collect(Collectors.toList());
+
+        return ingredienttracings;
+    }
+
     public void save(Ingredienttracing ingredienttracing) {
         IngredienttracingEntity ingredientToSave = ingredienttracingMapper.toEntity(ingredienttracing);
         ingredienttracingRepository.save(ingredientToSave);

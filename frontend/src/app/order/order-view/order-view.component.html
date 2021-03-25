@@ -1,6 +1,6 @@
 <div class="row" *ngIf="order">
 
-  <div class="col-md-6">
+  <div class="col-md-9">
 
 
     <div class="card">
@@ -51,7 +51,7 @@
                   <td> {{orderline.product.name}}</td>
                   <td> {{orderline.purchasePrice}}</td>
                   <td style="white-space: nowrap">
-                    <a [routerLink]="['../orderline', orderline.id ]" class="btn btn-secondary">View</a>&nbsp;
+                    <a [routerLink]="['./orderlines', orderline.id ]" class="btn btn-secondary">View</a>&nbsp;
                   </td>
                 </tr>
                 </tbody>
@@ -62,6 +62,7 @@
     </div>
   </div>
 
+  <div class="col-md-3">
   <div class="card">
     <div class="card-body">
       <h2 class="h4">Klant</h2>
@@ -83,4 +84,5 @@
         </div>      </div></div>
 
   </div>
+</div>
 </div>

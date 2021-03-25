@@ -2,7 +2,6 @@ import { Order } from './order';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import {Orderstatus} from "./orderstatus";
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 

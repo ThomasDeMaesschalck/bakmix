@@ -3,6 +3,7 @@ package be.bakmix.eindproject.order.service.dto;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 public class Orderline {
@@ -13,4 +14,5 @@ public class Orderline {
     private BigDecimal purchasePrice;
 
     private Product product;
+    private List<Ingredient> ingredient;
 }

@@ -10,11 +10,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ProductModule } from './product/product.module';
 import { CustomerModule } from './customer/customer.module';
 import {HomeModule} from './home/home.module';
-import {OrderModule} from "./order/order.module";
+import {OrderModule} from './order/order.module';
+import {IngredienttracingModule} from './ingredienttracing/ingredienttracing.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +27,8 @@ import {OrderModule} from "./order/order.module";
     ProductModule,
     CustomerModule,
     HomeModule,
-    OrderModule
+    OrderModule,
+    IngredienttracingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
