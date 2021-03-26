@@ -73,7 +73,12 @@ import java.util.stream.StreamSupport;
     public Orderline getById(Long id){
         Optional<OrderlineEntity> orderlineEntityOptional = orderlineRepository.findById(id);
         if(orderlineEntityOptional.isPresent()){
-            return orderlineMapper.toDTO(orderlineEntityOptional.get());
+            Orderline orderline = orderlineMapper.toDTO(orderlineEntityOptional.get());
+            RestTemplate rtProduct = new RestTemplate();
+            Product product = rtProduct.getForObject(urlProducts+orderline.getProductId(), Product.class);
+            orderline.setProductId(product.getId());
+            orderline.setProduct(product);
+            return orderline;
         }
         return null;
     }

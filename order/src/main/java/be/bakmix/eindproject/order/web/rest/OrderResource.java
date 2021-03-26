@@ -2,6 +2,7 @@ package be.bakmix.eindproject.order.web.rest;
 
 import be.bakmix.eindproject.order.service.OrderService;
 import be.bakmix.eindproject.order.service.dto.Order;
+import be.bakmix.eindproject.order.service.dto.Orderline;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,17 @@ public class OrderResource {
         }
         log.info("Retrieved order number " + id);
         return ResponseEntity.ok(order);
+    }
+
+    @GetMapping("/orders/orderlinewithlinkedingredients/{id}")
+    public ResponseEntity<Orderline> getOrderlineWithLinkedIngredientsById(@PathVariable Long id){
+        Orderline orderline = orderService.getOrderlineWithLinkedIngredientsById(id);
+        if(orderline == null){
+            log.error("Failed to find orderline number " + id);
+
+            return ResponseEntity.notFound().build();
+        }
+        log.info("Retrieved orderline number " + id);
+        return ResponseEntity.ok(orderline);
     }
 }

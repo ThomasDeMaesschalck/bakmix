@@ -7,6 +7,7 @@ import {RouterModule} from '@angular/router';
 import {ORDER_ROUTES} from './order.routes';
 import {OrderService} from './order.service';
 import { OrderlineViewComponent } from './orderline-view/orderline-view.component';
+import {OrderlineService} from './orderline.service';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { OrderlineViewComponent } from './orderline-view/orderline-view.componen
     RouterModule.forChild(ORDER_ROUTES)
   ],
 
-  providers: [OrderService],
+  providers: [OrderService, OrderlineService],
   exports: []
 })
 export class OrderModule { }

@@ -47,7 +47,7 @@ public class OrderlineResource {
 
             return ResponseEntity.notFound().build();
         }
-        log.info("Retrieved orderline with order id number " + id);
+        log.info("Retrieved orderlines with order id number " + id);
         return ResponseEntity.ok(orderline);
     }
 }

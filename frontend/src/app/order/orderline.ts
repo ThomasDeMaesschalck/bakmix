@@ -1,4 +1,5 @@
 import {Product} from '../product/product';
+import {Ingredient} from '../ingredient/ingredient';
 
 export class Orderline {
   id: number;
@@ -8,4 +9,5 @@ export class Orderline {
   purchasePrice: number;
 
   product: Product;
+  ingredients: Ingredient[];
 }

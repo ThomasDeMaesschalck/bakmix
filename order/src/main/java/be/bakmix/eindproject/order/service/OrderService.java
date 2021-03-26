@@ -39,6 +39,9 @@ public class OrderService {
     @Value("http://localhost:7773/api/orderlines/getbyorder/")
     private String urlOrderlines;
 
+    @Value("http://localhost:7773/api/orderlines/")
+    private String urlOrderlinesById;
+
     @Value("http://localhost:7779/api/customers/")
     private String urlCustomers;
 
@@ -61,6 +64,7 @@ public class OrderService {
             order.setCustomer(customer);
         }
 
+
         for(Order order : orders){
             RestTemplate rtOrderlines = new RestTemplate();
             Orderline[] orderlines = rtOrderlines.getForObject(urlOrderlines+order.getId(), Orderline[].class);
@@ -77,7 +81,7 @@ public class OrderService {
                     RestTemplate rtIngredients = new RestTemplate();
                     Ingredient ingredient = rtIngredients.getForObject(urlIngredients+ingredientId, Ingredient.class);
                     ingredients.add(ingredient);
-                    orderline.setIngredient(ingredients);
+                    orderline.setIngredients(ingredients);
                 }
             }
 
@@ -111,7 +115,7 @@ public class OrderService {
                     RestTemplate rtIngredients = new RestTemplate();
                     Ingredient ingredient = rtIngredients.getForObject(urlIngredients+ingredientId, Ingredient.class);
                     ingredients.add(ingredient);
-                    orderline.setIngredient(ingredients);
+                    orderline.setIngredients(ingredients);
                 }
             }
 
@@ -119,5 +123,27 @@ public class OrderService {
             return order;
         }
         return null;
+    }
+
+    public Orderline getOrderlineWithLinkedIngredientsById(Long id){
+
+            RestTemplate rtOrderlines = new RestTemplate();
+            Orderline orderline = rtOrderlines.getForObject(urlOrderlinesById+id, Orderline.class);
+
+                RestTemplate rtIngredienttracings = new RestTemplate();
+                Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
+                List<Ingredient> ingredients = new ArrayList();
+
+                for(Ingredienttracing ingredienttracing: ingredienttracings)
+                {
+                    Long ingredientId = ingredienttracing.getIngredientId();
+                    RestTemplate rtIngredients = new RestTemplate();
+                    Ingredient ingredient = rtIngredients.getForObject(urlIngredients+ingredientId, Ingredient.class);
+                    ingredients.add(ingredient);
+                    orderline.setIngredients(ingredients);
+                }
+
+            return orderline;
+
     }
 }

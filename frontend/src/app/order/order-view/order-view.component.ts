@@ -6,7 +6,7 @@ import {IngredientService} from '../../ingredient/ingredient.service';
 import {OrderService} from '../order.service';
 import {map, switchMap} from "rxjs/operators";
 import {of} from "rxjs";
-import {Orderstatus} from "../orderstatus";
+import {Orderstatus} from '../orderstatus';
 
 @Component({
   selector: 'app-order-view',
