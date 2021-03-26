@@ -17,6 +17,7 @@
                 <tr>
                   <th class="border-top-0" scope="col">#</th>
                   <th class="border-top-0" scope="col">Name</th>
+                  <th class="border-top-0" scope="col" style="width:120px"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -24,6 +25,9 @@
 
                   <td>{{ingredient.uniqueCode}}</td>
                   <td>{{ingredient.brand}} {{ingredient.type}}</td>
+                  <td style="white-space: nowrap">
+                    <button type="submit" class="btn btn-primary" (click)="removeTracing(ingredient.ingredienttracingId)">{{ingredient.ingredienttracingId | json}}Remove</button>
+                  </td>
                 </tr>
                 </tbody>
               </table>
@@ -46,13 +50,16 @@
                 <tr>
                   <th class="border-top-0" scope="col">#</th>
                   <th class="border-top-0" scope="col">Name</th>
+                  <th class="border-top-0" scope="col" style="width:120px"></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-
-                  <td>Id</td>
-                  <td>Naam type</td>
+                <tr *ngFor="let ingredientItem of ingredients">
+                  <td>{{ingredientItem.uniqueCode}}</td>
+                  <td>{{ingredientItem.brand}} {{ingredientItem.type}}</td>
+                  <td style="white-space: nowrap">
+                    <button type="submit" class="btn btn-primary" (click)="saveTracing(ingredientItem.id, orderline.id)">Add</button>
+                  </td>
                 </tr>
                 </tbody>
               </table>

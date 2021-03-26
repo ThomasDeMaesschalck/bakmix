@@ -15,4 +15,5 @@ public class Ingredient {
     private String lotNumber;
     private String volume;
     private Boolean available;
+    private Long ingredienttracingId;
 }

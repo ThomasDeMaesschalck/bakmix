@@ -1,30 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import {IngredienttracingFilter} from './ingredienttracing-filter';
+import {Ingredient} from '../ingredient/ingredient';
 import {Ingredienttracing} from './ingredienttracing';
+import {Router} from "@angular/router";
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
 
 @Injectable()
 export class IngredienttracingService {
-  ingredienttracingList: Ingredienttracing[] = [];
-  ingredienttracingListForOrderline: Ingredienttracing[] = [];
-  api = 'http://localhost:7771/api/ingredienttracings/';
+  availableIngredientsForOrderline: Ingredient[] = [];
+  apiOrderlines = 'http://localhost:7772/api/orders/availableingredientsfororderline/';
+  apiIngredienttracing = 'http://localhost:7771/api/ingredienttracings/';
 
   constructor(private http: HttpClient) {
   }
 
-  findByOrderlineId(id: string): Observable<Ingredienttracing> {
-    const url = `${this.api}/orderline/${id}`;
-    const params = { id: id };
-    return this.http.get<Ingredienttracing>(url, {params, headers});
+  findAvailableIngredients(olId: string): Observable<Ingredient[]> {
+    const url = `${this.apiOrderlines}/${olId}`;
+    const params = { olId: olId };
+    return this.http.get<Ingredient[]>(url, {params, headers});
   }
 
-  load(filter: IngredienttracingFilter): void {
-    this.find(filter).subscribe(result => {
-        this.ingredienttracingList = result;
+  load(): void {
+    this.find().subscribe(result => {
+        this.availableIngredientsForOrderline = result;
       },
       err => {
         console.error('error loading', err);
@@ -32,36 +33,25 @@ export class IngredienttracingService {
     );
   }
 
-  find(filter: IngredienttracingFilter): Observable<Ingredienttracing[]> {
-    const params = {
-      'id': filter.id,
-    };
+  find(): Observable<Ingredient[]> {
 
-    return this.http.get<Ingredienttracing[]>(this.api, {params, headers});
+    return this.http.get<Ingredient[]>(this.apiOrderlines, {headers});
   }
 
-  save(entity: Ingredienttracing): Observable<Ingredienttracing> {
-    let params = new HttpParams();
-    let url = '';
-    if (entity.id) {
-      url = `${this.api}/${entity.id.toString()}`;
-      params = new HttpParams().set('ID', entity.id.toString());
-      return this.http.put<Ingredienttracing>(url, entity, {headers, params});
-    } else {
-      url = `${this.api}`;
-      return this.http.post<Ingredienttracing>(url, entity, {headers, params});
-    }
+  saveIngredienttracing(ingredienttracing: Ingredienttracing): void {
+    const params = new HttpParams();
+    const url = `${this.apiIngredienttracing}`;
+    this.http.post<Ingredienttracing>(url, ingredienttracing, {headers, params}).subscribe(result =>
+      this.findAvailableIngredients(ingredienttracing.orderlineId.toString()));
   }
 
-  delete(entity: Ingredienttracing): Observable<Ingredienttracing> {
-    let params = new HttpParams();
-    let url = '';
-    if (entity.id) {
-      url = `${this.api}/${entity.id.toString()}`;
-      params = new HttpParams().set('ID', entity.id.toString());
-      return this.http.delete<Ingredienttracing>(url, {headers, params});
-    }
-    return null;
+  removeIngredienttracing(ingredienttracingId: number): void {
+    const params = new HttpParams();
+    const url = `${this.apiIngredienttracing}${ingredienttracingId}`;
+    this.http.delete<Ingredienttracing>(url, {headers, params}).subscribe(result =>
+      this.find());
+
   }
+
 }
 

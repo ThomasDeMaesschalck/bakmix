@@ -8,6 +8,7 @@ import {ORDER_ROUTES} from './order.routes';
 import {OrderService} from './order.service';
 import { OrderlineViewComponent } from './orderline-view/orderline-view.component';
 import {OrderlineService} from './orderline.service';
+import {IngredienttracingService} from '../ingredienttracing/ingredienttracing.service';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import {OrderlineService} from './orderline.service';
     RouterModule.forChild(ORDER_ROUTES)
   ],
 
-  providers: [OrderService, OrderlineService],
+  providers: [OrderService, OrderlineService, IngredienttracingService],
   exports: []
 })
 export class OrderModule { }

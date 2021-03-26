@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import {Orderline} from './orderline';
+import {Ingredient} from '../ingredient/ingredient';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 

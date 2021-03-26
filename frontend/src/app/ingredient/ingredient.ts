@@ -8,4 +8,5 @@ export class Ingredient {
   lotNumber: string;
   volume: string;
   available: string;
+  ingredienttracingId: number;
 }

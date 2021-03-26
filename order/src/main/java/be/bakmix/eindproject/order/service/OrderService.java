@@ -139,6 +139,7 @@ public class OrderService {
                     Long ingredientId = ingredienttracing.getIngredientId();
                     RestTemplate rtIngredients = new RestTemplate();
                     Ingredient ingredient = rtIngredients.getForObject(urlIngredients+ingredientId, Ingredient.class);
+                    ingredient.setIngredienttracingId(ingredienttracing.getId());
                     ingredients.add(ingredient);
                     orderline.setIngredients(ingredients);
                 }
