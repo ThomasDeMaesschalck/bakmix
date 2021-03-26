@@ -144,6 +144,34 @@ public class OrderService {
                 }
 
             return orderline;
+    }
 
+    public List<Ingredient> getAvailableIngredientsForOrderline(Long id) {
+
+        RestTemplate rtIngredients = new RestTemplate();
+        Ingredient[] ingredients = rtIngredients.getForObject(urlIngredients, Ingredient[].class);
+
+        List<Ingredient> ingredientsList = Arrays.asList(ingredients);
+
+
+        RestTemplate rtIngredienttracings = new RestTemplate();
+        Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings + id, Ingredienttracing[].class);
+
+        ingredientsList = ingredientsList.stream().filter(i -> i.getAvailable() == true).collect(Collectors.toList());
+
+
+        for (Ingredienttracing ingredienttracing : ingredienttracings)
+        {
+            for (Ingredient ingredient: ingredientsList)
+            {
+                if (ingredienttracing.getIngredientId() == ingredient.getId())
+                {
+                    ingredientsList.remove(ingredient);
+                    break;
+                }
+            }
+        }
+
+        return ingredientsList;
     }
 }

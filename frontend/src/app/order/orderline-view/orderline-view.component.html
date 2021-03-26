@@ -1,11 +1,12 @@
-<div class="row" *ngIf="orderline">
+<div class="row pl-5 pb-3">  <a [routerLink]="['../..']" class="btn btn-secondary">back to order</a>&nbsp;
+</div>
+<div class="row">
 
   <div class="col-md-6">
 
-    <a [routerLink]="['../..']" class="btn btn-secondary">back to order</a>&nbsp;
-<br><br>
 
-    <div class="card">
+
+    <div class="card" *ngIf="orderline">
       <div class="card-body">
         <h2 class="h4">Orderlijn {{orderline.id}} gekoppelde ingrediënten - {{orderline.product.name}}</h2>
         <div class="card-text">
@@ -28,7 +29,35 @@
               </table>
             </div>
           </div>      </div></div>
+    </div>
+  </div>
 
+  <div class="col-md-6">
+
+
+    <div class="card">
+      <div class="card-body">
+        <h2 class="h4">Ingrediënten</h2>
+        <div class="card-text">
+          <div class="card-text">
+            <div class="table-responsive">
+              <table class="table table-centered table-hover mb-0" id="datatable4">
+                <thead>
+                <tr>
+                  <th class="border-top-0" scope="col">#</th>
+                  <th class="border-top-0" scope="col">Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+
+                  <td>Id</td>
+                  <td>Naam type</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>      </div></div>
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 package be.bakmix.eindproject.order.web.rest;
 
 import be.bakmix.eindproject.order.service.OrderService;
+import be.bakmix.eindproject.order.service.dto.Ingredient;
 import be.bakmix.eindproject.order.service.dto.Order;
 import be.bakmix.eindproject.order.service.dto.Orderline;
 import lombok.AllArgsConstructor;
@@ -50,5 +51,17 @@ public class OrderResource {
         }
         log.info("Retrieved orderline number " + id);
         return ResponseEntity.ok(orderline);
+    }
+
+    @GetMapping("/orders/availableingredientsfororderline/{id}")
+    public ResponseEntity<List<Ingredient>> getAvailableIngredientsForOrderline(@PathVariable Long id){
+        List<Ingredient> ingredients = orderService.getAvailableIngredientsForOrderline(id);
+        if(ingredients == null){
+            log.error("Failed to find available ingredients for orderline number " + id);
+
+            return ResponseEntity.notFound().build();
+        }
+        log.info("Retrieved  available ingredients for orderline number " + id);
+        return ResponseEntity.ok(ingredients);
     }
 }
