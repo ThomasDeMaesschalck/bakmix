@@ -179,22 +179,13 @@ public class OrderService {
                 .map(e -> orderMapper.toDTO(e))
                 .collect(Collectors.toList());
 
-        for(Order order : orders){
-            RestTemplate rtCustomer = new RestTemplate();
-            Customer customer = rtCustomer.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
-            order.setCustomerId(customer.getId());
-            order.setCustomer(customer);
-        }
-
-
-        for(Order order : orders){
+          for(Order order : orders){
             RestTemplate rtOrderlines = new RestTemplate();
             Orderline[] orderlines = rtOrderlines.getForObject(urlOrderlines+order.getId(), Orderline[].class);
             List<Orderline> filteredOrderlines = new ArrayList();
-
+            boolean found = false;
             for(Orderline orderline: orderlines)
             {
-                boolean found = false;
                 RestTemplate rtIngredienttracings = new RestTemplate();
                 Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
                 List<Ingredient> ingredients = new ArrayList();
@@ -211,16 +202,22 @@ public class OrderService {
                         found = true;
                     }
                 }
-                if (found == true)
+                if (found)
                 {
                     filteredOrderlines.add(orderline);
+                    found = false;
                 }
             }
-            order.setOrderlines(filteredOrderlines);
-        }
-        List<Order> ordersFiltered = orders;
+                order.setOrderlines(filteredOrderlines);
+            }
+        List<Order> ordersFiltered =   orders.stream().filter(o -> !o.getOrderlines().isEmpty()).collect(Collectors.toList());
 
-        orders.stream().filter(o -> Objects.nonNull(o.getOrderlines())).collect(Collectors.toList());
+        for(Order order : ordersFiltered){
+            RestTemplate rtCustomer = new RestTemplate();
+            Customer customer = rtCustomer.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
+            order.setCustomerId(customer.getId());
+            order.setCustomer(customer);
+        }
 
         return ordersFiltered;
     }

@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/web/rest/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/web/rest/OrderResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,8 +187,8 @@
       <item itemvalue="JavaScript Debug.Angular Application (frontend)" />
       <item itemvalue="npm.Angular CLI Server (frontend)" />
       <item itemvalue="Protractor.E2E Tests (frontend)" />
-      <item itemvalue="Spring Boot.IngredienttracingApplication" />
       <item itemvalue="Spring Boot.OrderApplication" />
+      <item itemvalue="Spring Boot.IngredienttracingApplication" />
       <item itemvalue="Spring Boot.OrderlineApplication" />
       <item itemvalue="Spring Boot.UserApplication" />
       <item itemvalue="Spring Boot.CustomersApplication" />
@@ -215,7 +212,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615929913755</updated>
       <workItem from="1615929916701" duration="829000" />
-      <workItem from="1616102007845" duration="100055000" />
+      <workItem from="1616102007845" duration="103354000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -301,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616798335683</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ingredient tracing search half werkend">
+      <created>1616847258478</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1616847258478</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +325,7 @@
     <MESSAGE value="orderline angular ingredient weergave" />
     <MESSAGE value="available ingredient by orderline code" />
     <MESSAGE value="working ingredient adding to orderlines" />
-    <option name="LAST_COMMIT_MESSAGE" value="working ingredient adding to orderlines" />
+    <MESSAGE value="ingredient tracing search half werkend" />
+    <option name="LAST_COMMIT_MESSAGE" value="ingredient tracing search half werkend" />
   </component>
 </project>
