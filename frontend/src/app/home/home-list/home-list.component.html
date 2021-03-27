@@ -70,6 +70,8 @@
           <td>{{ingredientItem.available}}</td>
           <td style="white-space: nowrap">
             <a [routerLink]="['../ingredients', ingredientItem.id ]" class="btn btn-secondary">Edit</a>&nbsp;
+            <a [routerLink]="['../tracing', ingredientItem.uniqueCode ]" class="btn btn-secondary">Trace</a>&nbsp;
+
           </td>
         </tr>
         </tbody>

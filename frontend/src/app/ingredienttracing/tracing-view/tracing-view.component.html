@@ -1,0 +1,39 @@
+<div class="row" >
+
+  <div class="col-md-9">
+
+
+                 <div class="card">
+      <div class="card-body">
+        <h2 class="h4">Gevonden orders voor ingrediënt {{uniqueCode}}</h2>
+        <div class="card-text">
+          <div class="card-text">
+            <div class="table-responsive">
+              <table class="table table-centered table-hover mb-0" id="datatable2">
+                <thead>
+                <tr>
+                  <th class="border-top-0" scope="col">Order id</th>
+                  <th class="border-top-0" scope="col">customer name</th>
+                  <th class="border-top-0" scope="col">affected products</th>
+                  <th class="border-top-0" scope="col" style="width:120px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let orderItem of orderList">
+
+                  <td>{{orderItem.id}}</td>
+                  <td>{{orderItem.customer.firstName}}</td>
+
+                  <td *ngFor="let orderlineItem of orderItem.orderlines">{{orderlineItem.product.name}}</td>
+                  <td style="white-space: nowrap">
+                    <a [routerLink]="['../../orders', orderItem.id ]" class="btn btn-secondary">View</a>&nbsp;
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>      </div></div>
+
+    </div>
+  </div>
+</div>

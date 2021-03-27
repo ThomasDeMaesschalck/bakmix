@@ -3,13 +3,15 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import {Ingredient} from '../ingredient/ingredient';
 import {Ingredienttracing} from './ingredienttracing';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
+import {Order} from '../order/order';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
 
 @Injectable()
 export class IngredienttracingService {
+  orders: Order[];
   availableIngredientsForOrderline: Ingredient[] = [];
   apiOrderlines = 'http://localhost:7772/api/orders/availableingredientsfororderline/';
   apiIngredienttracing = 'http://localhost:7771/api/ingredienttracings/';
