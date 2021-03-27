@@ -6,17 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing-filter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/web/rest/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/web/rest/OrderResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +215,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615929913755</updated>
       <workItem from="1615929916701" duration="829000" />
-      <workItem from="1616102007845" duration="91454000" />
+      <workItem from="1616102007845" duration="100055000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -301,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616778849719</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="working ingredient adding to orderlines">
+      <created>1616798335683</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1616798335683</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,6 +320,7 @@
     <MESSAGE value="order microservice expanded with ingredienttracing" />
     <MESSAGE value="orderline angular ingredient weergave" />
     <MESSAGE value="available ingredient by orderline code" />
-    <option name="LAST_COMMIT_MESSAGE" value="available ingredient by orderline code" />
+    <MESSAGE value="working ingredient adding to orderlines" />
+    <option name="LAST_COMMIT_MESSAGE" value="working ingredient adding to orderlines" />
   </component>
 </project>

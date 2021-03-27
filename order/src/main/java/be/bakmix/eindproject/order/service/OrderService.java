@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -172,7 +169,60 @@ public class OrderService {
                 }
             }
         }
-
         return ingredientsList;
     }
+
+
+    public List<Order> getAllIngredienttracedOrders(String id){
+        List<Order> orders = StreamSupport
+                .stream(orderRepository.findAll().spliterator(), false)
+                .map(e -> orderMapper.toDTO(e))
+                .collect(Collectors.toList());
+
+        for(Order order : orders){
+            RestTemplate rtCustomer = new RestTemplate();
+            Customer customer = rtCustomer.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
+            order.setCustomerId(customer.getId());
+            order.setCustomer(customer);
+        }
+
+
+        for(Order order : orders){
+            RestTemplate rtOrderlines = new RestTemplate();
+            Orderline[] orderlines = rtOrderlines.getForObject(urlOrderlines+order.getId(), Orderline[].class);
+            List<Orderline> filteredOrderlines = new ArrayList();
+
+            for(Orderline orderline: orderlines)
+            {
+                boolean found = false;
+                RestTemplate rtIngredienttracings = new RestTemplate();
+                Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
+                List<Ingredient> ingredients = new ArrayList();
+
+                for(Ingredienttracing ingredienttracing: ingredienttracings)
+                {
+                    Long ingredientId = ingredienttracing.getIngredientId();
+                    RestTemplate rtIngredients = new RestTemplate();
+                    Ingredient ingredient = rtIngredients.getForObject(urlIngredients+ingredientId, Ingredient.class);
+                    ingredients.add(ingredient);
+                    orderline.setIngredients(ingredients);
+                    if (ingredient.getUniqueCode().equals(id))
+                    {
+                        found = true;
+                    }
+                }
+                if (found == true)
+                {
+                    filteredOrderlines.add(orderline);
+                }
+            }
+            order.setOrderlines(filteredOrderlines);
+        }
+        List<Order> ordersFiltered = orders;
+
+        orders.stream().filter(o -> Objects.nonNull(o.getOrderlines())).collect(Collectors.toList());
+
+        return ordersFiltered;
+    }
+
 }

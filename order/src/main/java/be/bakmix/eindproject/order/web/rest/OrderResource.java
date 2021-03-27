@@ -64,4 +64,16 @@ public class OrderResource {
         log.info("Retrieved  available ingredients for orderline number " + id);
         return ResponseEntity.ok(ingredients);
     }
+
+    @GetMapping("/tracing/{id}")
+    public ResponseEntity<List<Order>> getAllIngredienttracedOrders(@PathVariable String id){
+        List<Order> orders = orderService.getAllIngredienttracedOrders(id);
+        if(orders == null){
+            log.error("Failed to find orders for unique ingredient " + id);
+
+            return ResponseEntity.notFound().build();
+        }
+        log.info("Retrieved  orders for unique ingredient " + id);
+        return ResponseEntity.ok(orders);
+    }
 }

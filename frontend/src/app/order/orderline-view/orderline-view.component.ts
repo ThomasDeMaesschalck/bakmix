@@ -71,11 +71,11 @@ export class OrderlineViewComponent implements OnInit {
   saveTracing(ingredientId: number, orderlineId: number): void {
     const ingredienttracing = new Ingredienttracing(ingredientId, orderlineId);
     this.ingredienttracingService.saveIngredienttracing(ingredienttracing);
-    this.ngOnInit();
+    setTimeout(() => {this.ngOnInit(); }, 500);
   }
 
   removeTracing(ingredienttracingId: number): void {
     this.ingredienttracingService.removeIngredienttracing(ingredienttracingId);
-    this.ngOnInit();
+    setTimeout(() => {this.ngOnInit(); }, 500);
   }
 }

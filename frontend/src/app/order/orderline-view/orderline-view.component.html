@@ -55,6 +55,8 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let ingredientItem of ingredients">
+                  <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
+
                   <td>{{ingredientItem.uniqueCode}}</td>
                   <td>{{ingredientItem.brand}} {{ingredientItem.type}}</td>
                   <td style="white-space: nowrap">
