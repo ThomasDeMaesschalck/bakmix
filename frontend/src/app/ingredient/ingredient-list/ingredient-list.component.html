@@ -31,7 +31,7 @@
           <th class="border-top-0" scope="col">Lot Number</th>
           <th class="border-top-0" scope="col">Volume</th>
           <th class="border-top-0" scope="col">Available</th>
-          <th class="border-top-0" scope="col" style="width:120px"></th>
+          <th class="border-top-0" scope="col" style="width:200px"></th>
         </tr>
       </thead>
       <tbody>
@@ -48,6 +48,9 @@
           <td>{{item.available}}</td>
           <td style="white-space: nowrap">
             <a [routerLink]="['../ingredients', item.id ]" class="btn btn-secondary">Edit</a>&nbsp;
+            <button *ngIf="item.available == true" (click)="switchIngredientStatus(item)" class="btn btn-dark mr-1">Niet beschikbaar</button>
+            <button *ngIf="item.available == false" (click)="switchIngredientStatus(item)" class="btn btn-success mr-1">Wel beschikbaar</button>
+            <a [routerLink]="['../tracing', item.uniqueCode ]" class="btn btn-info">Trace</a>&nbsp;
             <button (click)="delete(item)" class="btn btn-danger">Delete</button>
           </td>
         </tr>

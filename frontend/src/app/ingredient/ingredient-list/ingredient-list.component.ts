@@ -32,6 +32,19 @@ export class IngredientListComponent implements OnInit {
     this.selectedIngredient = selected;
   }
 
+  switchIngredientStatus(ingredient: Ingredient): void {
+    this.ingredientService.switchIngredientAvailability(ingredient).subscribe(() => {
+        this.feedback = {type: 'success', message: 'Status gewijzigd!'};
+        setTimeout(() => {
+          this.search();
+        }, 1000);
+      },
+      err => {
+        this.feedback = {type: 'warning', message: 'Fout bij status wijzigen'};
+      }
+    );
+  }
+
   delete(ingredient: Ingredient): void {
     if (confirm('Are you sure?')) {
       this.ingredientService.delete(ingredient).subscribe(() => {

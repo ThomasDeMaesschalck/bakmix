@@ -8,7 +8,9 @@
         <h2 class="h4">Gevonden orders voor ingrediënt {{uniqueCode}}</h2>
         <div class="card-text">
           <div class="card-text">
-            <div class="table-responsive">
+
+            <div *ngIf="orderList.length == 0">Niets gevonden</div>
+            <div class="table-responsive" *ngIf="orderList.length > 0">
               <table class="table table-centered table-hover mb-0" id="datatable2">
                 <thead>
                 <tr>

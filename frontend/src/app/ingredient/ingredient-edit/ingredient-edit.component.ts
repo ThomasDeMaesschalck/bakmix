@@ -44,6 +44,12 @@ export class IngredientEditComponent implements OnInit {
   }
 
   save() {
+    const ingredientFound = new Ingredient();
+    ingredientFound.uniqueCode = 'duplicate';
+
+    if ((this.ingredientService.duplicateUniqueIdCheckBeforeSave(this.ingredient.uniqueCode))
+      || (this.ingredient.id))
+    {
     this.ingredientService.save(this.ingredient).subscribe(
       ingredient => {
         this.ingredient = ingredient;
@@ -56,6 +62,11 @@ export class IngredientEditComponent implements OnInit {
         this.feedback = {type: 'warning', message: 'Error saving'};
       }
     );
+  }
+    this.feedback = {type: 'warning', message: 'Unique id was not unique'};
+    setTimeout(() => {
+      this.cancel();
+    }, 1000);
   }
 
   cancel() {

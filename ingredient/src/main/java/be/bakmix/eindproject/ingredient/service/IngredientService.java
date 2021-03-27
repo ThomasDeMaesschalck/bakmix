@@ -48,6 +48,17 @@ public class IngredientService {
         ingredientRepository.save(contactToSave);
     }
 
+    public Ingredient findDuplicateUniqueId(String uniqueId)
+    {
+        Ingredient duplicate = new Ingredient();
+        List<Ingredient> checkDuplicate = getAll().stream().filter(i -> i.getUniqueCode().equals(uniqueId)).collect(Collectors.toList());
+        if(checkDuplicate.size() > 0)
+        {
+            duplicate.setUniqueCode("duplicate");
+            return duplicate;
+        }
+        return null;
+    }
 
     public Ingredient delete(Long id) {
         Iterator<IngredientEntity> it = ingredientRepository.findAll().iterator();

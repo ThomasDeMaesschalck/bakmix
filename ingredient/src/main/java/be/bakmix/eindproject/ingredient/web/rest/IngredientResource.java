@@ -43,6 +43,11 @@ public class IngredientResource {
         return ResponseEntity.ok(ingredient);
     }
 
+    @GetMapping("/ingredients/exists/{uniqueId}")
+    public ResponseEntity<Ingredient> findDuplicateUniqueId(@PathVariable String uniqueId){
+        Ingredient result = ingredientService.findDuplicateUniqueId(uniqueId);
+        return ResponseEntity.ok(result);
+    }
 
     @PostMapping("/ingredients")
     public ResponseEntity<Ingredient> createContact(@Valid @RequestBody Ingredient ingredient)

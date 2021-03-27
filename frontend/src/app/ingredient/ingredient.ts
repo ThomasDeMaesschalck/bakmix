@@ -7,6 +7,6 @@ export class Ingredient {
   purchaseLocation: string;
   lotNumber: string;
   volume: string;
-  available: string;
+  available: boolean;
   ingredienttracingId: number;
 }
