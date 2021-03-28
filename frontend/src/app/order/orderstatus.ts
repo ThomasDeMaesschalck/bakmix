@@ -1,5 +1,5 @@
 export enum Orderstatus {
-  Open,
+  Nieuw,
   Verwerkt,
   Verzonden
 }

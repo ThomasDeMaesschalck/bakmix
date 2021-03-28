@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderstatus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderstatus.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/web/rest/IngredienttracingResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/web/rest/IngredienttracingResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +53,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -175,8 +183,8 @@
       <item itemvalue="JavaScript Debug.Angular Application (frontend)" />
       <item itemvalue="npm.Angular CLI Server (frontend)" />
       <item itemvalue="Protractor.E2E Tests (frontend)" />
-      <item itemvalue="Spring Boot.OrderApplication" />
       <item itemvalue="Spring Boot.IngredienttracingApplication" />
+      <item itemvalue="Spring Boot.OrderApplication" />
       <item itemvalue="Spring Boot.OrderlineApplication" />
       <item itemvalue="Spring Boot.UserApplication" />
       <item itemvalue="Spring Boot.CustomersApplication" />
@@ -185,8 +193,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.IngredientApplication" />
         <item itemvalue="Spring Boot.ProductApplication" />
+        <item itemvalue="Spring Boot.IngredientApplication" />
         <item itemvalue="Spring Boot.CustomersApplication" />
       </list>
     </recent_temporary>
@@ -202,7 +210,8 @@
       <workItem from="1615929916701" duration="829000" />
       <workItem from="1616102007845" duration="116193000" />
       <workItem from="1616873607371" duration="4378000" />
-      <workItem from="1616879288294" duration="7675000" />
+      <workItem from="1616879288294" duration="14432000" />
+      <workItem from="1616932504509" duration="988000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -323,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616885428900</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Minor cleanups">
+      <created>1616924685926</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1616924685926</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,6 +375,7 @@
     <MESSAGE value="backend tracing working" />
     <MESSAGE value="angular ingredient tracing working" />
     <MESSAGE value="ingredient add duplicate check working" />
-    <option name="LAST_COMMIT_MESSAGE" value="ingredient add duplicate check working" />
+    <MESSAGE value="Minor cleanups" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor cleanups" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Order} from '../order';
 import {OrderService} from '../order.service';
+import {Orderstatus} from "../orderstatus";
 
 @Component({
   selector: 'app-order-list',
@@ -28,5 +29,8 @@ export class OrderListComponent implements OnInit {
 
   select(selected: Order): void {
     this.selectedOrder = selected;
+  }
+  getStatusType(status: number): string{
+    return Orderstatus[status];
   }
 }

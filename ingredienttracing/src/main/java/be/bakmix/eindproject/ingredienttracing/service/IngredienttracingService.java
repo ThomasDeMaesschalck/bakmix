@@ -58,18 +58,14 @@ public class IngredienttracingService {
     }
 
 
-    public Ingredienttracing delete(Long id) {
-        Iterator<IngredienttracingEntity> it = ingredienttracingRepository.findAll().iterator();
-        while (it.hasNext())   {
-            IngredienttracingEntity ingredienttracing = it.next();
-            if(ingredienttracing.getId() == id)
-            {
-                ingredienttracingRepository.delete(ingredienttracing);
-                it.remove();
-                return ingredienttracingMapper.toDTO(ingredienttracing);
-            }
+    public boolean delete(Long id) {
+
+        Optional<IngredienttracingEntity> ingredienttracingEntityOptional = ingredienttracingRepository.findById(id);
+        if(ingredienttracingEntityOptional.isPresent()) {
+            ingredienttracingRepository.deleteById(id);
+        return true;
         }
-        return null;
+        return false;
     }
 
 }

@@ -12,8 +12,8 @@
               <table class="table table-centered table-hover mb-0" id="datatable2">
                 <thead>
                 <tr>
-                  <th class="border-top-0" scope="col">Id</th>
-                  <th class="border-top-0" scope="col">customer name</th>
+                  <th class="border-top-0" scope="col">#</th>
+                  <th class="border-top-0" scope="col">Klant</th>
                   <th class="border-top-0" scope="col">Status</th>
                   <th class="border-top-0" scope="col" style="width:120px"></th>
                 </tr>
@@ -25,7 +25,7 @@
                   <td>{{orderItem.customer.firstName}}</td>
                   <td>{{getStatusType(orderItem.status)}}</td>
                   <td style="white-space: nowrap">
-                    <a [routerLink]="['../orders', orderItem.id ]" class="btn btn-secondary">View</a>&nbsp;
+                    <a [routerLink]="['../orders', orderItem.id ]" class="btn btn-secondary">Bekijk</a>&nbsp;
                   </td>
                 </tr>
                 </tbody>
@@ -43,7 +43,7 @@
         <div class="row">
     <h2 class="h4"><a routerLink="/ingredients">Voorraad ingrediënten</a></h2>
           <div class="pl-3">
-        <a [routerLink]="['../ingredients', 'new' ]" class="btn btn-primary">New</a>
+        <a [routerLink]="['../ingredients', 'new' ]" class="btn btn-primary">Nieuw</a>
           </div>
         </div>
 
@@ -52,24 +52,22 @@
       <table class="table table-centered table-hover mb-0" id="datatable">
         <thead>
         <tr>
-          <th class="border-top-0" scope="col">Id</th>
           <th class="border-top-0" scope="col">Unique #</th>
           <th class="border-top-0" scope="col">Type</th>
-          <th class="border-top-0" scope="col">Purchase Date</th>
-          <th class="border-top-0" scope="col">Available</th>
+          <th class="border-top-0" scope="col">Aankoopdatum</th>
+          <th class="border-top-0" scope="col">In stock</th>
           <th class="border-top-0" scope="col" style="width:120px"></th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let ingredientItem of ingredientList" [class.active]="ingredientItem === selectedIngredient">
 
-          <td>{{ingredientItem.id}}</td>
           <td>{{ingredientItem.uniqueCode}}</td>
           <td>{{ingredientItem.brand}} {{ingredientItem.type}}</td>
           <td>{{ingredientItem.purchaseDate}}</td>
           <td>{{ingredientItem.available}}</td>
           <td style="white-space: nowrap">
-            <a [routerLink]="['../ingredients', ingredientItem.id ]" class="btn btn-secondary">Edit</a>&nbsp;
+            <a [routerLink]="['../ingredients', ingredientItem.id ]" class="btn btn-secondary">Bewerk</a>&nbsp;
             <a [routerLink]="['../tracing', ingredientItem.uniqueCode ]" class="btn btn-secondary">Trace</a>&nbsp;
 
           </td>

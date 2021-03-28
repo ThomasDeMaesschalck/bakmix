@@ -62,11 +62,10 @@ public class IngredienttracingResource {
         return ResponseEntity.ok(ingredienttracing);
     }
 
-
     @DeleteMapping("/ingredienttracings/{id}")
     public ResponseEntity<Ingredienttracing> deleteIngredienttracing(@PathVariable Long id) {
-        Ingredienttracing ingredienttracing =  ingredienttracingService.delete(id);
-        if (ingredienttracing == null) {
+        boolean success =  ingredienttracingService.delete(id);
+        if (success == false) {
             log.error("Failed to delete ingredienttracing number " + id);
             throw new IngredienttracingNotFoundException("id-" + id);
         }
