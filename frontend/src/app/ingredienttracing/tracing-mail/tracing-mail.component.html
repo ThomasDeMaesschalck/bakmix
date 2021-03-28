@@ -1,0 +1,51 @@
+<div class="row" >
+
+  <div class="col-md-9">
+
+
+    <div class="card">
+      <div class="card-body">
+        <h2 class="h4">Gevonden orders voor ingrediënt {{uniqueCode}}</h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="card mt-2" *ngFor="let orderItem of orderList">
+      <div class="card-body">
+
+
+        <div class="card-text" >
+
+
+        <div>
+          <div class="font-weight-bold">Order nummer {{orderItem.id}} van  {{orderItem.customer.firstName}} <br></div>
+          Betreffend product: <div *ngFor="let orderlineItem of orderItem.orderlines"> {{orderlineItem.product.name}}</div>
+        </div>
+
+          <div class="row mt-2">
+            <form>
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="Email titel" name="title" ngModel required #name="ngModel">
+              </div>
+
+              <div class="form-group">
+                <textarea placeholder="Geachte, helaas is er een probleem met uw product, gelieve dit niet te consumeren en ons te contacteren" class="form-control" name="message" rows="3" ngModel required #message="ngModel"></textarea>
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" type="submit" value="Send">
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
