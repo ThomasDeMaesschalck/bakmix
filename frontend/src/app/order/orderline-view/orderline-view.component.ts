@@ -7,6 +7,7 @@ import {Orderline} from '../orderline';
 import {IngredienttracingService} from '../../ingredienttracing/ingredienttracing.service';
 import {Ingredient} from '../../ingredient/ingredient';
 import {Ingredienttracing} from '../../ingredienttracing/ingredienttracing';
+import {IngredientService} from '../../ingredient/ingredient.service';
 
 @Component({
   selector: 'app-order-view',
@@ -19,12 +20,14 @@ export class OrderlineViewComponent implements OnInit {
   orderline: Orderline;
   ingredients: Ingredient | Ingredient[];
   feedback: any = {};
+  feedbackAdd: any = {};
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private orderlineService: OrderlineService,
-    private ingredienttracingService: IngredienttracingService
+    private ingredienttracingService: IngredienttracingService,
+    private ingredientService: IngredientService
   ) {
   }
 
@@ -61,6 +64,7 @@ export class OrderlineViewComponent implements OnInit {
       .subscribe(ingredient => {
           this.ingredients = ingredient;
           this.feedback = {};
+          this.feedbackAdd = {};
         },
         err => {
           this.feedback = {type: 'warning', message: 'Error loading'};
@@ -72,10 +76,26 @@ export class OrderlineViewComponent implements OnInit {
     const ingredienttracing = new Ingredienttracing(ingredientId, orderlineId);
     this.ingredienttracingService.saveIngredienttracing(ingredienttracing);
     setTimeout(() => {this.ngOnInit(); }, 500);
+    this.feedbackAdd = {type: 'success', message: 'Gekoppeld'};
+
   }
 
   removeTracing(ingredienttracingId: number): void {
     this.ingredienttracingService.removeIngredienttracing(ingredienttracingId);
     setTimeout(() => {this.ngOnInit(); }, 500);
+    this.feedback = {type: 'success', message: 'Ontkoppeld'};
+  }
+
+  switchIngredientStatus(ingredient: Ingredient): void {
+    this.ingredientService.switchIngredientAvailability(ingredient).subscribe(() => {
+        this.feedback = {type: 'success', message: 'Status gewijzigd!'};
+        setTimeout(() => {
+          this.ngOnInit();
+        }, 1000);
+      },
+      err => {
+        this.feedback = {type: 'warning', message: 'Fout bij status wijzigen'};
+      }
+    );
   }
 }

@@ -1,6 +1,7 @@
-<div class="row pl-5 pb-3">  <a [routerLink]="['../..']" class="btn btn-secondary">back to order</a>&nbsp;
+<div class="row pl-5 pb-3">  <a [routerLink]="['../..']" class="btn btn-secondary">Terug naar bestelling</a>&nbsp;
 </div>
 <div class="row">
+
 
   <div class="col-md-6">
 
@@ -11,6 +12,9 @@
         <h2 class="h4">Orderlijn {{orderline.id}} gekoppelde ingrediënten - {{orderline.product.name}}</h2>
         <div class="card-text">
           <div class="card-text">
+
+            <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
+
             <div class="table-responsive">
               <table class="table table-centered table-hover mb-0" id="datatable2">
                 <thead>
@@ -18,6 +22,7 @@
                   <th class="border-top-0" scope="col">#</th>
                   <th class="border-top-0" scope="col">Name</th>
                   <th class="border-top-0" scope="col" style="width:120px"></th>
+                  <th class="border-top-0" scope="col">Status</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -26,7 +31,11 @@
                   <td>{{ingredient.uniqueCode}}</td>
                   <td>{{ingredient.brand}} {{ingredient.type}}</td>
                   <td style="white-space: nowrap">
-                    <button type="submit" class="btn btn-primary" (click)="removeTracing(ingredient.ingredienttracingId)">{{ingredient.ingredienttracingId | json}}Remove</button>
+                    <button type="submit" class="btn btn-primary" (click)="removeTracing(ingredient.ingredienttracingId)">Ontkoppelen</button>
+                  </td>
+                  <td>
+                    <button *ngIf="ingredient.available == true" (click)="switchIngredientStatus(ingredient)" class="btn btn-dark mr-1">Is nu opgebruikt</button>
+                    <button *ngIf="ingredient.available == false" (click)="switchIngredientStatus(ingredient)" class="btn btn-success mr-1">Wel beschikbaar</button>
                   </td>
                 </tr>
                 </tbody>
@@ -44,6 +53,8 @@
         <h2 class="h4">Ingrediënten</h2>
         <div class="card-text">
           <div class="card-text">
+            <div *ngIf="feedbackAdd.message" class="alert alert-{{feedbackAdd.type}}">{{ feedbackAdd.message }}</div>
+
             <div class="table-responsive">
               <table class="table table-centered table-hover mb-0" id="datatable4">
                 <thead>
@@ -55,13 +66,12 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let ingredientItem of ingredients">
-                  <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
 
                   <td>{{ingredientItem.uniqueCode}}</td>
                   <td>{{ingredientItem.brand}} {{ingredientItem.type}}</td>
                   <td style="white-space: nowrap">
-                    <button type="submit" class="btn btn-primary" (click)="saveTracing(ingredientItem.id, orderline.id)">Add</button>
-                  </td>
+                    <button type="submit" class="btn btn-primary" (click)="saveTracing(ingredientItem.id, orderline.id)">Toevoegen</button>
+                    </td>
                 </tr>
                 </tbody>
               </table>
