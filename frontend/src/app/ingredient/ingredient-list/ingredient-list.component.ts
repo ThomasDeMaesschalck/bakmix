@@ -22,6 +22,7 @@ export class IngredientListComponent implements OnInit {
 
   ngOnInit() {
     this.search();
+    this.feedback = {};
   }
 
   search(): void {
@@ -50,7 +51,7 @@ export class IngredientListComponent implements OnInit {
       this.ingredientService.delete(ingredient).subscribe(() => {
           this.feedback = {type: 'success', message: 'Delete was successful!'};
           setTimeout(() => {
-            this.search();
+            this.ngOnInit();
           }, 1000);
         },
         err => {

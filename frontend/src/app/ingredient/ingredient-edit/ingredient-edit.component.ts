@@ -44,27 +44,20 @@ export class IngredientEditComponent implements OnInit {
   }
 
   save() {
-       if ((this.ingredientService.duplicateUniqueIdCheckBeforeSave(this.ingredient.uniqueCode))
-      || (this.ingredient.id))
-    {
-    this.ingredientService.save(this.ingredient).subscribe(
-      ingredient => {
-        this.ingredient = ingredient;
-        this.feedback = {type: 'success', message: 'Save was successful!'};
-        setTimeout(() => {
-          this.router.navigate(['/ingredients']);
-        }, 1000);
-      },
-      err => {
-        this.feedback = {type: 'warning', message: 'Error saving'};
-      }
-    );
-  }
-       this.feedback = {type: 'warning', message: 'Unique id was not unique'};
-       setTimeout(() => {
-      this.cancel();
-    }, 1000);
-  }
+      this.ingredientService.save(this.ingredient).subscribe(
+        ingredient => {
+          this.ingredient = ingredient;
+          this.feedback = {type: 'success', message: 'Save was successful!'};
+          setTimeout(() => {
+            this.router.navigate(['/ingredients']);
+          }, 1000);
+        },
+        err => {
+          this.feedback = {type: 'warning', message: 'Error saving, check if unique Id is unique'};
+        }
+      );
+    }
+
 
   cancel() {
     this.router.navigate(['/ingredients']);

@@ -7,9 +7,9 @@
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/IngredientResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/IngredientResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,12 +178,12 @@
       <item itemvalue="JavaScript Debug.Angular Application (frontend)" />
       <item itemvalue="npm.Angular CLI Server (frontend)" />
       <item itemvalue="Protractor.E2E Tests (frontend)" />
-      <item itemvalue="Spring Boot.IngredienttracingApplication" />
       <item itemvalue="Spring Boot.OrderApplication" />
+      <item itemvalue="Spring Boot.IngredienttracingApplication" />
       <item itemvalue="Spring Boot.OrderlineApplication" />
       <item itemvalue="Spring Boot.UserApplication" />
-      <item itemvalue="Spring Boot.CustomersApplication" />
       <item itemvalue="Spring Boot.IngredientApplication" />
+      <item itemvalue="Spring Boot.CustomersApplication" />
       <item itemvalue="Spring Boot.ProductApplication" />
     </list>
     <recent_temporary>
@@ -206,7 +206,7 @@
       <workItem from="1616102007845" duration="116193000" />
       <workItem from="1616873607371" duration="4378000" />
       <workItem from="1616879288294" duration="14432000" />
-      <workItem from="1616932504509" duration="2665000" />
+      <workItem from="1616932504509" duration="9156000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -341,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616933709267</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Ingredient delete werkt weer">
+      <created>1616938019367</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1616938019367</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,6 +386,7 @@
     <MESSAGE value="ingredient add duplicate check working" />
     <MESSAGE value="Minor cleanups" />
     <MESSAGE value="Ingredienttracing delete working again" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ingredienttracing delete working again" />
+    <MESSAGE value="Ingredient delete werkt weer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ingredient delete werkt weer" />
   </component>
 </project>

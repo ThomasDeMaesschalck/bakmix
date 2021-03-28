@@ -160,15 +160,11 @@ public class OrderService {
 
         for (Ingredienttracing ingredienttracing : ingredienttracings)
         {
-            for (Ingredient ingredient: ingredientsList)
-            {
-                if (ingredienttracing.getIngredientId() == ingredient.getId())
-                {
-                    ingredientsList.remove(ingredient);
-                    break;
-                }
+
+                ingredientsList.removeIf(ingredient -> ingredient.getId().equals(ingredienttracing.getIngredientId()));
+
+
             }
-        }
         return ingredientsList;
     }
 

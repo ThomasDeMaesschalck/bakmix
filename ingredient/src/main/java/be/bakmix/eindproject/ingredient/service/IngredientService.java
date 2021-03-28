@@ -45,7 +45,8 @@ public class IngredientService {
 
     public void save(Ingredient ingredient) {
         IngredientEntity contactToSave = ingredientMapper.toEntity(ingredient);
-        ingredientRepository.save(contactToSave);
+       if((!findDuplicateUniqueIdBoolean(ingredient.getUniqueCode()) || (ingredient.getId() > 0)))
+       {ingredientRepository.save(contactToSave);}
     }
 
     public Ingredient findDuplicateUniqueId(String uniqueId)
@@ -58,6 +59,18 @@ public class IngredientService {
             return duplicate;
         }
         return null;
+    }
+
+    public boolean findDuplicateUniqueIdBoolean(String uniqueId)
+    {
+        boolean duplicate = false;
+        List<Ingredient> checkDuplicate = getAll().stream().filter(i -> i.getUniqueCode().equals(uniqueId)).collect(Collectors.toList());
+        if(checkDuplicate.size() > 0)
+        {
+            duplicate = true;
+           return duplicate;
+        }
+        return duplicate;
     }
 
     public boolean delete(Long id) {
