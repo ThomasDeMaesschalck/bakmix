@@ -16,4 +16,6 @@ public class Ingredient {
     private String volume;
     private Boolean available;
     private Long ingredienttracingId;
+    private Boolean recalled;
+    private LocalDate expiry;
 }

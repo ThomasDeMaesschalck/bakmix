@@ -9,10 +9,12 @@ import {OrderService} from './order.service';
 import { OrderlineViewComponent } from './orderline-view/orderline-view.component';
 import {OrderlineService} from './orderline.service';
 import {IngredienttracingService} from '../ingredienttracing/ingredienttracing.service';
+import { OrderViewPrintComponent } from './order-view-print/order-view-print.component';
+import { OrderViewSendComponent } from './order-view-send/order-view-send.component';
 
 
 @NgModule({
-  declarations: [OrderListComponent, OrderViewComponent, OrderlineViewComponent],
+  declarations: [OrderListComponent, OrderViewComponent, OrderlineViewComponent, OrderViewPrintComponent, OrderViewSendComponent],
   imports: [
     CommonModule,
     FormsModule,

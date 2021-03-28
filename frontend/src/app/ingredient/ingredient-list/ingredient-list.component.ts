@@ -37,7 +37,7 @@ export class IngredientListComponent implements OnInit {
     this.ingredientService.switchIngredientAvailability(ingredient).subscribe(() => {
         this.feedback = {type: 'success', message: 'Status gewijzigd!'};
         setTimeout(() => {
-          this.search();
+          this.ngOnInit();
         }, 1000);
       },
       err => {
@@ -60,4 +60,5 @@ export class IngredientListComponent implements OnInit {
       );
     }
   }
-}
+
+  }

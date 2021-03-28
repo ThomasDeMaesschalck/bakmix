@@ -122,6 +122,11 @@ public class OrderService {
         return null;
     }
 
+    public void save(Order order) {
+        OrderEntity orderToSave = orderMapper.toEntity(order);
+        orderRepository.save(orderToSave);
+    }
+
     public Orderline getOrderlineWithLinkedIngredientsById(Long id){
 
             RestTemplate rtOrderlines = new RestTemplate();

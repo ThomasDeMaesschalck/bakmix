@@ -30,7 +30,7 @@ public class IngredientService {
     public List<Ingredient> getAll(){
         List<Ingredient> ingredients = StreamSupport
                 .stream(ingredientRepository.findAll().spliterator(), false)
-                .map(e -> ingredientMapper.toDTO(e))
+                .map(i -> ingredientMapper.toDTO(i))
                 .collect(Collectors.toList());
         return ingredients;
     }

@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {Ingredient} from '../../ingredient/ingredient';
-import {Order} from '../order';
 import {ActivatedRoute, Router} from '@angular/router';
-import {IngredientService} from '../../ingredient/ingredient.service';
 import {OrderService} from '../order.service';
+import {Order} from '../order';
 import {map, switchMap} from "rxjs/operators";
 import {of} from "rxjs";
-import {Orderstatus} from '../orderstatus';
 
 @Component({
-  selector: 'app-order-view',
-  templateUrl: './order-view.component.html',
-  styleUrls: ['./order-view.component.css']
+  selector: 'app-order-view-print',
+  templateUrl: './order-view-print.component.html'
 })
-export class OrderViewComponent implements OnInit {
+export class OrderViewPrintComponent implements OnInit {
 
   id: string;
   order: Order;
@@ -44,22 +40,6 @@ export class OrderViewComponent implements OnInit {
           this.feedback = {type: 'warning', message: 'Error loading'};
         }
       );
-  }
-  getStatusType(status: number): string{
-    return Orderstatus[status];
-  }
-
-  switchOrderStatus(): void{
-    this.orderService.switchOrderStatus(this.order).subscribe(() => {
-        this.feedback = {type: 'success', message: 'Status gewijzigd!'};
-        setTimeout(() => {
-          this.ngOnInit();
-        }, 1000);
-      },
-      err => {
-        this.feedback = {type: 'warning', message: 'Fout bij status wijzigen'};
-      }
-    );
   }
 
 }

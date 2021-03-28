@@ -9,4 +9,6 @@ export class Ingredient {
   volume: string;
   available: boolean;
   ingredienttracingId: number;
+  recalled: boolean;
+  expiry: string;
 }

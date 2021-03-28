@@ -68,6 +68,8 @@ public class IngredientResource {
       ingredient.setPurchaseLocation(ingredienDetails.getPurchaseLocation());
       ingredient.setUniqueCode(ingredienDetails.getUniqueCode());
       ingredient.setVolume(ingredienDetails.getVolume());
+      ingredient.setRecalled(ingredienDetails.getRecalled());
+      ingredient.setExpiry(ingredienDetails.getExpiry());
         ingredientService.save(ingredient);
         log.info("Updated ingredient number " + id + ingredient);
      return ResponseEntity.ok(ingredient);

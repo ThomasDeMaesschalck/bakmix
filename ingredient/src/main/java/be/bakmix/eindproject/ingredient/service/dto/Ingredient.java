@@ -1,9 +1,6 @@
 package be.bakmix.eindproject.ingredient.service.dto;
 
 import lombok.Data;
-
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.time.LocalDate;
 
 
@@ -18,4 +15,6 @@ public class Ingredient {
     private String lotNumber;
     private String volume;
     private Boolean available;
+    private Boolean recalled;
+    private LocalDate expiry;
 }

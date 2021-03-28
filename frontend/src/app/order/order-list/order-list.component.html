@@ -17,7 +17,7 @@
             <tr *ngFor="let orderItem of orderList">
 
               <td>{{orderItem.id}}</td>
-              <td>{{orderItem.customer.firstName}}</td>
+              <td>{{orderItem.customer.firstName}} {{orderItem.customer.lastName}}</td>
               <td>{{getStatusType(orderItem.status)}}</td>
               <td style="white-space: nowrap">
                 <a [routerLink]="['../orders', orderItem.id ]" class="btn btn-secondary">Bekijk</a>&nbsp;

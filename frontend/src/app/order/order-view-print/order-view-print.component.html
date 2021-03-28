@@ -1,0 +1,52 @@
+<div class="row" *ngIf="order">
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="h4">Bestelling {{order.id}} </h2>
+        <div class="card-text">
+          <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
+</div>
+        </div>
+
+</div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="card-text">
+          <a  class="btn btn-secondary">Factuur maken <i class="fas fa-file-pdf"></i></a>&nbsp;
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="card-text">
+          <a  class="btn btn-secondary">Label maken <i class="fas fa-file-pdf"></i></a>&nbsp;
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="h4">Klant</h2>
+        <div class="card-text">
+          <div class="card-text">
+
+            {{order.customer.firstName}}   {{order.customer.lastName}} <br>
+            {{order.customer.address}} <br>
+            {{order.customer.zipCode}}    {{order.customer.city}}<br>
+            <br>
+            Phone:           {{order.customer.phone}} <br>
+            E-mail:           {{order.customer.email}}
+
+          </div>      </div></div>
+
+    </div>
+  </div>
+</div>

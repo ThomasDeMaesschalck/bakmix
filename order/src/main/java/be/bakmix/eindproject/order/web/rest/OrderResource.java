@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 @CrossOrigin
@@ -38,6 +41,16 @@ public class OrderResource {
             return ResponseEntity.notFound().build();
         }
         log.info("Retrieved order number " + id);
+        return ResponseEntity.ok(order);
+    }
+
+    @PutMapping("/orders/{id}")
+    public ResponseEntity<Order> replaceOrder(@PathVariable Long id, @Valid @RequestBody Order orderDetails) {
+
+        Order order = orderService.getById(id);
+        order.setStatus(orderDetails.getStatus());
+        orderService.save(order);
+        log.info("Updated order number " + id + order);
         return ResponseEntity.ok(order);
     }
 

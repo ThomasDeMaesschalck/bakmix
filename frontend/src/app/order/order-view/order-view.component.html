@@ -2,11 +2,11 @@
 
   <div class="col-md-9">
 
-
     <div class="card">
       <div class="card-body">
         <h2 class="h4">Bestelling {{order.id}} </h2>
         <div class="card-text">
+          <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
           <div class="card-text">
             <div class="table-responsive">
               <table class="table table-centered table-hover mb-0" id="datatable2">
@@ -43,7 +43,6 @@
                 </thead>
                 <tbody>
                 <tr   *ngFor="let orderline of order.orderlines">
-
                   <td>{{orderline.qty}}</td>
                   <td>{{orderline.id}}</td>
                   <td> {{orderline.orderId}}</td>
@@ -51,7 +50,7 @@
                   <td> {{orderline.product.name}}</td>
                   <td> {{orderline.purchasePrice}}</td>
                   <td style="white-space: nowrap">
-                    <a [routerLink]="['./orderlines', orderline.id ]" class="btn btn-secondary">Bekijken</a>&nbsp;
+                    <a [routerLink]="['./orderlines', orderline.id ]"  (click)="switchOrderStatus()" class="btn btn-secondary">Bekijken</a>&nbsp;
                   </td>
                 </tr>
                 </tbody>
@@ -76,13 +75,13 @@
           Phone:           {{order.customer.phone}} <br>
           E-mail:           {{order.customer.email}}
 
-
-
-
-
-
         </div>      </div></div>
 
   </div>
 </div>
+
+  <div class="row m-4">
+    <a [routerLink]="['print']"  class="btn btn-secondary">Printen label/factuur</a>&nbsp;
+    <a  class="btn btn-secondary">Verzenden</a>&nbsp;
+  </div>
 </div>

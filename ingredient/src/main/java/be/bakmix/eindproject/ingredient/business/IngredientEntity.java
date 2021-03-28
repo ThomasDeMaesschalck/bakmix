@@ -20,5 +20,6 @@ public class IngredientEntity {
     private String lotNumber;
     private String volume;
     private Boolean available;
-
+    private Boolean recalled;
+    private LocalDate expiry;
 }
