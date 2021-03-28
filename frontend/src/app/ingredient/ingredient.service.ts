@@ -64,7 +64,7 @@ export class IngredientService {
     const object = this.http.get<Ingredient>(url, {params, headers});
     object.subscribe(ing => this.ingredientConverted = ing);
     let result = false;
-    if (this.ingredientConverted)
+    if (!this.ingredientConverted)
     {result = true; }
     return result;
   }

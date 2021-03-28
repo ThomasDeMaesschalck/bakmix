@@ -75,8 +75,8 @@ public class IngredientResource {
 
     @DeleteMapping("/ingredients/{id}")
     public ResponseEntity<Ingredient> deleteContact(@PathVariable String id) {
-        Ingredient ingredient =  ingredientService.delete(Long.parseLong(id));
-        if (ingredient == null) {
+        boolean success =  ingredientService.delete(Long.parseLong(id));
+        if (success == false) {
             log.error("Failed to delete ingredient number " + id);
             throw new IngredientNotFoundException("id-" + id);
         }

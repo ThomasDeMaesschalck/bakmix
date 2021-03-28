@@ -60,18 +60,14 @@ public class IngredientService {
         return null;
     }
 
-    public Ingredient delete(Long id) {
-        Iterator<IngredientEntity> it = ingredientRepository.findAll().iterator();
-        while (it.hasNext())   {
-            IngredientEntity ingredient = it.next();
-            if(ingredient.getId() == id)
-            {
-                ingredientRepository.delete(ingredient);
-                it.remove();
-                return ingredientMapper.toDTO(ingredient);
-            }
+    public boolean delete(Long id) {
+
+        Optional<IngredientEntity> ingredientEntityOptional = ingredientRepository.findById(id);
+        if(ingredientEntityOptional.isPresent()) {
+            ingredientRepository.deleteById(id);
+            return true;
         }
-        return null;
+        return false;
     }
 
     }
