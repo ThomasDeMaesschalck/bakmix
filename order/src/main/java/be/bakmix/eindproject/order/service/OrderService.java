@@ -54,36 +54,36 @@ public class OrderService {
                 .map(e -> orderMapper.toDTO(e))
                 .collect(Collectors.toList());
 
-        for(Order order : orders){
-            RestTemplate rtCustomer = new RestTemplate();
-            Customer customer = rtCustomer.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
-            order.setCustomerId(customer.getId());
-            order.setCustomer(customer);
-        }
+        orders.forEach(order -> {
+                    RestTemplate rtCustomer = new RestTemplate();
+                    Customer customer = rtCustomer.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
+                    order.setCustomerId(customer.getId());
+                    order.setCustomer(customer);
+                }
+                );
 
-
-        for(Order order : orders){
+        orders.forEach(order ->
+        {
             RestTemplate rtOrderlines = new RestTemplate();
             Orderline[] orderlines = rtOrderlines.getForObject(urlOrderlines+order.getId(), Orderline[].class);
 
-            for(Orderline orderline: orderlines)
-            {
+            Arrays.stream(orderlines).forEach(orderline -> {
                 RestTemplate rtIngredienttracings = new RestTemplate();
                 Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
                 List<Ingredient> ingredients = new ArrayList();
 
-                for(Ingredienttracing ingredienttracing: ingredienttracings) 
-                {
+                Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
                     Long ingredientId = ingredienttracing.getIngredientId();
                     RestTemplate rtIngredients = new RestTemplate();
                     Ingredient ingredient = rtIngredients.getForObject(urlIngredients+ingredientId, Ingredient.class);
                     ingredients.add(ingredient);
                     orderline.setIngredients(ingredients);
-                }
-            }
+                });
+
+            });
 
             order.setOrderlines(Arrays.asList(orderlines));
-        }
+        });
 
         return orders;
     }
@@ -136,15 +136,14 @@ public class OrderService {
                 Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
                 List<Ingredient> ingredients = new ArrayList();
 
-                for(Ingredienttracing ingredienttracing: ingredienttracings)
-                {
+                Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
                     Long ingredientId = ingredienttracing.getIngredientId();
                     RestTemplate rtIngredients = new RestTemplate();
                     Ingredient ingredient = rtIngredients.getForObject(urlIngredients+ingredientId, Ingredient.class);
                     ingredient.setIngredienttracingId(ingredienttracing.getId());
                     ingredients.add(ingredient);
                     orderline.setIngredients(ingredients);
-                }
+                });
 
             return orderline;
     }
@@ -154,22 +153,18 @@ public class OrderService {
         RestTemplate rtIngredients = new RestTemplate();
         Ingredient[] ingredients = rtIngredients.getForObject(urlIngredients, Ingredient[].class);
 
-        List<Ingredient> ingredientsList = Arrays.asList(ingredients);
-
+       List<Ingredient> ingredientsList = Arrays.asList(ingredients);
 
         RestTemplate rtIngredienttracings = new RestTemplate();
         Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings + id, Ingredienttracing[].class);
 
         ingredientsList = ingredientsList.stream().filter(i -> i.getAvailable() == true).collect(Collectors.toList());
 
+        List<Ingredient> finalIngredientsList = ingredientsList;
+        Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
+            finalIngredientsList.removeIf(ingredient -> ingredient.getId().equals(ingredienttracing.getIngredientId()));
+        });
 
-        for (Ingredienttracing ingredienttracing : ingredienttracings)
-        {
-
-                ingredientsList.removeIf(ingredient -> ingredient.getId().equals(ingredienttracing.getIngredientId()));
-
-
-            }
         return ingredientsList;
     }
 
@@ -180,11 +175,16 @@ public class OrderService {
                 .map(e -> orderMapper.toDTO(e))
                 .collect(Collectors.toList());
 
-          for(Order order : orders){
+        orders.forEach(order -> {
+
             RestTemplate rtOrderlines = new RestTemplate();
             Orderline[] orderlines = rtOrderlines.getForObject(urlOrderlines+order.getId(), Orderline[].class);
             List<Orderline> filteredOrderlines = new ArrayList();
             boolean found = false;
+
+            Arrays.stream(orderlines).forEach(orderline -> {
+
+            });
             for(Orderline orderline: orderlines)
             {
                 RestTemplate rtIngredienttracings = new RestTemplate();
@@ -209,16 +209,17 @@ public class OrderService {
                     found = false;
                 }
             }
-                order.setOrderlines(filteredOrderlines);
-            }
+            order.setOrderlines(filteredOrderlines);
+        });
+
         List<Order> ordersFiltered =   orders.stream().filter(o -> !o.getOrderlines().isEmpty()).collect(Collectors.toList());
 
-        for(Order order : ordersFiltered){
+        ordersFiltered.forEach(order -> {
             RestTemplate rtCustomer = new RestTemplate();
             Customer customer = rtCustomer.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
             order.setCustomerId(customer.getId());
             order.setCustomer(customer);
-        }
+        });
 
         return ordersFiltered;
     }

@@ -43,13 +43,12 @@ import java.util.stream.StreamSupport;
                 .map(e -> orderlineMapper.toDTO(e))
                 .collect(Collectors.toList());
 
-        for(Orderline orderline : orderlines){
-
+        orderlines.forEach(orderline -> {
             RestTemplate rtProduct = new RestTemplate();
             Product product = rtProduct.getForObject(urlProducts+orderline.getProductId(), Product.class);
             orderline.setProductId(product.getId());
             orderline.setProduct(product);
-        }
+        });
         return orderlines;
     }
 
@@ -60,13 +59,12 @@ import java.util.stream.StreamSupport;
                 .map(e -> orderlineMapper.toDTO(e))
                 .collect(Collectors.toList());
 
-        for(Orderline orderline : orderlines){
-
+        orderlines.forEach(orderline -> {
             RestTemplate rtProduct = new RestTemplate();
             Product product = rtProduct.getForObject(urlProducts+orderline.getProductId(), Product.class);
             orderline.setProductId(product.getId());
             orderline.setProduct(product);
-        }
+        });
         return orderlines;
     }
 
