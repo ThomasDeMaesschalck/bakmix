@@ -1,18 +1,20 @@
 <div class="card">
   <div class="card-body">
-    <h2 class="card-title">Ingredient List</h2>
+    <h2 class="card-title">Ingrediënten lijst</h2>
     <div class="card-text">
 
 
     <form #f="ngForm" class="form-inline">
 
       <div class="form-group">
-        <label for="id">Id:</label>
+        <label for="id">Unieke code:</label>
         <input [(ngModel)]="filter.id" id="id" name="id" class="form-control ml-2 mr-2">
       </div>
 
       <button (click)="search()" [disabled]="!f?.valid" class="btn btn-primary">Search</button>
-      <a [routerLink]="['../ingredients', 'new' ]" class="btn btn-default">New</a>
+      <button (click)="ngOnInit()" [disabled]="!f?.valid" class="ml-1 btn btn-primary">Clear</button>
+
+      <a [routerLink]="['../ingredients', 'new' ]" class="ml-1 btn btn-success">Nieuw</a>
     </form>
   </div>
 
@@ -22,29 +24,26 @@
     <table class="table table-centered table-hover mb-0" id="datatable">
       <thead>
         <tr>
-          <th class="border-top-0" scope="col">Id</th>
           <th class="border-top-0" scope="col">Unique #</th>
           <th class="border-top-0" scope="col">Type</th>
-          <th class="border-top-0" scope="col">Brand</th>
-          <th class="border-top-0" scope="col">Purchase Date</th>
-          <th class="border-top-0" scope="col">Purchase Location</th>
-          <th class="border-top-0" scope="col">Lot Number</th>
-          <th class="border-top-0" scope="col">Volume</th>
+          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Brand</th>
+          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Purchase Date</th>
+          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Purchase Location</th>
+          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Lot Number</th>
+          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Volume</th>
           <th class="border-top-0" scope="col">Available</th>
-          <th class="border-top-0" scope="col" style="width:200px"></th>
+          <th class="border-top-0" scope="col"></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of ingredientList" [class.active]="item === selectedIngredient">
-
-          <td>{{item.id}}</td>
           <td>{{item.uniqueCode}}</td>
           <td>{{item.type}}</td>
-          <td>{{item.brand}}</td>
-          <td>{{item.purchaseDate}}</td>
-          <td>{{item.purchaseLocation}}</td>
-          <td>{{item.lotNumber}}</td>
-          <td>{{item.volume}}</td>
+          <td class="d-none d-sm-table-cell">{{item.brand}}</td>
+          <td class="d-none d-sm-table-cell">{{item.purchaseDate}}</td>
+          <td class="d-none d-sm-table-cell">{{item.purchaseLocation}}</td>
+          <td class="d-none d-sm-table-cell">{{item.lotNumber}}</td>
+          <td class="d-none d-sm-table-cell">{{item.volume}}</td>
           <td>{{item.available}}</td>
           <td style="white-space: nowrap">
             <a [routerLink]="['../ingredients', item.id ]" class="btn btn-secondary">Edit</a>&nbsp;

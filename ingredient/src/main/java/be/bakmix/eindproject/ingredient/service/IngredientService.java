@@ -15,6 +15,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import static com.google.common.collect.MoreCollectors.onlyElement;
+
 @Service
 @AllArgsConstructor
 public class IngredientService {
@@ -49,16 +51,15 @@ public class IngredientService {
        {ingredientRepository.save(contactToSave);}
     }
 
-    public Ingredient findDuplicateUniqueId(String uniqueId)
+    public Ingredient findByUniqueId(String uniqueId)
     {
-        Ingredient duplicate = new Ingredient();
-        List<Ingredient> checkDuplicate = getAll().stream().filter(i -> i.getUniqueCode().equals(uniqueId)).collect(Collectors.toList());
-        if(checkDuplicate.size() > 0)
-        {
-            duplicate.setUniqueCode("duplicate");
-            return duplicate;
+        try {
+            Ingredient foundByUniqueId = getAll().stream().filter(i -> i.getUniqueCode().equals(uniqueId)).collect(onlyElement());
+            return foundByUniqueId;
         }
-        return null;
+        catch (Exception e)
+        {throw new RuntimeException(e);
+        }
     }
 
     public boolean findDuplicateUniqueIdBoolean(String uniqueId)

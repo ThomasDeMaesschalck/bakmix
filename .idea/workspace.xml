@@ -5,17 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-mail/tracing-mail.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-mail/tracing-mail.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_30_1_1_jre.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_8_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-view/tracing-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-view/tracing-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/IngredientResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/IngredientResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,8 +210,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ProductApplication" />
-        <item itemvalue="Spring Boot.CustomersApplication" />
         <item itemvalue="Spring Boot.IngredientApplication" />
+        <item itemvalue="Spring Boot.CustomersApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +227,7 @@
       <workItem from="1616102007845" duration="116193000" />
       <workItem from="1616873607371" duration="4378000" />
       <workItem from="1616879288294" duration="14432000" />
-      <workItem from="1616932504509" duration="24037000" />
+      <workItem from="1616932504509" duration="37759000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -379,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616960908290</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Implemented mail and send UI">
+      <created>1616965170822</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1616965170822</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,6 +431,7 @@
     <MESSAGE value="Ingredient delete werkt weer" />
     <MESSAGE value="Fixed more nasty bugs" />
     <MESSAGE value="Working version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working version" />
+    <MESSAGE value="Implemented mail and send UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented mail and send UI" />
   </component>
 </project>

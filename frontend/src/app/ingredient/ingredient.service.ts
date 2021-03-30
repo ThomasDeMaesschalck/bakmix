@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-import {defaultIfEmpty, map} from "rxjs/operators";
+import {defaultIfEmpty, isEmpty, map} from 'rxjs/operators';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
@@ -12,10 +12,9 @@ const headers = new HttpHeaders().set('Accept', 'application/json');
 @Injectable()
 export class IngredientService {
   ingredientList: Ingredient[] = [];
+  ingredientSingleList: Ingredient[] = [];
   api = 'http://localhost:7777/api/ingredients/';
-  dupeCheckApi = 'http://localhost:7777/api/ingredients/exists/';
-  ingredientConverted: Ingredient;
-
+  uniqueCodeApi = 'http://localhost:7777/api/ingredients/uniquecode/';
 
   constructor(private http: HttpClient) {
   }
@@ -26,21 +25,43 @@ export class IngredientService {
     return this.http.get<Ingredient>(url, {params, headers});
   }
 
+  findByUniqueCode(id: string): Observable<Ingredient> {
+    const url = `${this.uniqueCodeApi}/${id}`;
+    const params = { id };
+    return this.http.get<Ingredient>(url, {params, headers});
+  }
+
   load(filter: IngredientFilter): void {
-    this.find(filter).subscribe(result => {
-        this.ingredientList = result;
-      },
-      err => {
-        console.error('error loading', err);
-      }
-    );
+
+    if (filter.id === '') {
+      this.find(filter).subscribe(result => {
+          this.ingredientList = result;
+        },
+        err => {
+          console.error('error loading', err);
+        }
+      );
+    }
+    else
+      {
+
+      this.findByUniqueCode(filter.id).subscribe(result => {
+        this.ingredientSingleList = [];
+        this.ingredientSingleList.push(result);
+        this.ingredientList = this.ingredientSingleList;
+        },
+        err => {
+          console.error('error loading', err);
+          alert('Unieke code niet gevonden, probeer opnieuw');
+        }
+      );
+    }
   }
 
   find(filter: IngredientFilter): Observable<Ingredient[]> {
     const params = {
       id: filter.id,
     };
-
     return this.http.get<Ingredient[]>(this.api, {params, headers});
   }
 
@@ -56,17 +77,6 @@ export class IngredientService {
       entity.available = true;
       return this.http.post<Ingredient>(url, entity, {headers, params});
     }
-  }
-
-  duplicateUniqueIdCheckBeforeSave(uniqueId: string): boolean {
-    const url = `${this.dupeCheckApi}/${uniqueId}`;
-    const params = { uniqueId };
-    const object = this.http.get<Ingredient>(url, {params, headers});
-    object.subscribe(ing => this.ingredientConverted = ing);
-    let result = false;
-    if (!this.ingredientConverted)
-    {result = true; }
-    return result;
   }
 
   switchIngredientAvailability(ingredient: Ingredient): Observable<Ingredient> {

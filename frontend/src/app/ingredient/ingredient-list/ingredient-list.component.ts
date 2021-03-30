@@ -11,7 +11,7 @@ export class IngredientListComponent implements OnInit {
 
   filter = new IngredientFilter();
   selectedIngredient: Ingredient;
-  feedback: any = {};
+  public feedback: any = {};
 
   get ingredientList(): Ingredient[] {
     return this.ingredientService.ingredientList;
@@ -21,11 +21,13 @@ export class IngredientListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.filter.id = '';
     this.search();
     this.feedback = {};
   }
 
   search(): void {
+    this.feedback = {};
     this.ingredientService.load(this.filter);
   }
 
@@ -37,7 +39,7 @@ export class IngredientListComponent implements OnInit {
     this.ingredientService.switchIngredientAvailability(ingredient).subscribe(() => {
         this.feedback = {type: 'success', message: 'Status gewijzigd!'};
         setTimeout(() => {
-          this.ngOnInit();
+          this.search();
         }, 1000);
       },
       err => {

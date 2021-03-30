@@ -82,6 +82,7 @@
 
   <div class="row m-4">
     <a [routerLink]="['print']"  class="btn btn-secondary">Printen label/factuur</a>&nbsp;
-    <a  [routerLink]="['send']" class="btn btn-secondary">Verzenden</a>&nbsp;
+    <a  *ngIf="order.status === 1" [routerLink]="['send']" class="btn btn-secondary">Verzenden</a>&nbsp;
+    <a  *ngIf="order.status === 2" [routerLink]="['send']" class="btn btn-secondary">Is reeds verzonden</a>&nbsp;
   </div>
 </div>
