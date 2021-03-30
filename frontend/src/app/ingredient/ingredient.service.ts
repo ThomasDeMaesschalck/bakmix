@@ -1,19 +1,21 @@
 import { Ingredient } from './ingredient';
 import { IngredientFilter } from './ingredient-filter';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-import {defaultIfEmpty, isEmpty, map} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
 
 @Injectable()
 export class IngredientService {
+  size$ = new BehaviorSubject<number>(0);
   ingredientList: Ingredient[] = [];
   ingredientSingleList: Ingredient[] = [];
   api = 'http://localhost:7777/api/ingredients/';
+  apiPaginated = 'http://localhost:7777/api/ingredientspaginated/';
   uniqueCodeApi = 'http://localhost:7777/api/ingredients/uniquecode/';
 
   constructor(private http: HttpClient) {
@@ -59,10 +61,18 @@ export class IngredientService {
   }
 
   find(filter: IngredientFilter): Observable<Ingredient[]> {
-    const params = {
+    const urlPagination = `${this.apiPaginated}`;
+    const params: any = {
       id: filter.id,
+      pageSize: filter.size,
+      pageNo: filter.page
     };
-    return this.http.get<Ingredient[]>(this.api, {params, headers});
+    return this.http.get<Ingredient[]>(urlPagination, {headers, params}).pipe(
+    map((response: any) => {
+      this.size$.next(response.totalElements);
+      return response.content;
+    }
+ ));
   }
 
   save(entity: Ingredient): Observable<Ingredient> {
@@ -98,5 +108,6 @@ export class IngredientService {
     }
     return null;
   }
+
 }
 

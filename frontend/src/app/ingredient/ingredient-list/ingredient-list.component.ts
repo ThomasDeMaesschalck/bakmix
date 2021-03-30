@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IngredientFilter } from '../ingredient-filter';
 import { IngredientService } from '../ingredient.service';
 import { Ingredient } from '../ingredient';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-ingredient',
@@ -9,6 +10,7 @@ import { Ingredient } from '../ingredient';
 })
 export class IngredientListComponent implements OnInit {
 
+  total$: Observable<number>;
   filter = new IngredientFilter();
   selectedIngredient: Ingredient;
   public feedback: any = {};
@@ -22,6 +24,8 @@ export class IngredientListComponent implements OnInit {
 
   ngOnInit() {
     this.filter.id = '';
+    this.filter.page = 0;
+    this.filter.size = 10;
     this.search();
     this.feedback = {};
   }
@@ -29,6 +33,7 @@ export class IngredientListComponent implements OnInit {
   search(): void {
     this.feedback = {};
     this.ingredientService.load(this.filter);
+    this.total$ = this.ingredientService.size$;
   }
 
   select(selected: Ingredient): void {
@@ -39,7 +44,7 @@ export class IngredientListComponent implements OnInit {
     this.ingredientService.switchIngredientAvailability(ingredient).subscribe(() => {
         this.feedback = {type: 'success', message: 'Status gewijzigd!'};
         setTimeout(() => {
-          this.search();
+          this.ngOnInit();
         }, 1000);
       },
       err => {
@@ -63,4 +68,16 @@ export class IngredientListComponent implements OnInit {
     }
   }
 
+
+  onChange(pageSize: number) {
+    this.filter.size = pageSize;
+    this.filter.page = 0;
+    this.search();
+  }
+
+  onPageChange(page: number) {
+    this.filter.page = page - 1;
+    this.search();
+    this.filter.page = page;
+  }
   }

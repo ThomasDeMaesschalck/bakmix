@@ -6,13 +6,14 @@ import { IngredientListComponent } from './ingredient-list/ingredient-list.compo
 import { IngredientEditComponent } from './ingredient-edit/ingredient-edit.component';
 import {IngredientService} from './ingredient.service';
 import { INGREDIENT_ROUTES } from './ingredient.routes';
-import {NgbDatepickerModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDatepickerModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     RouterModule.forChild(INGREDIENT_ROUTES),
+    NgbModule,
     NgbDatepickerModule
   ],
   declarations: [

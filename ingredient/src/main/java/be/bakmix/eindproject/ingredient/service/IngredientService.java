@@ -6,6 +6,7 @@ import be.bakmix.eindproject.ingredient.service.dto.Ingredient;
 import be.bakmix.eindproject.ingredient.service.mapper.IngredientMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -29,7 +30,15 @@ public class IngredientService {
     @Autowired
     private IngredientMapper ingredientMapper;
 
-    public List<Ingredient> getAll(){
+    public Page<Ingredient> getAll(Integer pageNo, Integer pageSize, String sortBy){
+        Pageable paging = PageRequest.of(pageNo, pageSize);
+
+        Page<Ingredient> ingredients = ingredientRepository.findAll(paging).map(ingredientMapper::toDTO);
+
+        return ingredients;
+    }
+
+    public List<Ingredient> getAllNoPagination(){
         List<Ingredient> ingredients = StreamSupport
                 .stream(ingredientRepository.findAll().spliterator(), false)
                 .map(i -> ingredientMapper.toDTO(i))
@@ -54,7 +63,7 @@ public class IngredientService {
     public Ingredient findByUniqueId(String uniqueId)
     {
         try {
-            Ingredient foundByUniqueId = getAll().stream().filter(i -> i.getUniqueCode().equals(uniqueId)).collect(onlyElement());
+             Ingredient foundByUniqueId = getAllNoPagination().stream().filter(i -> i.getUniqueCode().equals(uniqueId)).collect(onlyElement());
             return foundByUniqueId;
         }
         catch (Exception e)
@@ -65,7 +74,7 @@ public class IngredientService {
     public boolean findDuplicateUniqueIdBoolean(String uniqueId)
     {
         boolean duplicate = false;
-        List<Ingredient> checkDuplicate = getAll().stream().filter(i -> i.getUniqueCode().equals(uniqueId)).collect(Collectors.toList());
+        List<Ingredient> checkDuplicate = getAllNoPagination().stream().filter(i -> i.getUniqueCode().equals(uniqueId)).collect(Collectors.toList());
         if(checkDuplicate.size() > 0)
         {
             duplicate = true;

@@ -7,6 +7,10 @@ import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +30,17 @@ public class IngredientResource {
 
     @GetMapping("/ingredients")
     public ResponseEntity<List<Ingredient>> getAll() {
-        List<Ingredient> ingredient = ingredientService.getAll();
+        List<Ingredient> ingredient = ingredientService.getAllNoPagination();
+        log.info("Retrieved all ingredients");
+        return ResponseEntity.ok(ingredient);
+    }
+
+
+    @GetMapping("/ingredientspaginated/")
+    public ResponseEntity<Page<Ingredient>> getAllPaginated(@RequestParam(defaultValue = "0") Integer pageNo,
+                                                            @RequestParam(defaultValue = "10") Integer pageSize,
+                                                            @RequestParam(defaultValue = "id") String sortBy) {
+        Page<Ingredient> ingredient = ingredientService.getAll(pageNo, pageSize, sortBy);
         log.info("Retrieved all ingredients");
         return ResponseEntity.ok(ingredient);
     }

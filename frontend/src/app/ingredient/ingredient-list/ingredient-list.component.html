@@ -11,7 +11,7 @@
         <input [(ngModel)]="filter.id" id="id" name="id" class="form-control ml-2 mr-2">
       </div>
 
-      <button (click)="search()" [disabled]="!f?.valid" class="btn btn-primary">Search</button>
+      <button (click)="search()" [disabled]="!filter.id" class="btn btn-primary">Search</button>
       <button (click)="ngOnInit()" [disabled]="!f?.valid" class="ml-1 btn btn-primary">Clear</button>
 
       <a [routerLink]="['../ingredients', 'new' ]" class="ml-1 btn btn-success">Nieuw</a>
@@ -55,6 +55,16 @@
         </tr>
       </tbody>
     </table>
+    <div class="d-flex justify-content-between p-2">
+      <ngb-pagination [maxSize]="10"
+                      [collectionSize]="total$ | async" [(page)]="filter.page" [pageSize]="filter.size" (pageChange)="onPageChange(filter.page)">
+      </ngb-pagination>
+      <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="filter.size" (ngModelChange)="onChange(filter.size)">
+        <option [ngValue]="10">10 items per page</option>
+        <option [ngValue]="20">20 items per page</option>
+        <option [ngValue]="50">50 items per page</option>
+      </select>
+    </div>
   </div>
 </div>
  </div>

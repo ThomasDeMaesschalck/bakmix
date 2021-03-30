@@ -27,7 +27,7 @@ export class OrderlineViewComponent implements OnInit {
     private router: Router,
     private orderlineService: OrderlineService,
     private ingredienttracingService: IngredienttracingService,
-    private ingredientService: IngredientService
+    private ingredientService: IngredientService,
   ) {
   }
 

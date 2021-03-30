@@ -11,6 +11,7 @@ import {OrderlineService} from './orderline.service';
 import {IngredienttracingService} from '../ingredienttracing/ingredienttracing.service';
 import { OrderViewPrintComponent } from './order-view-print/order-view-print.component';
 import { OrderViewSendComponent } from './order-view-send/order-view-send.component';
+import {IngredientService} from '../ingredient/ingredient.service';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { OrderViewSendComponent } from './order-view-send/order-view-send.compon
     RouterModule.forChild(ORDER_ROUTES)
   ],
 
-  providers: [OrderService, OrderlineService, IngredienttracingService],
+  providers: [OrderService, OrderlineService, IngredienttracingService, IngredientService],
   exports: []
 })
 export class OrderModule { }
