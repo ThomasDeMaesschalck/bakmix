@@ -12,6 +12,7 @@ import {IngredienttracingService} from '../ingredienttracing/ingredienttracing.s
 import { OrderViewPrintComponent } from './order-view-print/order-view-print.component';
 import { OrderViewSendComponent } from './order-view-send/order-view-send.component';
 import {IngredientService} from '../ingredient/ingredient.service';
+import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {IngredientService} from '../ingredient/ingredient.service';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(ORDER_ROUTES)
+    RouterModule.forChild(ORDER_ROUTES),
+    NgbPaginationModule
   ],
 
   providers: [OrderService, OrderlineService, IngredienttracingService, IngredientService],

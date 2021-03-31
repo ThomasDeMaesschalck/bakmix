@@ -1,13 +1,15 @@
 import { Customer } from './customer';
 import { CustomerFilter } from './customer-filter';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import {map} from "rxjs/operators";
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
 @Injectable()
 export class CustomerService {
+  size$ = new BehaviorSubject<number>(0);
   customerList: Customer[] = [];
   api = 'http://localhost:7779/api/customers/';
 
@@ -31,11 +33,19 @@ export class CustomerService {
   }
 
   find(filter: CustomerFilter): Observable<Customer[]> {
-    const params = {
-      'id': filter.id,
+
+    const params: any = {
+      id: filter.id,
+      pageSize: filter.size,
+      pageNo: filter.page
     };
 
-    return this.http.get<Customer[]>(this.api, {params, headers});
+    return this.http.get<Customer[]>(this.api, {headers, params}).pipe(
+      map((response: any) => {
+          this.size$.next(response.totalElements);
+          return response.content;
+        }
+      ));
   }
 
 }

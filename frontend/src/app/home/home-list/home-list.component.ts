@@ -31,6 +31,7 @@ export class HomeListComponent implements OnInit {
   }
 
   searchIngredients(): void {
+    this.filter.size = 10;
     this.ingredientService.load(this.filter);
   }
 
@@ -43,7 +44,7 @@ export class HomeListComponent implements OnInit {
   }
 
   searchOrders(): void {
-    this.orderService.load(true);
+    this.orderService.load(true, this.filter);
   }
   getStatusType(status: number): string{
     return Orderstatus[status];

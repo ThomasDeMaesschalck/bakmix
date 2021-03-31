@@ -5,11 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/order/order-filter.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/web/rest/CustomerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/web/rest/CustomerResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer-filter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/customer/customer-filter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer-list/customer-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/customer/customer-list/customer-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer-list/customer-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/customer/customer-list/customer-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/customer/customer.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/customer/customer.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/product/product-list/product-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/product/product-list/product-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/business/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/business/repository/OrderRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/web/rest/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/web/rest/OrderResource.java" afterDir="false" />
     </list>
@@ -201,8 +221,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.IngredientApplication" />
         <item itemvalue="Spring Boot.ProductApplication" />
+        <item itemvalue="Spring Boot.IngredientApplication" />
         <item itemvalue="Spring Boot.CustomersApplication" />
       </list>
     </recent_temporary>
@@ -219,7 +239,7 @@
       <workItem from="1616102007845" duration="116193000" />
       <workItem from="1616873607371" duration="4378000" />
       <workItem from="1616879288294" duration="14432000" />
-      <workItem from="1616932504509" duration="61475000" />
+      <workItem from="1616932504509" duration="75840000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -410,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617178219306</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Performance verbetering index page">
+      <created>1617189086138</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1617189086141</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +457,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="orderline added product" />
     <MESSAGE value="first version of order microservice" />
     <MESSAGE value="homepage angular first version" />
     <MESSAGE value="angular order" />
@@ -455,6 +481,7 @@
     <MESSAGE value="Foreach lambdas en streams" />
     <MESSAGE value="pagination working op ingredients" />
     <MESSAGE value="Added code om verzonden orders niet wijzigbaar te maken" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added code om verzonden orders niet wijzigbaar te maken" />
+    <MESSAGE value="Performance verbetering index page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Performance verbetering index page" />
   </component>
 </project>

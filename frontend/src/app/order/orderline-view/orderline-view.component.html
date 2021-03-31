@@ -1,7 +1,7 @@
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-  <li class="breadcrumb-item"><a [routerLink]="['../..']">Terug naar bestelling {{order.id}}</a></li>
-  <li class="breadcrumb-item active">Orderlijn {{orderline.id}}</li>
+  <li class="breadcrumb-item"><a [routerLink]="['../..']" *ngIf="order">Terug naar bestelling {{order.id}}</a></li>
+  <li *ngIf="orderline" class="breadcrumb-item active">Orderlijn {{orderline.id}}</li>
 </ol>
 
 <div class="row">
@@ -9,9 +9,7 @@
 
   <div class="col-md-6">
 
-
-
-    <div class="card" *ngIf="orderline">
+    <div class="card">
       <div class="card-body">
         <h2 class="h4">Orderlijn {{orderline.id}} gekoppelde ingrediënten - {{orderline.product.name}}</h2>
         <div class="card-text">

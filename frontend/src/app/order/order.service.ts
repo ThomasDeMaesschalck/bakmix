@@ -1,13 +1,16 @@
 import { Order } from './order';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import {Ingredient} from '../ingredient/ingredient';
+import {map} from "rxjs/operators";
+import {OrderFilter} from './order-filter';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
 @Injectable()
 export class OrderService {
+  size$ = new BehaviorSubject<number>(0);
   orderList: Order[] = [];
   api = 'http://localhost:7772/api/orders/';
   apiTracedOrders = 'http://localhost:7772/api/tracing/';
@@ -27,8 +30,8 @@ export class OrderService {
     return this.http.get<Order[]>(url, {params, headers});
   }
 
-  load(index: boolean): void {
-    this.find(index).subscribe(result => {
+  load(index: boolean, filter: OrderFilter): void {
+    this.find(index, filter).subscribe(result => {
         this.orderList = result;
       },
       err => {
@@ -37,21 +40,29 @@ export class OrderService {
     );
   }
 
-  find(index: boolean): Observable<Order[]> {
+  find(index: boolean, filter: OrderFilter): Observable<Order[]> {
     let params: any;
     if (index === true)
     {
        params = {
-        'id': '',
-        'index': 'true'
+        'index': 'true',
+         id: filter.id,
+         pageSize: filter.size,
+         pageNo: filter.page
       };
     }
   else {
        params = {
-        'id': ''
-      };
+         id: filter.id,
+         pageSize: filter.size,
+         pageNo: filter.page      };
     }
-    return this.http.get<Order[]>(this.api, {params, headers});
+    return this.http.get<Order[]>(this.api, {params, headers}).pipe(
+      map((response: any) => {
+          this.size$.next(response.totalElements);
+          return response.content;
+        }
+      ));;
   }
 
   switchOrderStatus(order: Order): Observable<Order> {

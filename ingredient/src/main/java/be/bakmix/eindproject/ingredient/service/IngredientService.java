@@ -30,8 +30,10 @@ public class IngredientService {
     @Autowired
     private IngredientMapper ingredientMapper;
 
+
+
     public Page<Ingredient> getAll(Integer pageNo, Integer pageSize, String sortBy){
-        Pageable paging = PageRequest.of(pageNo, pageSize);
+        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.DESC, sortBy));
 
         Page<Ingredient> ingredients = ingredientRepository.findAll(paging).map(ingredientMapper::toDTO);
 

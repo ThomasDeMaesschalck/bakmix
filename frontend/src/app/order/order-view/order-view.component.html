@@ -1,10 +1,10 @@
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
   <li class="breadcrumb-item"><a [routerLink]="['..']">Bestellingen lijst</a>&nbsp;</li>
-  <li class="breadcrumb-item active">Bestelling {{order.id}}</li>
+  <li *ngIf="order" class="breadcrumb-item active">Bestelling {{order.id}}</li>
 </ol>
 
-<div class="row" *ngIf="order">
+<div class="row">
 
   <div class="col-md-9">
 

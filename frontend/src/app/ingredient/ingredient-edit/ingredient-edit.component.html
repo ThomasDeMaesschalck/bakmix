@@ -3,14 +3,14 @@
   <li class="breadcrumb-item"><a [routerLink]="['..']">Ingrediënten lijst</a>&nbsp;</li>
   <li class="breadcrumb-item active">Ingave ingrediënt</li>
 </ol>
-<div class="card">
+<div class="card" *ngIf="ingredient">
   <div class="card-body">
     <h2 class="card-title" *ngIf="ingredient.id != null">Ingrediënt bewerken</h2>
     <h2 class="card-title" *ngIf="ingredient.id == null">Ingave nieuw ingrediënt</h2>
 
     <div class="card-text">
     <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
-    <form *ngIf="ingredient" #editForm="ngForm" (ngSubmit)="save()">
+    <form  #editForm="ngForm" (ngSubmit)="save()">
 
       <div class="form-group">
         <label>Id</label>
@@ -18,19 +18,22 @@
       </div>
 
       <div class="form-group">
-        <label for="uniqueCode">Unique #</label>
-        <input *ngIf="ingredient.id == null" [(ngModel)]="ingredient.uniqueCode" id="uniqueCode" name="uniqueCode" class="form-control" required>
+        <label for="uniqueCode">Unieke #</label>
+        <input *ngIf="ingredient.id == null" [(ngModel)]="ingredient.uniqueCode" id="uniqueCode" name="uniqueCode" #uniqueCode="ngModel" class="form-control" required
+               [ngClass]="{'is-invalid': uniqueCode.touched && uniqueCode.invalid,  'is-valid': uniqueCode.touched && uniqueCode.valid}">
         <input *ngIf="ingredient.id != null" [(ngModel)]="ingredient.uniqueCode" id="uniqueCode2" name="uniqueCode" class="form-control" readonly>
       </div>
 
       <div class="form-group">
         <label for="type">Type</label>
-        <input [(ngModel)]="ingredient.type" id="type" name="type" class="form-control" required>
+        <input [(ngModel)]="ingredient.type" id="type" name="type" class="form-control" required #type="ngModel"
+               [ngClass]="{'is-invalid': type.touched && type.invalid,  'is-valid': type.touched && type.valid}">
       </div>
 
       <div class="form-group">
-        <label for="brand">Brand</label>
-        <input [(ngModel)]="ingredient.brand" id="brand" name="brand" class="form-control" required>
+        <label for="brand">Merk</label>
+        <input [(ngModel)]="ingredient.brand" id="brand" name="brand" class="form-control" required #merk="ngModel"
+               [ngClass]="{'is-invalid': merk.touched && merk.invalid,  'is-valid': merk.touched && merk.valid}">
       </div>
 
 
@@ -40,7 +43,8 @@
         <div class="input-group">
 
 
-          <input id="purchaseDate" class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="ingredient.purchaseDate" required>
+          <input id="purchaseDate" class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="ingredient.purchaseDate" required pattern="^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$" #date="ngModel"
+                 [ngClass]="{'is-invalid': date.touched && date.invalid,  'is-valid': date.touched && date.valid}">
 
         </div>
       </div>
@@ -49,18 +53,21 @@
       <pre>Model: {{ingredient.purchaseDate | json}}</pre>
 
       <div class="form-group">
-        <label for="purchaseLocation">Purchase Location</label>
-        <input [(ngModel)]="ingredient.purchaseLocation" id="purchaseLocation" name="purchaseLocation" class="form-control" required>
+        <label for="purchaseLocation">Aankooplocatie</label>
+        <input [(ngModel)]="ingredient.purchaseLocation" id="purchaseLocation" name="purchaseLocation" class="form-control" required #location="ngModel"
+               [ngClass]="{'is-invalid': location.touched && location.invalid,  'is-valid': location.touched && location.valid}">
       </div>
 
       <div class="form-group">
-        <label for="lotNumber">Lot Number</label>
-        <input [(ngModel)]="ingredient.lotNumber" id="lotNumber" name="lotNumber" class="form-control" required>
+        <label for="lotNumber">Lot nummer</label>
+        <input [(ngModel)]="ingredient.lotNumber" id="lotNumber" name="lotNumber" class="form-control" required #lot="ngModel"
+               [ngClass]="{'is-invalid': lot.touched && lot.invalid,  'is-valid': lot.touched && lot.valid}">
       </div>
 
       <div class="form-group">
         <label for="volume">Volume</label>
-        <input [(ngModel)]="ingredient.volume" id="volume" name="volume" class="form-control" required>
+        <input [(ngModel)]="ingredient.volume" id="volume" name="volume" class="form-control" required #volume="ngModel"
+               [ngClass]="{'is-invalid': volume.touched && volume.invalid,  'is-valid': volume.touched && volume.valid}">
       </div>
 
       <div class="form-group" *ngIf="ingredient.id != null">

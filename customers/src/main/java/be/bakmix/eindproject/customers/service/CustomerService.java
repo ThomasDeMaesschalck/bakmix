@@ -7,6 +7,10 @@ import be.bakmix.eindproject.customers.service.dto.Customer;
 import be.bakmix.eindproject.customers.service.mapper.CustomerMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -27,11 +31,9 @@ public class CustomerService {
     @Autowired
     private CustomerMapper customerMapper;
 
-    public List<Customer> getAll(){
-        List<Customer> customers = StreamSupport
-                .stream(customerRepository.findAll().spliterator(), false)
-                .map(e -> customerMapper.toDTO(e))
-                .collect(Collectors.toList());
+    public Page<Customer> getAll(Integer pageNo, Integer pageSize, String sortBy){
+        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.DESC, sortBy));
+        Page<Customer> customers = customerRepository.findAll(paging).map(customerMapper::toDTO);
         return customers;
     }
 

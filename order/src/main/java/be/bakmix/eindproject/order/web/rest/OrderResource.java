@@ -7,6 +7,7 @@ import be.bakmix.eindproject.order.service.dto.Orderline;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,8 +27,10 @@ public class OrderResource {
     private OrderService orderService;
 
     @GetMapping("/orders")
-    public ResponseEntity<List<Order>> getAll(@RequestParam(defaultValue = "0") Boolean index) {
-        List<Order> orders = orderService.getAll(index);
+    public ResponseEntity<Page<Order>> getAll(@RequestParam(defaultValue = "0") Boolean index, @RequestParam(defaultValue = "0") Integer pageNo,
+                                              @RequestParam(defaultValue = "10") Integer pageSize,
+                                              @RequestParam(defaultValue = "id") String sortBy) {
+        Page<Order> orders = orderService.getAll(index, pageNo, pageSize, sortBy);
         log.info("Retrieved all orders");
         return ResponseEntity.ok(orders);
     }

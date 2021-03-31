@@ -5,6 +5,7 @@ import be.bakmix.eindproject.customers.service.dto.Customer;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +21,11 @@ public class CustomerResource {
     private CustomerService customerService;
 
     @GetMapping("/customers")
-    public ResponseEntity<List<Customer>> getAll() {
-        List<Customer> customers = customerService.getAll();
+    public ResponseEntity<Page<Customer>> getAll(@RequestParam(defaultValue = "0") Integer pageNo,
+                                    @RequestParam(defaultValue = "10") Integer pageSize,
+                                    @RequestParam(defaultValue = "id") String sortBy)
+    {
+        Page<Customer> customers = customerService.getAll(pageNo, pageSize, sortBy);
         log.info("Retrieved all customers");
         return ResponseEntity.ok(customers);
     }

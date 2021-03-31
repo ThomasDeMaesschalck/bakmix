@@ -4,7 +4,7 @@
 </ol>
 <div class="card">
   <div class="header">
-    <h2 class="title">Customer List</h2>
+    <h2 class="title">Klanten lijst</h2>
   </div>
 
 </div>
@@ -39,5 +39,15 @@
         </tr>
       </tbody>
     </table>
+    <div class="d-flex justify-content-between p-2">
+      <ngb-pagination [maxSize]="10"
+                      [collectionSize]="total$ | async" [(page)]="filter.page" [pageSize]="filter.size" (pageChange)="onPageChange(filter.page)">
+      </ngb-pagination>
+      <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="filter.size" (ngModelChange)="onChange(filter.size)">
+        <option [ngValue]="10">10 items per page</option>
+        <option [ngValue]="20">20 items per page</option>
+        <option [ngValue]="50">50 items per page</option>
+      </select>
+    </div>
   </div>
 </div>

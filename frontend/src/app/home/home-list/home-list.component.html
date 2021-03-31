@@ -65,7 +65,8 @@
         <tr *ngFor="let ingredientItem of ingredientList" [class.active]="ingredientItem === selectedIngredient">
           <td>{{ingredientItem.uniqueCode}}</td>
           <td>{{ingredientItem.brand}} {{ingredientItem.type}} ({{ingredientItem.purchaseDate}})</td>
-          <td>{{ingredientItem.available}}</td>
+          <td *ngIf="!ingredientItem.available"><i class="fa fa-ban rediconcolor" aria-hidden="true"></i></td>
+          <td *ngIf="ingredientItem.available"><i class="fa fa-check-circle greeniconcolor" aria-hidden="true"></i></td>
           <td style="white-space: nowrap">
             <a [routerLink]="['../ingredients', ingredientItem.id ]" class="btn btn-secondary">Bewerk</a>&nbsp;
             <a [routerLink]="['../tracing', ingredientItem.uniqueCode ]" class="btn btn-secondary">Trace</a>&nbsp;

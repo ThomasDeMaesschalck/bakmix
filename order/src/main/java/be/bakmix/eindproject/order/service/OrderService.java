@@ -6,6 +6,10 @@ import be.bakmix.eindproject.order.service.dto.*;
 import be.bakmix.eindproject.order.service.mapper.OrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -48,11 +52,11 @@ public class OrderService {
         this.orderMapper = orderMapper;
     }
 
-    public List<Order> getAll(boolean index){
-        List<Order> orders = StreamSupport
-                .stream(orderRepository.findAll().spliterator(), false)
-                .map(e -> orderMapper.toDTO(e))
-                .collect(Collectors.toList());
+    public Page<Order> getAll(boolean index, Integer pageNo, Integer pageSize, String sortBy){
+        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.DESC, sortBy));
+
+        Page<Order> orders = orderRepository.findAll(paging).map(orderMapper::toDTO);
+
         orders.forEach(order -> {
                     RestTemplate rtCustomer = new RestTemplate();
                     Customer customer = rtCustomer.getForObject(urlCustomers + order.getCustomerId(), Customer.class);

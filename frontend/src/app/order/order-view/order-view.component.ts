@@ -5,7 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {IngredientService} from '../../ingredient/ingredient.service';
 import {OrderService} from '../order.service';
 import {map, switchMap} from "rxjs/operators";
-import {of} from "rxjs";
+import {Observable, of} from "rxjs";
 import {Orderstatus} from '../orderstatus';
 
 @Component({
@@ -15,6 +15,7 @@ import {Orderstatus} from '../orderstatus';
 })
 export class OrderViewComponent implements OnInit {
 
+  total$: Observable<number>;
   id: string;
   order: Order;
   feedback: any = {};
@@ -62,5 +63,4 @@ export class OrderViewComponent implements OnInit {
       }
     );
   }
-
 }
