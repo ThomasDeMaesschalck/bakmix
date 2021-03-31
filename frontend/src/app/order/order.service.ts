@@ -2,7 +2,7 @@ import { Order } from './order';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import {Ingredient} from "../ingredient/ingredient";
+import {Ingredient} from '../ingredient/ingredient';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
@@ -27,8 +27,8 @@ export class OrderService {
     return this.http.get<Order[]>(url, {params, headers});
   }
 
-  load(): void {
-    this.find().subscribe(result => {
+  load(index: boolean): void {
+    this.find(index).subscribe(result => {
         this.orderList = result;
       },
       err => {
@@ -37,11 +37,20 @@ export class OrderService {
     );
   }
 
-  find(): Observable<Order[]> {
-    const params = {
-      'id': ''
-    };
-
+  find(index: boolean): Observable<Order[]> {
+    let params: any;
+    if (index === true)
+    {
+       params = {
+        'id': '',
+        'index': 'true'
+      };
+    }
+  else {
+       params = {
+        'id': ''
+      };
+    }
     return this.http.get<Order[]>(this.api, {params, headers});
   }
 

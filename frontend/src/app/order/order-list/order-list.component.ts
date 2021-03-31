@@ -24,7 +24,7 @@ export class OrderListComponent implements OnInit {
   }
 
   search(): void {
-    this.orderService.load();
+    this.orderService.load(false);
   }
 
   select(selected: Order): void {

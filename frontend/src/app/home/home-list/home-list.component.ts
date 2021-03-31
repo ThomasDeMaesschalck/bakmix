@@ -43,7 +43,7 @@ export class HomeListComponent implements OnInit {
   }
 
   searchOrders(): void {
-    this.orderService.load();
+    this.orderService.load(true);
   }
   getStatusType(status: number): string{
     return Orderstatus[status];

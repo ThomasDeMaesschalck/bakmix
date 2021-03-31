@@ -48,43 +48,43 @@ public class OrderService {
         this.orderMapper = orderMapper;
     }
 
-    public List<Order> getAll(){
+    public List<Order> getAll(boolean index){
         List<Order> orders = StreamSupport
                 .stream(orderRepository.findAll().spliterator(), false)
                 .map(e -> orderMapper.toDTO(e))
                 .collect(Collectors.toList());
-
         orders.forEach(order -> {
                     RestTemplate rtCustomer = new RestTemplate();
-                    Customer customer = rtCustomer.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
+                    Customer customer = rtCustomer.getForObject(urlCustomers + order.getCustomerId(), Customer.class);
                     order.setCustomerId(customer.getId());
                     order.setCustomer(customer);
                 }
-                );
+        );
 
-        orders.forEach(order ->
-        {
-            RestTemplate rtOrderlines = new RestTemplate();
-            Orderline[] orderlines = rtOrderlines.getForObject(urlOrderlines+order.getId(), Orderline[].class);
+        if(!index) { //performance enhancement voor de index pagina
+            orders.forEach(order ->
+            {
+                RestTemplate rtOrderlines = new RestTemplate();
+                Orderline[] orderlines = rtOrderlines.getForObject(urlOrderlines + order.getId(), Orderline[].class);
 
-            Arrays.stream(orderlines).forEach(orderline -> {
-                RestTemplate rtIngredienttracings = new RestTemplate();
-                Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
-                List<Ingredient> ingredients = new ArrayList();
+                Arrays.stream(orderlines).forEach(orderline -> {
+                    RestTemplate rtIngredienttracings = new RestTemplate();
+                    Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings + orderline.getId(), Ingredienttracing[].class);
+                    List<Ingredient> ingredients = new ArrayList();
 
-                Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
-                    Long ingredientId = ingredienttracing.getIngredientId();
-                    RestTemplate rtIngredients = new RestTemplate();
-                    Ingredient ingredient = rtIngredients.getForObject(urlIngredients+ingredientId, Ingredient.class);
-                    ingredients.add(ingredient);
-                    orderline.setIngredients(ingredients);
+                    Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
+                        Long ingredientId = ingredienttracing.getIngredientId();
+                        RestTemplate rtIngredients = new RestTemplate();
+                        Ingredient ingredient = rtIngredients.getForObject(urlIngredients + ingredientId, Ingredient.class);
+                        ingredients.add(ingredient);
+                        orderline.setIngredients(ingredients);
+                    });
+
                 });
 
+                order.setOrderlines(Arrays.asList(orderlines));
             });
-
-            order.setOrderlines(Arrays.asList(orderlines));
-        });
-
+        }
         return orders;
     }
 

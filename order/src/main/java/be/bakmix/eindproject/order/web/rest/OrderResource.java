@@ -26,8 +26,8 @@ public class OrderResource {
     private OrderService orderService;
 
     @GetMapping("/orders")
-    public ResponseEntity<List<Order>> getAll() {
-        List<Order> orders = orderService.getAll();
+    public ResponseEntity<List<Order>> getAll(@RequestParam(defaultValue = "0") Boolean index) {
+        List<Order> orders = orderService.getAll(index);
         log.info("Retrieved all orders");
         return ResponseEntity.ok(orders);
     }
