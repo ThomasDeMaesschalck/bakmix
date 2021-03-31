@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {map, switchMap} from "rxjs/operators";
 import {Observable, of} from "rxjs";
@@ -8,9 +8,11 @@ import {IngredienttracingService} from '../../ingredienttracing/ingredienttracin
 import {Ingredient} from '../../ingredient/ingredient';
 import {Ingredienttracing} from '../../ingredienttracing/ingredienttracing';
 import {IngredientService} from '../../ingredient/ingredient.service';
+import {Order} from '../order';
+import {OrderService} from '../order.service';
 
 @Component({
-  selector: 'app-order-view',
+  selector: 'app-orderline-view',
   templateUrl: './orderline-view.component.html'
 })
 export class OrderlineViewComponent implements OnInit {
@@ -21,6 +23,7 @@ export class OrderlineViewComponent implements OnInit {
   ingredients: Ingredient | Ingredient[];
   feedback: any = {};
   feedbackAdd: any = {};
+  order: Order;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,6 +31,7 @@ export class OrderlineViewComponent implements OnInit {
     private orderlineService: OrderlineService,
     private ingredienttracingService: IngredienttracingService,
     private ingredientService: IngredientService,
+    private orderService: OrderService
   ) {
   }
 
@@ -65,6 +69,23 @@ export class OrderlineViewComponent implements OnInit {
           this.ingredients = ingredient;
           this.feedback = {};
           this.feedbackAdd = {};
+        },
+        err => {
+          this.feedback = {type: 'warning', message: 'Error loading'};
+        }
+      );
+    this.route
+      .params
+      .pipe(
+        map(p => p.id),
+        switchMap(id => {
+          if (id === 'new') { return of(new Order()); }
+          return this.orderService.findById(id);
+        })
+      )
+      .subscribe(order => {
+          this.order = order;
+          this.feedback = {};
         },
         err => {
           this.feedback = {type: 'warning', message: 'Error loading'};

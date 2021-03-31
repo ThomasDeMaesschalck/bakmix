@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Ingredient} from '../../ingredient/ingredient';
 import {Order} from '../order';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -18,6 +18,7 @@ export class OrderViewComponent implements OnInit {
   id: string;
   order: Order;
   feedback: any = {};
+  @Input() orderCurrent: Order;
 
   constructor(
     private route: ActivatedRoute,

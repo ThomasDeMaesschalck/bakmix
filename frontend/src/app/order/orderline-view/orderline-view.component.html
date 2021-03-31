@@ -1,5 +1,9 @@
-<div class="row pl-5 pb-3">  <a [routerLink]="['../..']" class="btn btn-secondary">Terug naar bestelling</a>&nbsp;
-</div>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+  <li class="breadcrumb-item"><a [routerLink]="['../..']">Terug naar bestelling {{order.id}}</a></li>
+  <li class="breadcrumb-item active">Orderlijn {{orderline.id}}</li>
+</ol>
+
 <div class="row">
 
 
@@ -31,7 +35,7 @@
                   <td>{{ingredient.uniqueCode}}</td>
                   <td>{{ingredient.brand}} {{ingredient.type}}</td>
                   <td style="white-space: nowrap">
-                    <button type="submit" class="btn btn-primary" (click)="removeTracing(ingredient.ingredienttracingId)">{{ingredient.ingredienttracingId | json}} Ontkoppelen</button>
+                    <button *ngIf="order.status != 2" type="submit" class="btn btn-primary" (click)="removeTracing(ingredient.ingredienttracingId)">{{ingredient.ingredienttracingId | json}} Ontkoppelen</button>
                   </td>
                   <td>
                     <button *ngIf="ingredient.available == true" (click)="switchIngredientStatus(ingredient)" class="btn btn-dark mr-1">Is nu opgebruikt</button>
@@ -55,7 +59,7 @@
           <div class="card-text">
             <div *ngIf="feedbackAdd.message" class="alert alert-{{feedbackAdd.type}}">{{ feedbackAdd.message }}</div>
 
-            <div class="table-responsive">
+            <div class="table-responsive" *ngIf="order.status != 2">
               <table class="table table-centered table-hover mb-0" id="datatable4">
                 <thead>
                 <tr>
@@ -76,6 +80,7 @@
                 </tbody>
               </table>
             </div>
+            <div *ngIf="order.status == 2">Order is verzonden en kan niet meer gewijzigd worden</div>
           </div>      </div></div>
     </div>
   </div>

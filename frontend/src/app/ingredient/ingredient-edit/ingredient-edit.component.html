@@ -1,3 +1,8 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+  <li class="breadcrumb-item"><a [routerLink]="['..']">Ingrediënten lijst</a>&nbsp;</li>
+  <li class="breadcrumb-item active">Ingave ingrediënt</li>
+</ol>
 <div class="card">
   <div class="card-body">
     <h2 class="card-title" *ngIf="ingredient.id != null">Ingrediënt bewerken</h2>

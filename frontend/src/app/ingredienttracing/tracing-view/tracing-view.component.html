@@ -1,3 +1,7 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+  <li class="breadcrumb-item active">Interne tracing {{uniqueCode}}</li>
+</ol>
 <div class="row" >
 
   <div class="col-md-9">
@@ -36,7 +40,7 @@
             </div>
           </div>      </div></div>
 
-                   <a [routerLink]="['mail']" class="btn btn-danger ml-3 mt-2 mr-3">Terugroepactie starten</a>&nbsp;
+                   <a *ngIf="orderList.length > 0" [routerLink]="['mail']" class="btn btn-danger ml-3 mt-2 mr-3">Terugroepactie starten</a>&nbsp;
 
                  </div>
 
