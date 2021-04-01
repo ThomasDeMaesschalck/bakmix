@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IngredientFilter } from '../ingredient-filter';
 import { IngredientService } from '../ingredient.service';
 import { Ingredient } from '../ingredient';
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable, of} from "rxjs";
 
 @Component({
   selector: 'app-ingredient',

@@ -16,7 +16,7 @@
       </div>
 
       <button (click)="search()" [disabled]="!filter.id" class="btn btn-primary">Search</button>
-      <button (click)="ngOnInit()" [disabled]="!f?.valid" class="ml-1 btn btn-primary">Clear</button>
+      <button (click)="ngOnInit()" [disabled]="!f?.valid" class="ml-1 btn btn-primary">Wissen</button>
 
       <a [routerLink]="['../ingredients', 'new' ]" class="ml-1 btn btn-success">Nieuw</a>
     </form>
@@ -28,14 +28,14 @@
     <table class="table table-centered table-hover mb-0" id="datatable">
       <thead>
         <tr>
-          <th class="border-top-0" scope="col">Unique #</th>
+          <th class="border-top-0" scope="col">Uniek #</th>
           <th class="border-top-0" scope="col">Type</th>
-          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Brand</th>
-          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Purchase Date</th>
-          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Purchase Location</th>
-          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Lot Number</th>
+          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Merk</th>
+          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Aankoopdatum</th>
+          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Aankooplocatie</th>
+          <th class="border-top-0 d-none d-sm-table-cell" scope="col">Lot</th>
           <th class="border-top-0 d-none d-sm-table-cell" scope="col">Volume</th>
-          <th class="border-top-0" scope="col">Available</th>
+          <th class="border-top-0" scope="col">Stock</th>
           <th class="border-top-0" scope="col"></th>
         </tr>
       </thead>
@@ -52,7 +52,7 @@
           <td style="white-space: nowrap">
             <a [routerLink]="['../ingredients', item.id ]" class="btn btn-secondary">Edit</a>&nbsp;
             <button *ngIf="item.available == true" (click)="switchIngredientStatus(item)" class="btn btn-success mr-1">In stock</button>
-            <button *ngIf="item.available == false"  disabled class="btn btn-secondary mr-1">Is op</button>
+            <button *ngIf="item.available == false"  disabled class="btn btn-secondary mr-1">&nbsp; Is op&nbsp; &nbsp;</button>
             <a [routerLink]="['../tracing', item.uniqueCode ]" class="btn btn-info">Trace</a>&nbsp;
             <button (click)="delete(item)" class="btn btn-danger">Delete</button>
           </td>

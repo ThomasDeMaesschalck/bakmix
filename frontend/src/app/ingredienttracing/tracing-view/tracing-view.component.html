@@ -19,8 +19,8 @@
                 <thead>
                 <tr>
                   <th class="border-top-0" scope="col">Order id</th>
-                  <th class="border-top-0" scope="col">customer name</th>
-                  <th class="border-top-0" scope="col">affected products</th>
+                  <th class="border-top-0" scope="col">Klant</th>
+                  <th class="border-top-0" scope="col">Gelinkte producten</th>
                   <th class="border-top-0" scope="col" style="width:120px"></th>
                 </tr>
                 </thead>
@@ -32,7 +32,7 @@
 
                   <td *ngFor="let orderlineItem of orderItem.orderlines">{{orderlineItem.product.name}}</td>
                   <td style="white-space: nowrap">
-                    <a [routerLink]="['../../orders', orderItem.id ]" class="btn btn-secondary">View</a>&nbsp;
+                    <a [routerLink]="['../../orders', orderItem.id ]" class="btn btn-secondary">Bekijk</a>&nbsp;
                   </td>
                 </tr>
                 </tbody>

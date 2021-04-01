@@ -33,7 +33,7 @@
                   <td>{{ingredient.uniqueCode}}</td>
                   <td>{{ingredient.brand}} {{ingredient.type}}</td>
                   <td style="white-space: nowrap">
-                    <button *ngIf="order.status != 2" type="submit" class="btn btn-primary" (click)="removeTracing(ingredient.ingredienttracingId)">{{ingredient.ingredienttracingId | json}} Ontkoppelen</button>
+                    <button *ngIf="order.status != 2" type="submit" class="btn btn-primary" (click)="removeTracing(ingredient.ingredienttracingId)">Ontkoppelen</button>
                   </td>
                   <td>
                     <button *ngIf="ingredient.available == true" (click)="switchIngredientStatus(ingredient)" class="btn btn-dark mr-1">Is nu opgebruikt</button>

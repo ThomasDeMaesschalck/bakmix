@@ -1,9 +1,8 @@
 import { Ingredient } from './ingredient';
 import { IngredientFilter } from './ingredient-filter';
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {BehaviorSubject, Observable, of, ReplaySubject} from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {map} from 'rxjs/operators';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
@@ -51,6 +50,7 @@ export class IngredientService {
         this.ingredientSingleList = [];
         this.ingredientSingleList.push(result);
         this.ingredientList = this.ingredientSingleList;
+        this.size$.next(0);
         },
         err => {
           console.error('error loading', err);
@@ -105,18 +105,6 @@ export class IngredientService {
       url = `${this.api}/${entity.id.toString()}`;
       params = new HttpParams().set('ID', entity.id.toString());
       return this.http.delete<Ingredient>(url, {headers, params});
-    }
-    return null;
-  }
-
-  dateFromModel(value: string | null): NgbDateStruct | null {
-    if (value) {
-      const date = value.split('-');
-      return {
-        day : parseInt(date[0], 10),
-        month : parseInt(date[1], 10),
-        year : parseInt(date[2], 10)
-      };
     }
     return null;
   }

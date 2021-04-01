@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-view/tracing-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-view/tracing-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +218,7 @@
       <workItem from="1616102007845" duration="116193000" />
       <workItem from="1616873607371" duration="4378000" />
       <workItem from="1616879288294" duration="14432000" />
-      <workItem from="1616932504509" duration="87659000" />
+      <workItem from="1616932504509" duration="94357000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -425,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617220489112</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Datepicker working">
+      <created>1617259123485</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1617259123485</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +450,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="homepage angular first version" />
     <MESSAGE value="angular order" />
     <MESSAGE value="angular order verder gedaan" />
     <MESSAGE value="angular order verder gedaan deel 2" />
@@ -470,6 +474,7 @@
     <MESSAGE value="Added code om verzonden orders niet wijzigbaar te maken" />
     <MESSAGE value="Performance verbetering index page" />
     <MESSAGE value="Overal pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="Overal pagination" />
+    <MESSAGE value="Datepicker working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Datepicker working" />
   </component>
 </project>
