@@ -3,14 +3,12 @@
   <li class="breadcrumb-item"><a [routerLink]="['..']">Ingrediënten lijst</a>&nbsp;</li>
   <li class="breadcrumb-item active">Ingave ingrediënt</li>
 </ol>
-<div class="card" *ngIf="ingredient">
+<div class="card">
   <div class="card-body">
-    <h2 class="card-title" *ngIf="ingredient.id != null">Ingrediënt bewerken</h2>
-    <h2 class="card-title" *ngIf="ingredient.id == null">Ingave nieuw ingrediënt</h2>
 
     <div class="card-text">
     <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
-    <form  #editForm="ngForm" (ngSubmit)="save()">
+    <form *ngIf="ingredient" #editForm="ngForm" (ngSubmit)="save()">
 
       <div class="form-group">
         <label>Id</label>
@@ -40,17 +38,19 @@
 
       <div class="form-group">
 
+          <label for="d2">Aankoopdatum</label>
+        <div class="col-md-3 ml-0 pl-0">
         <div class="input-group">
-
-
-          <input id="purchaseDate" class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="ingredient.purchaseDate" required pattern="^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$" #date="ngModel"
-                 [ngClass]="{'is-invalid': date.touched && date.invalid,  'is-valid': date.touched && date.valid}">
-
+        <input class="form-control" placeholder="yyyy-mm-dd" id="d2" required
+               [ngClass]="{'is-invalid': c2.touched && c2.invalid,  'is-valid': c2.touched && c2.valid}"
+               name="d2" #c2="ngModel" [(ngModel)]="purchaseDate" ngbDatepicker #d2="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary bi-calendar" (click)="d2.toggle()" type="button" aria-label="calendar button"></button>
+</div>
+        </div>
         </div>
       </div>
 
-
-      <pre>Model: {{ingredient.purchaseDate | json}}</pre>
 
       <div class="form-group">
         <label for="purchaseLocation">Aankooplocatie</label>

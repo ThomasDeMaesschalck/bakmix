@@ -5,6 +5,7 @@ import { IngredientService } from '../ingredient.service';
 import { Ingredient } from '../ingredient';
 import { map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
+import {NgbDateParserFormatter, NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-ingredient-edit',
@@ -15,11 +16,15 @@ export class IngredientEditComponent implements OnInit {
   id: string;
   ingredient: Ingredient;
   feedback: any = {};
+  purchaseDate;
+  ngbDate: NgbDateStruct;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private ingredientService: IngredientService) {
+    private ingredientService: IngredientService,
+    private parserFormatter: NgbDateParserFormatter
+) {
   }
 
   ngOnInit() {
@@ -35,6 +40,7 @@ export class IngredientEditComponent implements OnInit {
       )
       .subscribe(ingredient => {
           this.ingredient = ingredient;
+          this.purchaseDate = this.parserFormatter.parse(this.ingredient.purchaseDate);
           this.feedback = {};
         },
         err => {
@@ -44,7 +50,8 @@ export class IngredientEditComponent implements OnInit {
   }
 
   save() {
-      this.ingredientService.save(this.ingredient).subscribe(
+   this.ingredient.purchaseDate =  this.parserFormatter.format(this.purchaseDate);
+    this.ingredientService.save(this.ingredient).subscribe(
         ingredient => {
           this.ingredient = ingredient;
           this.feedback = {type: 'success', message: 'Save was successful!'};

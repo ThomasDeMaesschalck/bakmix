@@ -14,7 +14,7 @@ import {NgbDatepickerModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     RouterModule.forChild(INGREDIENT_ROUTES),
     NgbModule,
-    NgbDatepickerModule
+    NgbDatepickerModule,
   ],
   declarations: [
     IngredientListComponent,

@@ -109,5 +109,17 @@ export class IngredientService {
     return null;
   }
 
+  dateFromModel(value: string | null): NgbDateStruct | null {
+    if (value) {
+      const date = value.split('-');
+      return {
+        day : parseInt(date[0], 10),
+        month : parseInt(date[1], 10),
+        year : parseInt(date[2], 10)
+      };
+    }
+    return null;
+  }
+
 }
 
