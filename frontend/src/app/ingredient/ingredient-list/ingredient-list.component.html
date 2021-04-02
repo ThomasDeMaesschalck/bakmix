@@ -42,19 +42,20 @@
       <tbody>
         <tr *ngFor="let item of ingredientList" [class.active]="item === selectedIngredient">
           <td>{{item.uniqueCode}}</td>
-          <td>{{item.type}}</td>
+          <td  class="text-break">{{item.type}}</td>
           <td class="d-none d-sm-table-cell">{{item.brand}}</td>
           <td class="d-none d-sm-table-cell">{{item.purchaseDate}}</td>
           <td class="d-none d-sm-table-cell">{{item.purchaseLocation}}</td>
           <td class="d-none d-sm-table-cell">{{item.lotNumber}}</td>
           <td class="d-none d-sm-table-cell">{{item.volume}}</td>
-          <td>{{item.available}}</td>
+
+          <td *ngIf="item.available == true"><i (click)="switchIngredientStatus(item)" title="Is beschikbaar" role="button" class="fas fa-circle greeniconcolor"></i></td>
+          <td *ngIf="item.available == false"><i class="far fa-circle rediconcolor" title="Is op"></i></td>
+
           <td style="white-space: nowrap">
-            <a [routerLink]="['../ingredients', item.id ]" class="btn btn-secondary">Edit</a>&nbsp;
-            <button *ngIf="item.available == true" (click)="switchIngredientStatus(item)" class="btn btn-success mr-1">In stock</button>
-            <button *ngIf="item.available == false"  disabled class="btn btn-secondary mr-1">&nbsp; Is op&nbsp; &nbsp;</button>
-            <a [routerLink]="['../tracing', item.uniqueCode ]" class="btn btn-info">Trace</a>&nbsp;
-            <button (click)="delete(item)" class="btn btn-danger">Delete</button>
+            <a [routerLink]="['../ingredients', item.id ]" class="btn btn-secondary" title="bewerken" ><i class="fas fa-edit"></i></a>&nbsp;
+             <a [routerLink]="['../tracing', item.uniqueCode ]" class="btn btn-info" title="trace" ><i class="fas fa-search"></i></a>&nbsp;
+            <button (click)="delete(item)" class="btn btn-danger" title="verwijderen"><i class="fas fa-trash-alt"></i></button>
           </td>
         </tr>
       </tbody>

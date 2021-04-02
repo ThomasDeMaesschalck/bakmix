@@ -3,12 +3,10 @@
   <li class="breadcrumb-item"><a>Klanten lijst</a>&nbsp;</li>
 </ol>
 <div class="card">
-  <div class="header">
+  <div class="card-body">
     <h2 class="title">Klanten lijst</h2>
-  </div>
-
-</div>
-<div class="card" *ngIf="customerList.length > 0">
+      <div class="card-text">
+<div  *ngIf="customerList.length > 0">
   <div *ngIf="feedback" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
   <div class="table-responsive">
     <table class="table table-centered table-hover mb-0" id="datatable">
@@ -51,3 +49,4 @@
     </div>
   </div>
 </div>
+      </div>      </div></div>
