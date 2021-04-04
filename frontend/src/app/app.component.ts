@@ -13,24 +13,11 @@ export class AppComponent {
   public claims: any;
   public hasValidAccessToken: boolean;
 
-  constructor(private oauthService: OAuthService) {
+  constructor(private readonly oauthService: OAuthService) {
     this.validAccessToken();
-    this.setupAutomaticSilentRefresh();
-    this.configure();
   }
 
-  authConfig: AuthConfig = {
-    issuer: 'http://localhost:8081/auth/realms/bakmix',
-    redirectUri: window.location.origin + '/home',
-    clientId: 'bakmix-frontend',
-    scope: 'openid profile email offline_access bakmix',
-    responseType: 'code',
-    requireHttps: false,
-    disableAtHashCheck: true,
-    showDebugInformation: true
-  };
-
-  public login() {
+    public login() {
     this.oauthService.initLoginFlow();
   }
 
@@ -38,26 +25,9 @@ export class AppComponent {
     this.oauthService.logOut();
   }
 
-  private configure() {
-    this.oauthService.configure(this.authConfig);
-    this.oauthService.tokenValidationHandler = new  NullValidationHandler();
-    this.oauthService.loadDiscoveryDocumentAndTryLogin();
+  public validAccessToken() {
+    this.hasValidAccessToken = this.oauthService.hasValidAccessToken();
+    console.log(this.hasValidAccessToken);
   }
-
-   private setupAutomaticSilentRefresh() {
-     this.oauthService.setupAutomaticSilentRefresh();
-   }
-
-   public name() {
-      this.claims = this.oauthService.getIdentityClaims();
-      console.log(this.claims);
-      if (!this.claims) return null;
-      return this.claims;
- }
-
- public validAccessToken() {
-     this.hasValidAccessToken = this.oauthService.hasValidAccessToken();
-     console.log(this.hasValidAccessToken);
- }
 
 }

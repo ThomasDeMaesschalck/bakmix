@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/authentication/auth.config.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/authentication/auth.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/authentication/authconfig.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +225,7 @@
       <workItem from="1616102007845" duration="116193000" />
       <workItem from="1616873607371" duration="4378000" />
       <workItem from="1616879288294" duration="14432000" />
-      <workItem from="1616932504509" duration="136672000" />
+      <workItem from="1616932504509" duration="138127000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -464,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617546104825</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Keycloak working version v2">
+      <created>1617555440529</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1617555440529</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +492,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="order microservice expanded with ingredienttracing" />
     <MESSAGE value="orderline angular ingredient weergave" />
     <MESSAGE value="available ingredient by orderline code" />
     <MESSAGE value="working ingredient adding to orderlines" />
@@ -509,6 +516,7 @@
     <MESSAGE value="Fancier UI" />
     <MESSAGE value="Pre-keycloak" />
     <MESSAGE value="Keycloak working version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Keycloak working version" />
+    <MESSAGE value="Keycloak working version v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Keycloak working version v2" />
   </component>
 </project>
