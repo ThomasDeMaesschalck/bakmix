@@ -16,33 +16,30 @@
   <div  [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" *ngIf="hasValidAccessToken" href="#">Home</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="hasValidAccessToken">
         <a class="nav-link" routerLink="/ingredients">Ingrediënten</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="hasValidAccessToken">
         <a class="nav-link" routerLink="/products">Producten</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="hasValidAccessToken">
         <a class="nav-link" routerLink="/customers">Klanten</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="hasValidAccessToken">
         <a class="nav-link" routerLink="/orders">Orders</a>
+      </li>
+      <li class="nav-item" *ngIf="!hasValidAccessToken">
+        <a type="button"  class="nav-link" (click)="login()">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="hasValidAccessToken">
+        <a type="button" class="nav-link" (click)="logoff()">Logout</a>
       </li>
     </ul>
   </div>
   </div>
 </nav>
-
-<button *ngIf="!hasValidAccessToken" class="btn btn-default" (click)="login()">
-  Login
-</button>
-<button *ngIf="hasValidAccessToken" class="btn btn-default" (click)="logoff()">
-  Logout
-</button>
-
-
 
 <div *ngIf="hasValidAccessToken" class="container-fluid pt-3">
   <router-outlet></router-outlet>

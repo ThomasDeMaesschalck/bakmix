@@ -23,7 +23,6 @@ export class HomeListComponent implements OnInit {
   ngOnInit(): void {
     this.searchIngredients();
     this.searchOrders();
-
   }
 
   get ingredientList(): Ingredient[] {

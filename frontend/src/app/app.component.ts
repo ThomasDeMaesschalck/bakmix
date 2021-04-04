@@ -11,14 +11,12 @@ export class AppComponent {
   title = 'frontend';
   isCollapsed = true;
   public claims: any;
-  public hasValidAccessToken: boolean = false;
-  constructor(private oauthService: OAuthService) {
-    this.configure();
+  public hasValidAccessToken: boolean;
 
-    this.name();
+  constructor(private oauthService: OAuthService) {
     this.validAccessToken();
     this.setupAutomaticSilentRefresh();
-    this.validAccessToken();
+    this.configure();
   }
 
   authConfig: AuthConfig = {
@@ -28,7 +26,6 @@ export class AppComponent {
     scope: 'openid profile email offline_access bakmix',
     responseType: 'code',
     requireHttps: false,
-    // at_hash is not present in JWT token
     disableAtHashCheck: true,
     showDebugInformation: true
   };
@@ -46,7 +43,6 @@ export class AppComponent {
     this.oauthService.tokenValidationHandler = new  NullValidationHandler();
     this.oauthService.loadDiscoveryDocumentAndTryLogin();
   }
-
 
    private setupAutomaticSilentRefresh() {
      this.oauthService.setupAutomaticSilentRefresh();
