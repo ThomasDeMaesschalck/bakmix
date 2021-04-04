@@ -4,8 +4,12 @@ import be.bakmix.eindproject.order.business.OrderEntity;
 import be.bakmix.eindproject.order.business.repository.OrderRepository;
 import be.bakmix.eindproject.order.service.dto.*;
 import be.bakmix.eindproject.order.service.mapper.OrderMapper;
+import org.keycloak.adapters.KeycloakConfigResolver;
+import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
+import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -27,6 +31,9 @@ public class OrderService {
 
     @Autowired
     private OrderMapper orderMapper;
+
+    @Autowired
+    private KeycloakRestTemplate keycloakRestTemplate;
 
     @Value("http://localhost:7778/api/products/")
     private String urlProducts;
@@ -58,8 +65,7 @@ public class OrderService {
         Page<Order> orders = orderRepository.findAll(paging).map(orderMapper::toDTO);
 
         orders.forEach(order -> {
-                    RestTemplate rtCustomer = new RestTemplate();
-                    Customer customer = rtCustomer.getForObject(urlCustomers + order.getCustomerId(), Customer.class);
+                    Customer customer = keycloakRestTemplate.getForObject(urlCustomers + order.getCustomerId(), Customer.class);
                     order.setCustomerId(customer.getId());
                     order.setCustomer(customer);
                 }
@@ -68,18 +74,15 @@ public class OrderService {
         if(!index) { //performance enhancement voor de index pagina
             orders.forEach(order ->
             {
-                RestTemplate rtOrderlines = new RestTemplate();
-                Orderline[] orderlines = rtOrderlines.getForObject(urlOrderlines + order.getId(), Orderline[].class);
+                Orderline[] orderlines = keycloakRestTemplate.getForObject(urlOrderlines + order.getId(), Orderline[].class);
 
                 Arrays.stream(orderlines).forEach(orderline -> {
-                    RestTemplate rtIngredienttracings = new RestTemplate();
-                    Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings + orderline.getId(), Ingredienttracing[].class);
+                    Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings + orderline.getId(), Ingredienttracing[].class);
                     List<Ingredient> ingredients = new ArrayList();
 
                     Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
                         Long ingredientId = ingredienttracing.getIngredientId();
-                        RestTemplate rtIngredients = new RestTemplate();
-                        Ingredient ingredient = rtIngredients.getForObject(urlIngredients + ingredientId, Ingredient.class);
+                         Ingredient ingredient = keycloakRestTemplate.getForObject(urlIngredients + ingredientId, Ingredient.class);
                         ingredients.add(ingredient);
                         orderline.setIngredients(ingredients);
                     });
@@ -97,24 +100,20 @@ public class OrderService {
         if(optionalOrderEntity.isPresent()){
             Order order = orderMapper.toDTO(optionalOrderEntity.get());
 
-            RestTemplate rtCustomer = new RestTemplate();
-            Customer customer = rtCustomer.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
+             Customer customer = keycloakRestTemplate.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
             order.setCustomer(customer);
 
-            RestTemplate rtOrderlines = new RestTemplate();
-            Orderline[] orderlines = rtOrderlines.getForObject(urlOrderlines+order.getId(), Orderline[].class);
+             Orderline[] orderlines = keycloakRestTemplate.getForObject(urlOrderlines+order.getId(), Orderline[].class);
 
             for(Orderline orderline: orderlines)
             {
-                RestTemplate rtIngredienttracings = new RestTemplate();
-                Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
+                 Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
                 List<Ingredient> ingredients = new ArrayList();
 
                 for(Ingredienttracing ingredienttracing: ingredienttracings)
                 {
                     Long ingredientId = ingredienttracing.getIngredientId();
-                    RestTemplate rtIngredients = new RestTemplate();
-                    Ingredient ingredient = rtIngredients.getForObject(urlIngredients+ingredientId, Ingredient.class);
+                     Ingredient ingredient = keycloakRestTemplate.getForObject(urlIngredients+ingredientId, Ingredient.class);
                     ingredients.add(ingredient);
                     orderline.setIngredients(ingredients);
                 }
@@ -133,17 +132,14 @@ public class OrderService {
 
     public Orderline getOrderlineWithLinkedIngredientsById(Long id){
 
-            RestTemplate rtOrderlines = new RestTemplate();
-            Orderline orderline = rtOrderlines.getForObject(urlOrderlinesById+id, Orderline.class);
+             Orderline orderline = keycloakRestTemplate.getForObject(urlOrderlinesById+id, Orderline.class);
 
-                RestTemplate rtIngredienttracings = new RestTemplate();
-                Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
+                 Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
                 List<Ingredient> ingredients = new ArrayList();
 
                 Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
                     Long ingredientId = ingredienttracing.getIngredientId();
-                    RestTemplate rtIngredients = new RestTemplate();
-                    Ingredient ingredient = rtIngredients.getForObject(urlIngredients+ingredientId, Ingredient.class);
+                     Ingredient ingredient = keycloakRestTemplate.getForObject(urlIngredients+ingredientId, Ingredient.class);
                     ingredient.setIngredienttracingId(ingredienttracing.getId());
                     ingredients.add(ingredient);
                     orderline.setIngredients(ingredients);
@@ -154,13 +150,11 @@ public class OrderService {
 
     public List<Ingredient> getAvailableIngredientsForOrderline(Long id) {
 
-        RestTemplate rtIngredients = new RestTemplate();
-        Ingredient[] ingredients = rtIngredients.getForObject(urlIngredients, Ingredient[].class);
+         Ingredient[] ingredients = keycloakRestTemplate.getForObject(urlIngredients, Ingredient[].class);
 
        List<Ingredient> ingredientsList = Arrays.asList(ingredients);
 
-        RestTemplate rtIngredienttracings = new RestTemplate();
-        Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings + id, Ingredienttracing[].class);
+         Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings + id, Ingredienttracing[].class);
 
         ingredientsList = ingredientsList.stream().filter(i -> i.getAvailable() == true).collect(Collectors.toList());
 
@@ -181,8 +175,7 @@ public class OrderService {
 
         orders.forEach(order -> {
 
-            RestTemplate rtOrderlines = new RestTemplate();
-            Orderline[] orderlines = rtOrderlines.getForObject(urlOrderlines+order.getId(), Orderline[].class);
+             Orderline[] orderlines = keycloakRestTemplate.getForObject(urlOrderlines+order.getId(), Orderline[].class);
             List<Orderline> filteredOrderlines = new ArrayList();
             boolean found = false;
 
@@ -191,15 +184,13 @@ public class OrderService {
             });
             for(Orderline orderline: orderlines)
             {
-                RestTemplate rtIngredienttracings = new RestTemplate();
-                Ingredienttracing[] ingredienttracings = rtIngredienttracings.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
+                 Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
                 List<Ingredient> ingredients = new ArrayList();
 
                 for(Ingredienttracing ingredienttracing: ingredienttracings)
                 {
                     Long ingredientId = ingredienttracing.getIngredientId();
-                    RestTemplate rtIngredients = new RestTemplate();
-                    Ingredient ingredient = rtIngredients.getForObject(urlIngredients+ingredientId, Ingredient.class);
+                     Ingredient ingredient = keycloakRestTemplate.getForObject(urlIngredients+ingredientId, Ingredient.class);
                     ingredients.add(ingredient);
                     orderline.setIngredients(ingredients);
                     if (ingredient.getUniqueCode().equals(id))
@@ -219,8 +210,7 @@ public class OrderService {
         List<Order> ordersFiltered =   orders.stream().filter(o -> !o.getOrderlines().isEmpty()).collect(Collectors.toList());
 
         ordersFiltered.forEach(order -> {
-            RestTemplate rtCustomer = new RestTemplate();
-            Customer customer = rtCustomer.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
+             Customer customer = keycloakRestTemplate.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
             order.setCustomerId(customer.getId());
             order.setCustomer(customer);
         });

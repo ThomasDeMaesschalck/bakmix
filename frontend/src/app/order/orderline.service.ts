@@ -15,7 +15,7 @@ export class OrderlineService {
   }
 
   findById(olId: string): Observable<Orderline> {
-    const url = `${this.api}/${olId}`;
+    const url = `${this.api}${olId}`;
     const params = { olId: olId };
     return this.http.get<Orderline>(url, {params, headers});
   }

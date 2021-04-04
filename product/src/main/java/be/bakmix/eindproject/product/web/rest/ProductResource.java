@@ -8,9 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
 @AllArgsConstructor
@@ -21,6 +22,7 @@ public class ProductResource {
     private ProductService productService;
 
     @GetMapping("/products")
+    @RolesAllowed({"bakmix-admin"})
     public ResponseEntity<List<Product>> getAll() {
         List<Product> products = productService.getAll();
         log.info("Retrieved all products");
@@ -28,6 +30,7 @@ public class ProductResource {
     }
 
     @GetMapping("/products/{id}")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<Product> getById(@PathVariable Long id){
         Product product = productService.getById(id);
         if(product == null){

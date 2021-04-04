@@ -17,7 +17,7 @@ export class CustomerService {
   }
 
   findById(id: string): Observable<Customer> {
-    const url = `${this.api}/${id}`;
+    const url = `${this.api}${id}`;
     const params = { id: id };
     return this.http.get<Customer>(url, {params, headers});
   }

@@ -12,6 +12,7 @@ import { CustomerModule } from './customer/customer.module';
 import {HomeModule} from './home/home.module';
 import {OrderModule} from './order/order.module';
 import {IngredienttracingModule} from './ingredienttracing/ingredienttracing.module';
+import {OAuthModule} from 'angular-oauth2-oidc';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,12 @@ import {IngredienttracingModule} from './ingredienttracing/ingredienttracing.mod
     AppRoutingModule,
     IngredientModule,
     HttpClientModule,
+    OAuthModule.forRoot({
+      resourceServer: {
+        allowedUrls: ['http://localhost:7777/api', 'http://localhost:7771/api', 'http://localhost:7779/api',
+          'http://localhost:7772/api', 'http://localhost:7773/api', 'http://localhost:7778/api' ],
+        sendAccessToken: true
+      }}),
     FormsModule,
     NgbModule,
     ProductModule,

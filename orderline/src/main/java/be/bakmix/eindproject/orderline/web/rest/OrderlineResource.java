@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @CrossOrigin
@@ -21,6 +22,7 @@ public class OrderlineResource {
     private OrderlineService orderlineService;
 
     @GetMapping("/orderlines")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<List<Orderline>> getAll() {
         List<Orderline> orderlines = orderlineService.getAll();
         log.info("Retrieved all orderlines");
@@ -28,6 +30,7 @@ public class OrderlineResource {
     }
 
     @GetMapping("/orderlines/{id}")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<Orderline> getById(@PathVariable Long id){
         Orderline orderline = orderlineService.getById(id);
         if(orderline == null){
@@ -40,6 +43,7 @@ public class OrderlineResource {
     }
 
     @GetMapping("/orderlines/getbyorder/{id}")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<List<Orderline>> getByOrderId(@PathVariable Long id){
         List<Orderline> orderline = orderlineService.getByOrderId(id);
         if(orderline == null){

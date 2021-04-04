@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class IngredienttracingResource {
     private IngredienttracingService ingredienttracingService;
 
     @GetMapping("/ingredienttracings")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<List<Ingredienttracing>> getAll() {
         List<Ingredienttracing> ingredienttracings = ingredienttracingService.getAll();
         log.info("Retrieved all ingredienttracings");
@@ -43,6 +45,7 @@ public class IngredienttracingResource {
  //   }
 
     @GetMapping("/ingredienttracings/{id}") //works by orderlineId
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<List<Ingredienttracing>> getByOrderlineId(@PathVariable Long id){
         List<Ingredienttracing> ingredienttracing = ingredienttracingService.getByOrderlineId(id);
         if(ingredienttracing == null){
@@ -55,6 +58,7 @@ public class IngredienttracingResource {
     }
 
     @PostMapping("/ingredienttracings")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredienttracing> createIngredienttracing(@Valid @RequestBody Ingredienttracing ingredienttracing)
     {
         ingredienttracingService.save(ingredienttracing);
@@ -63,6 +67,7 @@ public class IngredienttracingResource {
     }
 
     @DeleteMapping("/ingredienttracings/{id}")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredienttracing> deleteIngredienttracing(@PathVariable Long id) {
         boolean success =  ingredienttracingService.delete(id);
         if (success == false) {

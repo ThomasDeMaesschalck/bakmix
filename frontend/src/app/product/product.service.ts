@@ -15,7 +15,7 @@ export class ProductService {
   }
 
   findById(id: string): Observable<Product> {
-    const url = `${this.api}/${id}`;
+    const url = `${this.api}${id}`;
     const params = { id: id };
     return this.http.get<Product>(url, {params, headers});
   }

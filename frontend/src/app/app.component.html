@@ -35,8 +35,15 @@
   </div>
 </nav>
 
+<button *ngIf="!hasValidAccessToken" class="btn btn-default" (click)="login()">
+  Login
+</button>
+<button *ngIf="hasValidAccessToken" class="btn btn-default" (click)="logoff()">
+  Logout
+</button>
 
 
-<div class="container-fluid pt-3">
+
+<div *ngIf="hasValidAccessToken" class="container-fluid pt-3">
   <router-outlet></router-outlet>
 </div>

@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @CrossOrigin
@@ -21,6 +22,7 @@ public class CustomerResource {
     private CustomerService customerService;
 
     @GetMapping("/customers")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<Page<Customer>> getAll(@RequestParam(defaultValue = "0") Integer pageNo,
                                     @RequestParam(defaultValue = "10") Integer pageSize,
                                     @RequestParam(defaultValue = "id") String sortBy)
@@ -31,6 +33,7 @@ public class CustomerResource {
     }
 
     @GetMapping("/customers/{id}")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<Customer> getById(@PathVariable Long id){
         Customer customer = customerService.getById(id);
         if(customer == null){

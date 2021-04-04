@@ -19,13 +19,13 @@ export class OrderService {
   }
 
   findById(id: string): Observable<Order> {
-    const url = `${this.api}/${id}`;
+    const url = `${this.api}${id}`;
     const params = { id: id };
     return this.http.get<Order>(url, {params, headers});
   }
 
   findTracingsByUniqueCode(uniqueCode: string): Observable<Order[]>{
-    const url = `${this.apiTracedOrders}/${uniqueCode}`;
+    const url = `${this.apiTracedOrders}${uniqueCode}`;
     const params = { uniqueCode: uniqueCode };
     return this.http.get<Order[]>(url, {params, headers});
   }

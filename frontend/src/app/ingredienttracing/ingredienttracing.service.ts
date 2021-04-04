@@ -20,7 +20,7 @@ export class IngredienttracingService {
   }
 
   findAvailableIngredients(olId: string): Observable<Ingredient[]> {
-    const url = `${this.apiOrderlines}/${olId}`;
+    const url = `${this.apiOrderlines}${olId}`;
     const params = { olId: olId };
     return this.http.get<Ingredient[]>(url, {params, headers});
   }

@@ -14,6 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -29,6 +30,7 @@ public class IngredientResource {
     private IngredientService ingredientService;
 
     @GetMapping("/ingredients")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<List<Ingredient>> getAll() {
         List<Ingredient> ingredient = ingredientService.getAllNoPagination();
         log.info("Retrieved all ingredients");
@@ -37,6 +39,7 @@ public class IngredientResource {
 
 
     @GetMapping("/ingredientspaginated/")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<Page<Ingredient>> getAllPaginated(@RequestParam(defaultValue = "0") Integer pageNo,
                                                             @RequestParam(defaultValue = "10") Integer pageSize,
                                                             @RequestParam(defaultValue = "id") String sortBy) {
@@ -46,6 +49,7 @@ public class IngredientResource {
     }
 
     @GetMapping("/ingredients/{id}")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredient> getById(@PathVariable Long id){
         Ingredient ingredient = ingredientService.getById(id);
         if(ingredient == null){
@@ -58,6 +62,7 @@ public class IngredientResource {
     }
 
     @GetMapping("/ingredients/uniquecode/{uniqueId}")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredient> findByUniqueId(@PathVariable String uniqueId){
         Ingredient result = ingredientService.findByUniqueId(uniqueId);
         if(result == null){
@@ -70,6 +75,7 @@ public class IngredientResource {
     }
 
     @PostMapping("/ingredients")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredient> createContact(@Valid @RequestBody Ingredient ingredient)
     {
         ingredientService.save(ingredient);
@@ -77,6 +83,7 @@ public class IngredientResource {
         return ResponseEntity.ok(ingredient);
     }
     @PutMapping("/ingredients/{id}")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredient> replaceIngredient(@PathVariable Long id, @Valid @RequestBody Ingredient ingredienDetails) {
 
       Ingredient ingredient = ingredientService.getById(id);
@@ -96,6 +103,7 @@ public class IngredientResource {
     }
 
     @DeleteMapping("/ingredients/{id}")
+    @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredient> deleteContact(@PathVariable String id) {
         boolean success =  ingredientService.delete(Long.parseLong(id));
         if (success == false) {

@@ -6,6 +6,7 @@ import be.bakmix.eindproject.orderline.service.dto.Orderline;
 import be.bakmix.eindproject.orderline.service.dto.Product;
 import be.bakmix.eindproject.orderline.service.mapper.OrderlineMapper;
 import lombok.AllArgsConstructor;
+import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,9 @@ import java.util.stream.StreamSupport;
     @Autowired
     private OrderlineMapper orderlineMapper;
 
+    @Autowired
+    private KeycloakRestTemplate keycloakRestTemplate;
+
     @Value("http://localhost:7778/api/products/")
     private String urlProducts;
 
@@ -44,8 +48,7 @@ import java.util.stream.StreamSupport;
                 .collect(Collectors.toList());
 
         orderlines.forEach(orderline -> {
-            RestTemplate rtProduct = new RestTemplate();
-            Product product = rtProduct.getForObject(urlProducts+orderline.getProductId(), Product.class);
+             Product product = keycloakRestTemplate.getForObject(urlProducts+orderline.getProductId(), Product.class);
             orderline.setProductId(product.getId());
             orderline.setProduct(product);
         });
@@ -60,8 +63,7 @@ import java.util.stream.StreamSupport;
                 .collect(Collectors.toList());
 
         orderlines.forEach(orderline -> {
-            RestTemplate rtProduct = new RestTemplate();
-            Product product = rtProduct.getForObject(urlProducts+orderline.getProductId(), Product.class);
+             Product product = keycloakRestTemplate.getForObject(urlProducts+orderline.getProductId(), Product.class);
             orderline.setProductId(product.getId());
             orderline.setProduct(product);
         });
@@ -72,8 +74,7 @@ import java.util.stream.StreamSupport;
         Optional<OrderlineEntity> orderlineEntityOptional = orderlineRepository.findById(id);
         if(orderlineEntityOptional.isPresent()){
             Orderline orderline = orderlineMapper.toDTO(orderlineEntityOptional.get());
-            RestTemplate rtProduct = new RestTemplate();
-            Product product = rtProduct.getForObject(urlProducts+orderline.getProductId(), Product.class);
+             Product product = keycloakRestTemplate.getForObject(urlProducts+orderline.getProductId(), Product.class);
             orderline.setProductId(product.getId());
             orderline.setProduct(product);
             return orderline;

@@ -21,13 +21,13 @@ export class IngredientService {
   }
 
   findById(id: string): Observable<Ingredient> {
-    const url = `${this.api}/${id}`;
+    const url = `${this.api}${id}`;
     const params = { id };
     return this.http.get<Ingredient>(url, {params, headers});
   }
 
   findByUniqueCode(id: string): Observable<Ingredient> {
-    const url = `${this.uniqueCodeApi}/${id}`;
+    const url = `${this.uniqueCodeApi}${id}`;
     const params = { id };
     return this.http.get<Ingredient>(url, {params, headers});
   }
@@ -79,7 +79,7 @@ export class IngredientService {
     let params = new HttpParams();
     let url = '';
     if (entity.id) {
-      url = `${this.api}/${entity.id.toString()}`;
+      url = `${this.api}${entity.id.toString()}`;
       params = new HttpParams().set('ID', entity.id.toString());
       return this.http.put<Ingredient>(url, entity, {headers, params});
     } else {
@@ -93,7 +93,7 @@ export class IngredientService {
     let params = new HttpParams();
     let url = '';
     ingredient.available = !ingredient.available;
-    url = `${this.api}/${ingredient.id.toString()}`;
+    url = `${this.api}${ingredient.id.toString()}`;
     params = new HttpParams().set('ID', ingredient.id.toString());
     return this.http.put<Ingredient>(url, ingredient, {headers, params});
   }
@@ -102,7 +102,7 @@ export class IngredientService {
     let params = new HttpParams();
     let url = '';
     if (entity.id) {
-      url = `${this.api}/${entity.id.toString()}`;
+      url = `${this.api}${entity.id.toString()}`;
       params = new HttpParams().set('ID', entity.id.toString());
       return this.http.delete<Ingredient>(url, {headers, params});
     }
