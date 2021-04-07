@@ -11,8 +11,8 @@
         <module name="product" />
         <module name="ingredient" />
         <module name="ingredienttracing" />
+        <module name="pdf" />
         <module name="customers" />
-        <module name="user" />
         <module name="order" />
       </profile>
     </annotationProcessing>
@@ -22,6 +22,7 @@
       <module name="ingredienttracing" target="11" />
       <module name="order" target="11" />
       <module name="orderline" target="11" />
+      <module name="pdf" target="11" />
       <module name="product" target="11" />
       <module name="user" target="11" />
     </bytecodeTargetLevel>
@@ -33,6 +34,7 @@
       <module name="ingredienttracing" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="orderline" options="-parameters" />
+      <module name="pdf" options="-parameters" />
       <module name="product" options="-parameters" />
       <module name="user" options="-parameters" />
     </option>

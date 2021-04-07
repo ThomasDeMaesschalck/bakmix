@@ -5,12 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/authentication/auth.config.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/authentication/auth.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/authentication/authconfig.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_itextpdf_5_5_13_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/PdfApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/config/ResourceServerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/PdfService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Ingredient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Ingredienttracing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Orderline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/util/GeneratePdf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/test/java/be/bakmix/eindproject/pdf/PdfApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/auth.config.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/authentication/auth.config.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/be/bakmix/eindproject/user/UserApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/test/java/be/bakmix/eindproject/user/UserApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +89,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -67,10 +98,13 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="ts.external.directory.path" value="C:\bakmixeindproject\frontend\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\bakmixeindproject\pdf\src\main\java\be\bakmix\eindproject\pdf\service" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\bakmixeindproject\frontend\src\assets\img" />
       <recent name="C:\bakmixeindproject\frontend\src" />
@@ -78,11 +112,11 @@
       <recent name="C:\bakmixeindproject\frontend\src\app\images" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="be.bakmix.eindproject.pdf.service.mapper" />
       <recent name="be.bakmix.eindproject.product.config" />
       <recent name="be.bakmix.eindproject.orderline.config" />
       <recent name="be.bakmix.eindproject.order.config" />
       <recent name="be.bakmix.eindproject.ingredienttracing.config" />
-      <recent name="be.bakmix.eindproject.ingredient.config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -92,7 +126,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.IngredienttracingApplication">
+  <component name="RunManager" selected="Spring Boot.PdfApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -163,6 +197,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PdfApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="pdf" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="be.bakmix.eindproject.pdf.PdfApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="product" />
       <extension name="coverage">
@@ -172,13 +213,6 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="be.bakmix.eindproject.product.ProductApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="user" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="be.bakmix.eindproject.user.UserApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -197,19 +231,19 @@
       <item itemvalue="JavaScript Debug.Angular Application (frontend)" />
       <item itemvalue="npm.Angular CLI Server (frontend)" />
       <item itemvalue="Protractor.E2E Tests (frontend)" />
+      <item itemvalue="Spring Boot.PdfApplication" />
       <item itemvalue="Spring Boot.OrderApplication" />
       <item itemvalue="Spring Boot.IngredienttracingApplication" />
       <item itemvalue="Spring Boot.OrderlineApplication" />
-      <item itemvalue="Spring Boot.UserApplication" />
       <item itemvalue="Spring Boot.ProductApplication" />
       <item itemvalue="Spring Boot.CustomersApplication" />
       <item itemvalue="Spring Boot.IngredientApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ProductApplication" />
         <item itemvalue="Spring Boot.IngredientApplication" />
         <item itemvalue="Spring Boot.CustomersApplication" />
+        <item itemvalue="Spring Boot.ProductApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +259,7 @@
       <workItem from="1616102007845" duration="116193000" />
       <workItem from="1616873607371" duration="4378000" />
       <workItem from="1616879288294" duration="14432000" />
-      <workItem from="1616932504509" duration="138127000" />
+      <workItem from="1616932504509" duration="154480000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -472,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617555440529</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Keycloak 100% working">
+      <created>1617559414803</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1617559414803</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +533,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="orderline angular ingredient weergave" />
     <MESSAGE value="available ingredient by orderline code" />
     <MESSAGE value="working ingredient adding to orderlines" />
     <MESSAGE value="ingredient tracing search half werkend" />
@@ -517,6 +557,7 @@
     <MESSAGE value="Pre-keycloak" />
     <MESSAGE value="Keycloak working version" />
     <MESSAGE value="Keycloak working version v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Keycloak working version v2" />
+    <MESSAGE value="Keycloak 100% working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Keycloak 100% working" />
   </component>
 </project>

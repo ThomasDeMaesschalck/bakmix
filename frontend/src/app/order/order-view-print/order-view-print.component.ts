@@ -42,4 +42,38 @@ export class OrderViewPrintComponent implements OnInit {
       );
   }
 
+  makeLabel(): void {
+    const type = 'label';
+    this.printPdf(type);
+  }
+
+      makeInvoice(): void{
+        const type = 'invoice';
+        this.printPdf(type);
+      }
+
+      printPdf(type: string){
+        this.orderService.getPDF(this.order, type)
+          .subscribe(
+            (data: Blob) => {
+              var file = new Blob([data], { type: 'application/pdf' });
+              var fileURL = URL.createObjectURL(file);
+
+// if you want to open PDF in new tab
+              window.open(fileURL);
+              var a         = document.createElement('a');
+              a.href        = fileURL;
+              a.target      = '_blank';
+              a.download    = 'label' + this.order.id + '.pdf';
+              document.body.appendChild(a);
+              a.click();
+              setTimeout(() => {this.feedback = {}; }, 500);
+              this.feedback = {type: 'success', message: 'Label aan het maken'};
+            },
+            (error) => {
+              console.log('getPDF error: ', error);
+              this.feedback = {type: 'error', message: 'Error making label'};
+            }
+          );
+      }
 }

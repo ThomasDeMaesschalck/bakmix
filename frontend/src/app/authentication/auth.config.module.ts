@@ -13,7 +13,7 @@ export function init_app(authConfigService: AuthConfigService) {
   imports: [ HttpClientModule, OAuthModule.forRoot({
     resourceServer: {
       allowedUrls: ['http://localhost:7777/api', 'http://localhost:7771/api', 'http://localhost:7779/api',
-        'http://localhost:7772/api', 'http://localhost:7773/api', 'http://localhost:7778/api' ],
+        'http://localhost:7772/api', 'http://localhost:7773/api', 'http://localhost:7778/api', 'http://localhost:7800/api' ],
       sendAccessToken: true
     }}) ],
   providers: [

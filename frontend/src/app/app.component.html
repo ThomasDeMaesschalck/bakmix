@@ -41,6 +41,8 @@
   </div>
 </nav>
 
+{{claims | json}}
+
 <div *ngIf="hasValidAccessToken" class="container-fluid pt-3">
   <router-outlet></router-outlet>
 </div>
