@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {OrderService} from '../order.service';
 import {Order} from '../order';
-import {map, switchMap} from "rxjs/operators";
-import {of} from "rxjs";
+import {map, switchMap} from 'rxjs/operators';
+import {of} from 'rxjs';
+import {PdfService} from '../../pdf/pdf.service';
 
 @Component({
   selector: 'app-order-view-print',
@@ -18,7 +19,8 @@ export class OrderViewPrintComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private pdfService: PdfService
   ) { }
 
   ngOnInit(): void {
@@ -45,34 +47,42 @@ export class OrderViewPrintComponent implements OnInit {
   makeLabel(): void {
     const type = 'label';
     this.printPdf(type);
+    setTimeout(() => {this.feedback = {}; }, 2000);
+    this.feedback = {type: 'success', message: 'PDF aan het maken'};
   }
 
       makeInvoice(): void{
         const type = 'invoice';
         this.printPdf(type);
+        setTimeout(() => {this.feedback = {}; }, 2000);
+        this.feedback = {type: 'success', message: 'PDF aan het maken'};
       }
 
       printPdf(type: string){
-        this.orderService.getPDF(this.order, type)
+        this.pdfService.getPDF(this.order, type)
           .subscribe(
             (data: Blob) => {
-              var file = new Blob([data], { type: 'application/pdf' });
-              var fileURL = URL.createObjectURL(file);
+              let file = new Blob([data], { type: 'application/pdf' });
+              let fileURL = URL.createObjectURL(file);
 
-// if you want to open PDF in new tab
               window.open(fileURL);
-              var a         = document.createElement('a');
+              let a         = document.createElement('a');
               a.href        = fileURL;
               a.target      = '_blank';
+              if (type === 'label')
+              {
               a.download    = 'label' + this.order.id + '.pdf';
+                }
+              else if (type === 'invoice')
+              {
+                a.download    = 'factuur' + this.order.id + '.pdf';
+              }
               document.body.appendChild(a);
               a.click();
-              setTimeout(() => {this.feedback = {}; }, 500);
-              this.feedback = {type: 'success', message: 'Label aan het maken'};
             },
             (error) => {
               console.log('getPDF error: ', error);
-              this.feedback = {type: 'error', message: 'Error making label'};
+              this.feedback = {type: 'error', message: 'Fout bij maken PDF'};
             }
           );
       }

@@ -5,42 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_itextpdf_5_5_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/PdfApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/config/ResourceServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/PdfService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Ingredient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Ingredienttracing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Orderline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/util/GeneratePdf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/test/java/be/bakmix/eindproject/pdf/PdfApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_forms_7_1_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_html2pdf_3_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_io_7_1_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_kernel_7_1_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_layout_7_1_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_styled_xml_parser_7_1_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_svg_7_1_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_64.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/pdf/pdf.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/pdf/pdf.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/resources/templates/order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/auth.config.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/authentication/auth.config.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/be/bakmix/eindproject/user/UserApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/test/java/be/bakmix/eindproject/user/UserApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +246,7 @@
       <workItem from="1616102007845" duration="116193000" />
       <workItem from="1616873607371" duration="4378000" />
       <workItem from="1616879288294" duration="14432000" />
-      <workItem from="1616932504509" duration="154480000" />
+      <workItem from="1616932504509" duration="163024000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -513,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617559414803</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="PDF label generation is working">
+      <created>1617827303120</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1617827303120</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +527,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="available ingredient by orderline code" />
     <MESSAGE value="working ingredient adding to orderlines" />
     <MESSAGE value="ingredient tracing search half werkend" />
     <MESSAGE value="backend tracing working" />
@@ -558,6 +551,7 @@
     <MESSAGE value="Keycloak working version" />
     <MESSAGE value="Keycloak working version v2" />
     <MESSAGE value="Keycloak 100% working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Keycloak 100% working" />
+    <MESSAGE value="PDF label generation is working" />
+    <option name="LAST_COMMIT_MESSAGE" value="PDF label generation is working" />
   </component>
 </project>
