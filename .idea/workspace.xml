@@ -5,29 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_forms_7_1_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_html2pdf_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_io_7_1_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_kernel_7_1_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_layout_7_1_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_styled_xml_parser_7_1_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_svg_7_1_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_64.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_4_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pdf/pdf.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pdf/pdf.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/resources/templates/order.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/resources/img/bakmix.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/src/main/resources/templates/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/resources/templates/order.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +60,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pdf/src/main/resources/img" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -90,6 +74,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\bakmixeindproject\pdf\src\main\resources\img" />
       <recent name="C:\bakmixeindproject\pdf\src\main\java\be\bakmix\eindproject\pdf\service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -246,7 +231,7 @@
       <workItem from="1616102007845" duration="116193000" />
       <workItem from="1616873607371" duration="4378000" />
       <workItem from="1616879288294" duration="14432000" />
-      <workItem from="1616932504509" duration="163024000" />
+      <workItem from="1616932504509" duration="171479000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -507,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617827303120</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Thymeleaf first version (template nog verbeteren)">
+      <created>1617914967678</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1617914967678</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +519,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="working ingredient adding to orderlines" />
     <MESSAGE value="ingredient tracing search half werkend" />
     <MESSAGE value="backend tracing working" />
     <MESSAGE value="angular ingredient tracing working" />
@@ -552,6 +543,7 @@
     <MESSAGE value="Keycloak working version v2" />
     <MESSAGE value="Keycloak 100% working" />
     <MESSAGE value="PDF label generation is working" />
-    <option name="LAST_COMMIT_MESSAGE" value="PDF label generation is working" />
+    <MESSAGE value="Thymeleaf first version (template nog verbeteren)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Thymeleaf first version (template nog verbeteren)" />
   </component>
 </project>

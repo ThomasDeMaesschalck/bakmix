@@ -17,7 +17,10 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -120,6 +123,9 @@ public class OrderService {
             }
 
             order.setOrderlines(Arrays.asList(orderlines));
+            order.setSubTotal(subTotal(order));
+            order.setVatTotal(vatTotal(order));
+            order.setTotal(total(order));
             return order;
         }
         return null;
@@ -216,6 +222,29 @@ public class OrderService {
         });
 
         return ordersFiltered;
+    }
+
+    public BigDecimal subTotal(Order order)
+    {
+        Function<Orderline, BigDecimal> totalMapper = o -> o.getPurchasePrice().multiply(BigDecimal.valueOf(o.getQty()));
+        BigDecimal result = order.getOrderlines().stream().map(totalMapper).reduce(BigDecimal.ZERO, BigDecimal::add);
+        result = result.setScale(2, RoundingMode.HALF_UP);
+        return result;
+    }
+
+    public BigDecimal vatTotal(Order order)
+    {
+        double highestVat = (order.getOrderlines().stream().mapToDouble(o -> o.getProduct().getVat()).max().orElseThrow() / 100);
+        BigDecimal result = ((order.getSubTotal().subtract(order.getDiscount())).add(order.getShippingCost())).multiply(BigDecimal.valueOf(highestVat));
+        result = result.setScale(2, RoundingMode.HALF_UP);
+       return result;
+    }
+
+    public BigDecimal total(Order order)
+    {
+        BigDecimal result = order.getSubTotal().subtract(order.getDiscount()).add(order.getVatTotal()).add(order.getShippingCost());
+        result = result.setScale(2, RoundingMode.HALF_UP);
+        return result;
     }
 
 }

@@ -7,6 +7,9 @@ export class Order {
   status: number;
   discount: number;
   shippingCost: number;
+  subTotal: number;
+  vatTotal: number;
+  total: number;
 
   customer: Customer;
   orderlines: Orderline[];

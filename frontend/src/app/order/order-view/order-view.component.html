@@ -19,16 +19,11 @@
                 <thead>
                 <tr>
                   <th class="border-top-0" scope="col">Status</th>
-                  <th class="border-top-0" scope="col">Discount</th>
-                  <th class="border-top-0" scope="col">Shipping Cost</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-
                   <td>{{getStatusType(order.status)}}</td>
-                  <td> {{order.discount}}</td>
-                  <td> {{order.shippingCost}}</td>
                 </tr>
                 </tbody>
               </table>
@@ -39,28 +34,31 @@
                 <thead>
                 <tr>
                   <th class="border-top-0" scope="col">Qty</th>
-                  <th class="border-top-0" scope="col">Id</th>
-                  <th class="border-top-0" scope="col">OrderID</th>
-                  <th class="border-top-0" scope="col">ProductID</th>
-                  <th class="border-top-0" scope="col">Name</th>
-                  <th class="border-top-0" scope="col">Purchase Price</th>
+                  <th class="border-top-0" scope="col">Naam</th>
+                  <th class="border-top-0" scope="col">Stukprijs</th>
+                  <th class="border-top-0" scope="col">Totaal</th>
                   <th class="border-top-0" scope="col" style="width:120px"></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr   *ngFor="let orderline of order.orderlines">
-                  <td>{{orderline.qty}}</td>
-                  <td>{{orderline.id}}</td>
-                  <td> {{orderline.orderId}}</td>
-                  <td> {{orderline.productId}}</td>
+                  <td>{{orderline.qty}}x </td>
                   <td> {{orderline.product.name}}</td>
-                  <td> {{orderline.purchasePrice}}</td>
+                  <td> {{orderline.purchasePrice | number : '1.2-2'}}</td>
+                  <td> {{(orderline.qty * orderline.purchasePrice) | number : '1.2-2'}}</td>
                   <td style="white-space: nowrap">
                     <a [routerLink]="['./orderlines', orderline.id ]"  (click)="switchOrderStatus()" class="btn btn-secondary">Bekijken</a>&nbsp;
                   </td>
                 </tr>
                 </tbody>
               </table>
+              <div class="text-right mt-2">
+                Subtotaal (excl btw): {{order.subTotal | number : '1.2-2'}}<br>
+                Korting: - {{order.discount | number : '1.2-2'}} <br >
+                Verzending: + {{order.shippingCost | number : '1.2-2'}}<br>
+                Btw: + {{order.vatTotal | number : '1.2-2'}} <br>
+                <strong>Totaal: {{order.total | number : '1.2-2'}}</strong>
+              </div>
             </div>
           </div>      </div></div>
 
