@@ -54,8 +54,8 @@ export class OrderViewPrintComponent implements OnInit {
       makeInvoice(): void{
         const type = 'invoice';
         this.printPdf(type);
-        setTimeout(() => {this.feedback = {}; }, 2000);
-        this.feedback = {type: 'success', message: 'PDF aan het maken'};
+        this.feedback = {type: 'success', message: 'Even geduld... PDF aan het maken'};
+        setTimeout(() => {this.feedback = {}; }, 5000);
       }
 
       printPdf(type: string){

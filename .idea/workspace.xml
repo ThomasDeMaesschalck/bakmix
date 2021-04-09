@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/resources/img/bakmix.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_io_7_1_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/src/main/resources/static/css/invoice.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_forms_7_1_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_forms_7_1_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_html2pdf_3_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_html2pdf_3_0_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_io_7_1_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_kernel_7_1_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_kernel_7_1_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_layout_7_1_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_layout_7_1_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_styled_xml_parser_7_1_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_styled_xml_parser_7_1_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_svg_7_1_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_svg_7_1_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_64.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_67.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_bootstrap_4_0_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_3_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_popper_js_1_12_9_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/src/main/resources/img/bakmix.png" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/resources/static/images/bakmix.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pdf/src/main/resources/templates/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/resources/templates/order.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,10 +91,11 @@
       <recent name="C:\bakmixeindproject\pdf\src\main\java\be\bakmix\eindproject\pdf\service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\bakmixeindproject\frontend\src\assets\img" />
-      <recent name="C:\bakmixeindproject\frontend\src" />
-      <recent name="C:\bakmixeindproject\frontend\src\app" />
-      <recent name="C:\bakmixeindproject\frontend\src\app\images" />
+      <recent name="C:\bakmixeindproject\pdf\src\main\resources\static\" />
+      <recent name="C:\bakmixeindproject\pdf\src\main\resources\static\images" />
+      <recent name="C:\bakmixeindproject\pdf\src\main\resources\static" />
+      <recent name="C:\bakmixeindproject\pdf\src\main\resources" />
+      <recent name="C:\bakmixeindproject\pdf\src\main\resources\static\img\" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="be.bakmix.eindproject.pdf.service.mapper" />
@@ -231,7 +245,7 @@
       <workItem from="1616102007845" duration="116193000" />
       <workItem from="1616873607371" duration="4378000" />
       <workItem from="1616879288294" duration="14432000" />
-      <workItem from="1616932504509" duration="171479000" />
+      <workItem from="1616932504509" duration="178636000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -499,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617914967678</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Invoice logica">
+      <created>1617994763497</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1617994763497</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +540,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ingredient tracing search half werkend" />
     <MESSAGE value="backend tracing working" />
     <MESSAGE value="angular ingredient tracing working" />
     <MESSAGE value="ingredient add duplicate check working" />
@@ -544,6 +564,7 @@
     <MESSAGE value="Keycloak 100% working" />
     <MESSAGE value="PDF label generation is working" />
     <MESSAGE value="Thymeleaf first version (template nog verbeteren)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Thymeleaf first version (template nog verbeteren)" />
+    <MESSAGE value="Invoice logica" />
+    <option name="LAST_COMMIT_MESSAGE" value="Invoice logica" />
   </component>
 </project>

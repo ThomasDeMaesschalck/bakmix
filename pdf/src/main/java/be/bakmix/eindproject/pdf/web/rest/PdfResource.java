@@ -62,19 +62,16 @@ public class PdfResource {
     @RequestMapping(value = "/pdfinvoice", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_PDF_VALUE)
     @RolesAllowed("bakmix-admin")
-    public ResponseEntity<?> getPDF(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public ResponseEntity<?> getPDF(HttpServletRequest request, HttpServletResponse response, @RequestParam Long id) throws IOException {
 
-        /* Do Business Logic*/
-        Order order = pdfService.getById(Long.parseLong(String.valueOf(1)));
+        Order order = pdfService.getById(Long.parseLong(String.valueOf(id)));
 
         /* Create HTML using Thymeleaf template Engine */
-
         WebContext context = new WebContext(request, response, servletContext);
         context.setVariable("orderEntry", order);
         String orderHtml = templateEngine.process("order", context);
 
         /* Setup Source and target I/O streams */
-
         ByteArrayOutputStream target = new ByteArrayOutputStream();
 
         /*Setup converter properties. */
@@ -87,9 +84,7 @@ public class PdfResource {
         /* extract output as bytes */
         byte[] bytes = target.toByteArray();
 
-
         /* Send the response as downloadable PDF */
-
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_PDF)
                 .body(bytes);

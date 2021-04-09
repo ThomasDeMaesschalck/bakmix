@@ -1,63 +1,79 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>BakMix.be bestelling</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link th:href="@{__${#httpServletRequest.scheme + '://' + #httpServletRequest.serverName + ':' + #httpServletRequest.serverPort}__/css/invoice.css}" rel="stylesheet" />
 </head>
-<body class="flex items-center justify-center h-screen">
-<div class="rounded-lg border shadow-lg p-10 w-3/5">
-    <div class="flex flex-row justify-between pb-4">
-        <div>
-            <h2 class="text-xl font-bold">Bestelling #<span class="text-green-600" th:text="${orderEntry.id}"></span>
-            </h2>
-        </div>
-        <div>
-            <div class="text-xl font-bold" th:text="${orderEntry.date}"></div>
-        </div>
+
+<body>
+<header class="clearfix">
+    <div id="logo">
+        <img th:src="@{__${#httpServletRequest.scheme + '://' + #httpServletRequest.serverName + ':' + #httpServletRequest.serverPort}__/images/bakmix.png}"/>
     </div>
-    <div class="flex flex-col pb-8">
-        <div class="pb-2">
-            <h2 class="text-xl font-bold">Leveradres</h2>
-        </div>
+    <h1 th:text="'Factuur ' + ${orderEntry.id}"></h1>
+    <div id="company">
+        <div>Geleverd door:</div>
+        <div>BakMix.be</div>
+        <div>Bakstraat 1</div>
+        <div>9240 Zele</div>
+        <div>info@bakmix.be</div>
+        <div>BTW nummer: BE 0123456789</div>
+    </div>
+    <div id="project">
+        <div>Leveradres:</div>
         <div th:text="${orderEntry.customer.firstName} + ' ' + ${orderEntry.customer.lastName}"></div>
         <div th:text="${orderEntry.customer.address}"></div>
         <div th:text="${orderEntry.customer.zipCode} + ' ' + ${orderEntry.customer.city}"></div>
         <div th:text="${orderEntry.customer.phone}"></div>
         <div th:text="${orderEntry.customer.email}"></div>
-
     </div>
-    <table class="table-fixed w-full text-right border rounded">
-        <thead class="bg-gray-100">
+</header>
+<main>
+    <table>
+        <thead>
         <tr>
-            <th class="text-left pl-4">Product</th>
-            <th>Stuks</th>
-            <th>Prijs</th>
-            <th class="pr-4">Totaal</th>
+            <th class="service">Product</th>
+            <th class="desc">Stuks</th>
+            <th>Stukprijs</th>
+            <th>Totaal</th>
         </tr>
         </thead>
         <tbody>
+
         <tr th:each="item : ${orderEntry.orderlines}">
-            <td class="pl-4 text-left" th:text="${item.product.name}"></td>
-            <td th:text="${item.qty}"></td>
-            <td th:text="${item.purchasePrice}"></td>
-            <td class="pr-4" th:text="${item.purchasePrice * item.qty}"></td>
+            <td class="desc" th:text="${item.product.name}"></td>
+            <td class="unit" th:text="${item.qty}"></td>
+            <td class="unit" th:text="${item.purchasePrice}"></td>
+            <td class="total" th:text="${item.purchasePrice * item.qty}"></td>
+        </tr>
+
+
+        <tr>
+            <td colspan="3">Subtotaal</td>
+            <td class="unit" th:text="${orderEntry.subTotal}"></td>
+        </tr>
+        <tr>
+            <td colspan="3">Korting</td>
+            <td class="unit" th:text="'- ' + ${orderEntry.discount}"></td>
+        </tr>
+        <tr>
+            <td colspan="3">Verzending</td>
+            <td class="unit" th:text="'+ ' + ${orderEntry.shippingCost}"></td>
+        </tr>
+        <tr>
+            <td colspan="3">BTW</td>
+            <td class="unit" th:text="'+ ' + ${orderEntry.vatTotal}"></td>
+        </tr>
+        <tr>
+            <td colspan="3" class="grand total">Totaal</td>
+            <td class="grand total" th:text="${orderEntry.total + 'EUR'}"></td>
         </tr>
         </tbody>
     </table>
-
-    <div th:text="'Korting: ' + ${orderEntry.discount}"></div>
-    <div th:text="'Verzending: ' + ${orderEntry.shippingCost}"></div>
-
-    <div class="flex flex-row-reverse p-5">
-        <h2 class="font-medium  bg-gray-200 p-2 rounded">
-           Totaal: <span class="text-green-600" th:text="'totaalbedrag nog implementeren'"></span>
-        </h2>
-    </div>
-
-</div>
+</main>
+<footer>
+    Bedankt voor de bestelling en smakelijk!
+</footer>
 </body>
 </html>
