@@ -159,7 +159,7 @@ public class OrderService {
                 order.setStatus(Long.parseLong("0"));
                 save(order);
             }
-            if (found && (order.getStatus() == 0) && !foundInAll) {
+            if (found && !foundInAll) {
                 order.setStatus(Long.parseLong("1"));
                 save(order);
             }

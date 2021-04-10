@@ -98,6 +98,16 @@ export class IngredientService {
     return this.http.put<Ingredient>(url, ingredient, {headers, params});
   }
 
+  recallIngredient(ingredient: Ingredient): Observable<Ingredient> {
+    let params = new HttpParams();
+    let url = '';
+    ingredient.available = false;
+    ingredient.recalled = true;
+    url = `${this.api}${ingredient.id.toString()}`;
+    params = new HttpParams().set('ID', ingredient.id.toString());
+    return this.http.put<Ingredient>(url, ingredient, {headers, params});
+  }
+
   delete(entity: Ingredient): Observable<Ingredient> {
     let params = new HttpParams();
     let url = '';

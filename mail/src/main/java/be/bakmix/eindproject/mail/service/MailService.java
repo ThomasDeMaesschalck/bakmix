@@ -1,10 +1,7 @@
 package be.bakmix.eindproject.mail.service;
 
 
-import be.bakmix.eindproject.mail.service.dto.Customer;
-import be.bakmix.eindproject.mail.service.dto.Order;
-import be.bakmix.eindproject.mail.service.dto.Orderline;
-import be.bakmix.eindproject.mail.service.dto.TrackingMail;
+import be.bakmix.eindproject.mail.service.dto.*;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
 import lombok.AllArgsConstructor;
@@ -19,15 +16,20 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.io.StringWriter;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Service
 @AllArgsConstructor
 public class MailService {
+
+    private List<Order> orders = new ArrayList<>();
+
     @Autowired
     private KeycloakRestTemplate keycloakRestTemplate;
+
+    @Value("http://localhost:7772/api/tracing/")
+    private String urlTracedOrders;
+
 
     @Value("http://localhost:7772/api/orders/")
     private String urlOrders;
@@ -86,6 +88,43 @@ public class MailService {
         Map<String, Object> model = new HashMap<>();
         model.put("trackingmail", trackingMail);
         configuration.getTemplate("trackingcodemail.ftlh").process(model, stringWriter);
+        return stringWriter.getBuffer().toString();
+    }
+
+    public List<Order> sendRecallEmail(String id) throws MessagingException, IOException, TemplateException {
+        orders.clear();
+        Order[] tracedOrders = keycloakRestTemplate.getForObject(urlTracedOrders + id, Order[].class);
+        Arrays.stream(tracedOrders).forEach(order -> {orders.add(order);});
+
+        for (Order order: orders)
+        {
+            RecallMail recallMail = new RecallMail();
+            MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
+
+            helper.setSubject("BakMix bestelling " +  order.getId() + " terugroeping");
+            helper.setTo(order.getCustomer().getEmail());
+            recallMail.setOrderId(order.getId());
+            recallMail.setCustomerName(order.getCustomer().getFirstName() + " " + order.getCustomer().getLastName());
+            StringBuilder sb = new StringBuilder();
+            for(Orderline orderline : order.getOrderlines())
+            {
+                sb.append("<li>" + orderline.getProduct().getName() + "</li>");
+            }
+
+            recallMail.setAffectedProducts(sb.toString());
+            String emailContent = getRecallEmailContent(recallMail);
+            helper.setText(emailContent, true);
+            javaMailSender.send(mimeMessage);
+        }
+        return orders;
+    }
+
+    public String getRecallEmailContent(RecallMail recallMail) throws IOException, TemplateException {
+        StringWriter stringWriter = new StringWriter();
+        Map<String, Object> model = new HashMap<>();
+        model.put("recallmail", recallMail);
+        configuration.getTemplate("recallmail.ftlh").process(model, stringWriter);
         return stringWriter.getBuffer().toString();
     }
 }

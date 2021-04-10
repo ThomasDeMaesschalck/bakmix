@@ -2,6 +2,7 @@ package be.bakmix.eindproject.mail.web.rest;
 
 import be.bakmix.eindproject.mail.service.MailService;
 import be.bakmix.eindproject.mail.service.dto.Order;
+import be.bakmix.eindproject.mail.service.dto.RecallMail;
 import be.bakmix.eindproject.mail.service.dto.TrackingMail;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
+import java.util.List;
 
 @CrossOrigin("*")
 @RestController
@@ -30,6 +32,14 @@ public class MailResource {
         mailService.sendTrackingEmail(id, trackingMail);
         log.info("Mail send to customer from order #" + id);
         return trackingMail;
+    }
+
+    @GetMapping("/sendrecall/")
+    @RolesAllowed({"bakmix-admin"})
+    public ResponseEntity<List<Order>> sendRecallEmail(@RequestParam String id) throws Exception{
+        List<Order> orders = mailService.sendRecallEmail(id);
+        log.info("Recall mail send to customer(s) with ingredient # " + id);
+        return ResponseEntity.ok(orders);
     }
 
 }

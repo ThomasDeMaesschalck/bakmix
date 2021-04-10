@@ -30,7 +30,7 @@
                   <td>{{orderItem.id}}</td>
                   <td>{{orderItem.customer.firstName}}</td>
 
-                  <td *ngFor="let orderlineItem of orderItem.orderlines">{{orderlineItem.product.name}}</td>
+                  <td><ul *ngFor="let orderlineItem of orderItem.orderlines"><li>{{orderlineItem.product.name}}</li></ul></td>
                   <td style="white-space: nowrap">
                     <a [routerLink]="['../../orders', orderItem.id ]" class="btn btn-secondary">Bekijk</a>&nbsp;
                   </td>
@@ -40,7 +40,8 @@
             </div>
           </div>      </div></div>
 
-                   <a *ngIf="orderList.length > 0" [routerLink]="['mail']" class="btn btn-danger ml-3 mt-2 mr-3">Terugroepactie starten</a>&nbsp;
+                   <a *ngIf="orderList.length > 0 && !ingredient.recalled" [routerLink]="['mail']" class="btn btn-danger ml-3 mt-2 mr-3">Terugroepactie starten</a>&nbsp;
+                   <a *ngIf="orderList.length > 0 && ingredient.recalled"  class="disabled btn btn-danger ml-3 mt-2 mr-3">Terugroepactie reeds uitgevoerd</a>&nbsp;
 
                  </div>
 

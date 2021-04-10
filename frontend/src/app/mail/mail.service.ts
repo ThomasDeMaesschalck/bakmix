@@ -12,6 +12,8 @@ const headers = new HttpHeaders().set('Accept', 'application/json');
 export class MailService {
 
   apiTrackingMail = 'http://localhost:7801/api/trackingmail/';
+  apiRecallMail = 'http://localhost:7801/api/sendrecall/';
+
 
   constructor(private http: HttpClient) {
   }
@@ -21,5 +23,11 @@ export class MailService {
     params = new HttpParams().set('id', order.id.toString());
     return this.http.post<Trackingmail>(this.apiTrackingMail, trackingMail,
       {headers, params});
+  }
+
+  sendRecallMail(uniqueCode: string) {
+    let params;
+    params = new HttpParams().set('id', uniqueCode);
+    return this.http.get<Trackingmail>(this.apiRecallMail, {headers, params});
   }
 }
