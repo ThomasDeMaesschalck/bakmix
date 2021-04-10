@@ -51,6 +51,7 @@ public class PdfResource {
 
             Order order = pdfService.getById(id);
             ByteArrayInputStream  pdf = GeneratePdf.makeLabel(order);
+        log.info("Made PDF label for order # " + order.getId());
 
         return ResponseEntity
                 .ok()
@@ -83,7 +84,7 @@ public class PdfResource {
 
         /* extract output as bytes */
         byte[] bytes = target.toByteArray();
-
+        log.info("Made invoice for order # " + order.getId());
         /* Send the response as downloadable PDF */
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_PDF)

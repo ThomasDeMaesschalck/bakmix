@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/ingredient/pom.xml" />
         <option value="$PROJECT_DIR$/ingredienttracing/pom.xml" />
         <option value="$PROJECT_DIR$/pdf/pom.xml" />
+        <option value="$PROJECT_DIR$/mail/pom.xml" />
       </list>
     </option>
   </component>

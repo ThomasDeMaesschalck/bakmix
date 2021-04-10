@@ -5,26 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_io_7_1_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/src/main/resources/static/css/invoice.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_forms_7_1_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_forms_7_1_14.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_html2pdf_3_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_html2pdf_3_0_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_io_7_1_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_kernel_7_1_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_kernel_7_1_14.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_layout_7_1_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_layout_7_1_14.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_styled_xml_parser_7_1_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_styled_xml_parser_7_1_14.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_svg_7_1_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_svg_7_1_14.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_64.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_67.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_bootstrap_4_0_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_popper_js_1_12_9_1.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_jakarta_mail_1_6_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_freemarker_2_3_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_2_3_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_2_9_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/MailApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/config/ResourceServerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/MailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Ingredient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Ingredienttracing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Orderline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/TrackingMail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/web/rest/MailResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/main/resources/templates/trackingcodemail.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail/src/test/java/be/bakmix/eindproject/mail/MailApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/auth.config.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/authentication/auth.config.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/resources/img/bakmix.png" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/resources/static/images/bakmix.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/resources/templates/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/resources/templates/order.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +87,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pdf/src/main/resources/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -87,6 +101,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\bakmixeindproject\mail\src\main\java\be\bakmix\eindproject\mail\service\dto" />
       <recent name="C:\bakmixeindproject\pdf\src\main\resources\img" />
       <recent name="C:\bakmixeindproject\pdf\src\main\java\be\bakmix\eindproject\pdf\service" />
     </key>
@@ -98,11 +113,11 @@
       <recent name="C:\bakmixeindproject\pdf\src\main\resources\static\img\" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="be.bakmix.eindproject.mail.config" />
       <recent name="be.bakmix.eindproject.pdf.service.mapper" />
       <recent name="be.bakmix.eindproject.product.config" />
       <recent name="be.bakmix.eindproject.orderline.config" />
       <recent name="be.bakmix.eindproject.order.config" />
-      <recent name="be.bakmix.eindproject.ingredienttracing.config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -169,6 +184,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MailApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mail" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="be.bakmix.eindproject.mail.MailApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="order" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="be.bakmix.eindproject.order.OrderApplication" />
@@ -224,6 +246,7 @@
       <item itemvalue="Spring Boot.ProductApplication" />
       <item itemvalue="Spring Boot.CustomersApplication" />
       <item itemvalue="Spring Boot.IngredientApplication" />
+      <item itemvalue="Spring Boot.MailApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -245,7 +268,7 @@
       <workItem from="1616102007845" duration="116193000" />
       <workItem from="1616873607371" duration="4378000" />
       <workItem from="1616879288294" duration="14432000" />
-      <workItem from="1616932504509" duration="178636000" />
+      <workItem from="1616932504509" duration="183817000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -520,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617994763497</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Invoice pdf werkende">
+      <created>1618003072074</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1618003072074</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,8 +570,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="backend tracing working" />
-    <MESSAGE value="angular ingredient tracing working" />
     <MESSAGE value="ingredient add duplicate check working" />
     <MESSAGE value="Minor cleanups" />
     <MESSAGE value="Ingredienttracing delete working again" />
@@ -565,6 +593,8 @@
     <MESSAGE value="PDF label generation is working" />
     <MESSAGE value="Thymeleaf first version (template nog verbeteren)" />
     <MESSAGE value="Invoice logica" />
-    <option name="LAST_COMMIT_MESSAGE" value="Invoice logica" />
+    <MESSAGE value="Invoice pdf werkende" />
+    <MESSAGE value="Email backend tracking werkende" />
+    <option name="LAST_COMMIT_MESSAGE" value="Email backend tracking werkende" />
   </component>
 </project>

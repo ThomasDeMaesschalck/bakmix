@@ -8,7 +8,7 @@
   <div class="col-md-6">
     <div class="card">
       <div class="card-body">
-        <h2 class="h4">Bestelling {{order.id}} </h2>
+        <h2 class="h4">Bestelling {{order.id}} afdrukopties</h2>
         <div class="card-text">
           <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
 </div>
@@ -18,17 +18,11 @@
 
     <div class="card">
       <div class="card-body">
-        <div class="card-text">
-          <a  class="btn btn-secondary" (click)="makeInvoice()">Factuur maken <i class="fas fa-file-pdf"></i></a>&nbsp;
-        </div>
-      </div>
+        <div class="card-text col-6">
+          <a  class="btn btn-secondary btn-lg btn-block" (click)="makeInvoice()">Factuur maken <i class="fas fa-file-pdf"></i></a>&nbsp;
 
-    </div>
-
-    <div class="card">
-      <div class="card-body">
-        <div class="card-text">
-          <a  class="btn btn-secondary" (click)="makeLabel()">Label maken <i class="fas fa-file-pdf"></i></a>&nbsp;
+          <br><br>
+          <a  class="btn btn-secondary btn-lg btn-block" (click)="makeLabel()">Label maken <i class="fas fa-file-pdf"></i></a>&nbsp;
         </div>
       </div>
 
