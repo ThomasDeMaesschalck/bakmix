@@ -51,7 +51,38 @@
         </div>
 
         <div class="card-text">
+
+
+          <div *ngIf="expiredList.length > 0" class="table-responsive">
+
+
+            <table  class="alert-danger table table-centered table-hover mb-0" id="datatableExpired">
+              <thead>
+              <tr>
+                <th class="border-top-0" scope="col"><i class="fas fa-cookie-bite ml-1"></i></th>
+                <th class="border-top-0" scope="col">Vervallen ingrediënten:</th>
+                <th class="border-top-0 " scope="col" style="width:125px"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let ingredient of expiredList" [class.active]="ingredient === selectedIngredient">
+                <td>{{ingredient.uniqueCode}}</td>
+                <td class="text-break">{{ingredient.brand}} {{ingredient.type}}</td>
+                <td>
+                  <a [routerLink]="['../ingredients', ingredient.id ]" class="btn btn-secondary mr-1"><i class="far fa-edit"></i></a>
+
+
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+
     <div class="table-responsive">
+
+
       <table class="table table-centered table-hover mb-0" id="datatable">
         <thead>
         <tr>
@@ -81,7 +112,9 @@
           </div>
 
 
+
     </div>
   </div>
+
 
 </div>

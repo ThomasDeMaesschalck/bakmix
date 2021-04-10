@@ -17,6 +17,7 @@ export class IngredientEditComponent implements OnInit {
   ingredient: Ingredient;
   feedback: any = {};
   purchaseDate;
+  expiryDate;
   ngbDate: NgbDateStruct;
 
   constructor(
@@ -41,6 +42,7 @@ export class IngredientEditComponent implements OnInit {
       .subscribe(ingredient => {
           this.ingredient = ingredient;
           this.purchaseDate = this.parserFormatter.parse(this.ingredient.purchaseDate);
+          this.expiryDate = this.parserFormatter.parse(this.ingredient.expiry);
           this.feedback = {};
         },
         err => {
@@ -51,6 +53,7 @@ export class IngredientEditComponent implements OnInit {
 
   save() {
    this.ingredient.purchaseDate =  this.parserFormatter.format(this.purchaseDate);
+    this.ingredient.expiry =  this.parserFormatter.format(this.expiryDate);
     this.ingredientService.save(this.ingredient).subscribe(
         ingredient => {
           this.ingredient = ingredient;

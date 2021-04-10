@@ -114,5 +114,11 @@ public class IngredientResource {
         return ResponseEntity.noContent().build();
     }
 
-
+    @GetMapping("/expiredingredients")
+    @RolesAllowed("bakmix-admin")
+    public ResponseEntity<List<Ingredient>> getAlExpired() {
+        List<Ingredient> ingredient = ingredientService.expiredIngredients();
+        log.info("Retrieved all expired ingredients");
+        return ResponseEntity.ok(ingredient);
+    }
 }

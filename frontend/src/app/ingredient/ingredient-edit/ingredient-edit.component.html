@@ -8,7 +8,9 @@
 
     <div class="card-text">
     <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
-    <form *ngIf="ingredient" #editForm="ngForm" (ngSubmit)="save()">
+      <div *ngIf="ingredient.recalled" class="alert alert-danger">Opgelet: Dit ingrediënt is teruggeroepen</div>
+
+      <form *ngIf="ingredient" #editForm="ngForm" (ngSubmit)="save()">
 
       <div class="form-group">
         <label>Id</label>
@@ -68,6 +70,21 @@
         <label for="volume">Volume</label>
         <input [(ngModel)]="ingredient.volume" id="volume" name="volume" class="form-control" required #volume="ngModel"
                [ngClass]="{'is-invalid': volume.touched && volume.invalid,  'is-valid': volume.touched && volume.valid}">
+      </div>
+
+      <div class="form-group">
+
+        <label for="d3">Vervaldatum</label>
+        <div class="col-md-3 ml-0 pl-0">
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" id="d3" required
+                   [ngClass]="{'is-invalid': c3.touched && c3.invalid,  'is-valid': c3.touched && c3.valid}"
+                   name="d3" #c3="ngModel" [(ngModel)]="expiryDate" ngbDatepicker #d3="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary bi-calendar" (click)="d3.toggle()" type="button" aria-label="calendar button"></button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="form-group" *ngIf="ingredient.id != null">

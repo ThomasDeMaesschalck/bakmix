@@ -23,6 +23,7 @@ export class HomeListComponent implements OnInit {
   ngOnInit(): void {
     this.searchIngredients();
     this.searchOrders();
+    this.searchExpired();
   }
 
   get ingredientList(): Ingredient[] {
@@ -47,5 +48,13 @@ export class HomeListComponent implements OnInit {
   }
   getStatusType(status: number): string{
     return Orderstatus[status];
+  }
+
+  searchExpired(): void {
+    this.ingredientService.loadExpired();
+  }
+
+  get expiredList(): Ingredient[] {
+    return this.ingredientService.expiredList;
   }
 }

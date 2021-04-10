@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -94,5 +95,18 @@ public class IngredientService {
         }
         return false;
     }
+
+    public List<Ingredient> expiredIngredients(){
+        LocalDate today = LocalDate.now();
+        List<Ingredient> ingredients =  StreamSupport
+                .stream(ingredientRepository.findAll().spliterator(), false)
+                .filter(i -> i.getAvailable())
+                .filter(i -> !i.getExpiry().isAfter(today))
+                .map(i -> ingredientMapper.toDTO(i))
+                .collect(Collectors.toList());
+        return ingredients;
+    }
+
+
 
     }

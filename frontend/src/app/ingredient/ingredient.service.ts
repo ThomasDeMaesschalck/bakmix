@@ -12,10 +12,13 @@ const headers = new HttpHeaders().set('Accept', 'application/json');
 export class IngredientService {
   size$ = new BehaviorSubject<number>(0);
   ingredientList: Ingredient[] = [];
+  expiredList: Ingredient[] = [];
   ingredientSingleList: Ingredient[] = [];
   api = 'http://localhost:7777/api/ingredients/';
   apiPaginated = 'http://localhost:7777/api/ingredientspaginated/';
   uniqueCodeApi = 'http://localhost:7777/api/ingredients/uniquecode/';
+  apiExpiredIngredients = 'http://localhost:7777/api/expiredingredients/';
+
 
   constructor(private http: HttpClient) {
   }
@@ -73,6 +76,22 @@ export class IngredientService {
       return response.content;
     }
  ));
+  }
+
+  loadExpired(): void{
+    this.findExpired().subscribe(resultExpired => {
+        this.expiredList = resultExpired;
+      },
+      err => {
+        console.error('error loading', err);
+      }
+    );
+  }
+
+
+  findExpired(): Observable<Ingredient[]> {
+    const urlExpiredIngredients = `${this.apiExpiredIngredients}`;
+    return this.http.get<Ingredient[]>(urlExpiredIngredients, {headers});
   }
 
   save(entity: Ingredient): Observable<Ingredient> {
