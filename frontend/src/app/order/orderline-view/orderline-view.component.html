@@ -17,6 +17,8 @@
 
             <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
 
+            <div *ngIf="!orderline.ingredients" class="alert alert-info">Nog geen ingegeven ingrediënten</div>
+
             <div class="table-responsive">
               <table class="table table-centered table-hover mb-0" id="datatable2">
                 <thead>
@@ -33,7 +35,7 @@
                   <td>{{ingredient.uniqueCode}}</td>
                   <td>{{ingredient.brand}} {{ingredient.type}}</td>
                   <td style="white-space: nowrap">
-                    <button *ngIf="order.status != 2" type="submit" class="btn btn-primary" (click)="removeTracing(ingredient.ingredienttracingId)">Ontkoppelen</button>
+                    <button *ngIf="order.status != 3" type="submit" class="btn btn-primary" (click)="removeTracing(ingredient.ingredienttracingId)">Ontkoppelen</button>
                   </td>
                   <td>
                     <button *ngIf="ingredient.available == true" (click)="switchIngredientStatus(ingredient)" class="btn btn-dark mr-1">Is nu opgebruikt</button>
@@ -57,7 +59,7 @@
           <div class="card-text">
             <div *ngIf="feedbackAdd.message" class="alert alert-{{feedbackAdd.type}}">{{ feedbackAdd.message }}</div>
 
-            <div class="table-responsive" *ngIf="order.status != 2">
+            <div class="table-responsive" *ngIf="order.status != 3">
               <table class="table table-centered table-hover mb-0" id="datatable4">
                 <thead>
                 <tr>
@@ -78,7 +80,7 @@
                 </tbody>
               </table>
             </div>
-            <div *ngIf="order.status == 2">Order is verzonden en kan niet meer gewijzigd worden</div>
+            <div *ngIf="order.status == 3">Order is verzonden en kan niet meer gewijzigd worden</div>
           </div>      </div></div>
     </div>
   </div>

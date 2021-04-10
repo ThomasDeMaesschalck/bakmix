@@ -57,7 +57,7 @@ public class OrderResource {
         Order order = orderService.getById(id);
         order.setStatus(orderDetails.getStatus());
         orderService.save(order);
-        log.info("Updated order number " + id + order);
+        log.info("Updated order number " + id + " " + order);
         return ResponseEntity.ok(order);
     }
 

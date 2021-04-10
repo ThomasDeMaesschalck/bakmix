@@ -26,10 +26,10 @@ public class MailResource {
     @RequestMapping(method = RequestMethod.POST,path = "/trackingmail")
     @ResponseBody
     @RolesAllowed({"bakmix-admin"})
-    public String send(@RequestParam Long id, @Valid @RequestBody TrackingMail trackingMail) throws Exception {
+    public TrackingMail send(@RequestParam Long id, @Valid @RequestBody TrackingMail trackingMail) throws Exception {
         mailService.sendTrackingEmail(id, trackingMail);
-        log.info("Mail send to customer from order #");
-        return "Email Sent..!";
+        log.info("Mail send to customer from order #" + id);
+        return trackingMail;
     }
 
 }

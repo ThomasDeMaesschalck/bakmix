@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import {Ingredient} from '../ingredient/ingredient';
-import {map} from 'rxjs/operators';
+import {isEmpty, map} from 'rxjs/operators';
 import {OrderFilter} from './order-filter';
+import {assertNotNull} from "@angular/compiler/src/output/output_ast";
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
@@ -64,11 +65,11 @@ export class OrderService {
       ));
   }
 
-  switchOrderStatus(order: Order): Observable<Order> {
+  switchOrderStatus(order: Order, send: boolean): Observable<Order> {
     let params = new HttpParams();
     let url = '';
-    if (order.status === 0) {
-      order.status = 1;
+    if (order.status === 2 && send === true) {
+      order.status = 3;
     }
     url = `${this.api}${order.id.toString()}`;
     params = new HttpParams().set('ID', order.id.toString());

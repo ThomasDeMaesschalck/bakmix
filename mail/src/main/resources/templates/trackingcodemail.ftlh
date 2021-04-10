@@ -8,12 +8,13 @@
 </head>
 <body>
 <div style="margin-top: 10px">Hey ${trackingmail.customerName}, </div>
+<br>
 <div>Hierbij de tracking code van de levering!</div>
-<br/><br />
+<br/>
 <div>Tracking code: ${trackingmail.code}</div>
-<br><br>
+<br>
 <div>Te gebruiken op <a href="${trackingmail.link}">${trackingmail.link}</a></div>
-<br><br>
+<br>
 <div> Bedankt voor de bestelling en prettige dag!</div>
 <div>BakMix.be</div>
 </body>

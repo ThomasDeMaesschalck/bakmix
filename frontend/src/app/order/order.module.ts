@@ -12,7 +12,7 @@ import {IngredienttracingService} from '../ingredienttracing/ingredienttracing.s
 import { OrderViewPrintComponent } from './order-view-print/order-view-print.component';
 import { OrderViewSendComponent } from './order-view-send/order-view-send.component';
 import {IngredientService} from '../ingredient/ingredient.service';
-import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({

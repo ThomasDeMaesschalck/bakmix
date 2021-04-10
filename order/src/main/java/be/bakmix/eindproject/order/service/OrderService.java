@@ -93,6 +93,7 @@ public class OrderService {
                 });
 
                 order.setOrderlines(Arrays.asList(orderlines));
+                orderStatusCheck(order);
             });
         }
         return orders;
@@ -121,8 +122,10 @@ public class OrderService {
                     orderline.setIngredients(ingredients);
                 }
             }
-
             order.setOrderlines(Arrays.asList(orderlines));
+
+            orderStatusCheck(order);
+
             order.setSubTotal(subTotal(order));
             order.setVatTotal(vatTotal(order));
             order.setTotal(total(order));
@@ -134,6 +137,37 @@ public class OrderService {
     public void save(Order order) {
         OrderEntity orderToSave = orderMapper.toEntity(order);
         orderRepository.save(orderToSave);
+    }
+
+    public void orderStatusCheck(Order order)  //order wijzigen indien er wel of geen ingrediënten gekoppeld zijn aan orderlijnen
+    {
+        if (order.getStatus() != 3) {
+            boolean found = false;
+            boolean foundInAll = false;
+            int i = 0;
+            for (Orderline orderline : order.getOrderlines()) {
+                if ((orderline.getIngredients() != null)) {
+                    found = true;
+                    i++;
+                }
+                if (order.getOrderlines().size() == i)
+                {
+                    foundInAll = true;
+                }
+            }
+            if (!found && (order.getStatus() != 0)) {
+                order.setStatus(Long.parseLong("0"));
+                save(order);
+            }
+            if (found && (order.getStatus() == 0) && !foundInAll) {
+                order.setStatus(Long.parseLong("1"));
+                save(order);
+            }
+            if (found && (order.getStatus() < 2) && foundInAll) {
+                order.setStatus(Long.parseLong("2"));
+                save(order);
+            }
+        }
     }
 
     public Orderline getOrderlineWithLinkedIngredientsById(Long id){

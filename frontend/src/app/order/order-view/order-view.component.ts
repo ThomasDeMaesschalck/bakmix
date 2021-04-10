@@ -50,17 +50,4 @@ export class OrderViewComponent implements OnInit {
   getStatusType(status: number): string{
     return Orderstatus[status];
   }
-
-  switchOrderStatus(): void{
-    this.orderService.switchOrderStatus(this.order).subscribe(() => {
-        this.feedback = {type: 'success', message: 'Status gewijzigd!'};
-        setTimeout(() => {
-          this.ngOnInit();
-        }, 1000);
-      },
-      err => {
-        this.feedback = {type: 'warning', message: 'Fout bij status wijzigen'};
-      }
-    );
-  }
 }

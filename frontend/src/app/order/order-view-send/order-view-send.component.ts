@@ -5,7 +5,9 @@ import {OrderService} from "../order.service";
 import {map, switchMap} from "rxjs/operators";
 import {of} from "rxjs";
 import {NgForm} from "@angular/forms";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
+import {Trackingmail} from "../../mail/trackingmail";
+import {MailService} from "../../mail/mail.service";
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
@@ -17,15 +19,18 @@ export class OrderViewSendComponent implements OnInit {
   id: string;
   order: Order;
   feedback: any = {};
+  trackingMail: Trackingmail;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private orderService: OrderService,
-    private http: HttpClient
+    private http: HttpClient,
+    private mailService: MailService
   ) { }
 
   ngOnInit(): void {
+    this.trackingMail = new Trackingmail();
     this
       .route
       .params
@@ -46,17 +51,21 @@ export class OrderViewSendComponent implements OnInit {
       );
   }
 
-  onSubmit(trackingCodeForm: NgForm) {
-    if (trackingCodeForm.valid) {
-      const tracking = trackingCodeForm.value;
-      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      this.http.post('https://formspree.io/f/mknkwyyz',
-        { trackingCode: tracking.name, link: tracking.link },
-        { 'headers': headers }).subscribe(
-        response => {
-          console.log(response);
-        }
-      );
-    }
+  onSubmit() {
+    this.feedback = {type: 'success', message: 'Even geduld... mail aan het sturen'};
+    setTimeout(() => {this.feedback = {}; }, 5000);
+     this.mailService.sendTrackingMail(this.order, this.trackingMail).subscribe(
+       (trackingmail) => {
+         this.trackingMail = this.trackingMail;
+         this.feedback = {type: 'success', message: 'Mail zenden gelukt!'};
+         this.orderService.switchOrderStatus(this.order, true).subscribe();
+         setTimeout(() => {
+           this.router.navigate(['/orders/' + this.order.id]);
+         }, 2000);
+       },
+       err => {
+         this.feedback = {type: 'warning', message: 'Fout bij zenden mail'};
+       }
+     );
   }
 }
