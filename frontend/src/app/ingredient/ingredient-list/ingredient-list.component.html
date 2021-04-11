@@ -53,9 +53,11 @@
           <td *ngIf="item.available == false"><i class="far fa-circle rediconcolor" title="Is op"></i></td>
 
           <td style="white-space: nowrap">
-            <a [routerLink]="['../ingredients', item.id ]" class="btn btn-secondary" title="bewerken" ><i class="fas fa-edit"></i></a>&nbsp;
-             <a [routerLink]="['../tracing', item.uniqueCode ]" class="btn btn-info" title="trace" ><i class="fas fa-search"></i></a>&nbsp;
-            <button (click)="delete(item)" class="btn btn-danger" title="verwijderen"><i class="fas fa-trash-alt"></i></button>
+            <a [routerLink]="['../ingredients', item.id ]" class="btn btn-secondary" title="Bewerken" ><i class="fas fa-edit"></i></a>&nbsp;
+             <a [routerLink]="['../tracing', item.uniqueCode ]" class="btn btn-info" title="Trace" ><i class="fas fa-search"></i></a>&nbsp;
+            <button *ngIf="!item.linked" (click)="delete(item)" class="btn btn-danger" title="Verwijderen"><i class="fas fa-trash-alt"></i></button>
+            <button *ngIf="item.linked" class="btn btn-danger disabled" title="Verwijderen niet mogelijk want ingrediënt is gekoppeld"><i class="fas fa-trash-alt"></i></button>
+
           </td>
         </tr>
       </tbody>

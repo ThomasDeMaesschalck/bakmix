@@ -3,27 +3,31 @@ package be.bakmix.eindproject.ingredient.service;
 import be.bakmix.eindproject.ingredient.business.IngredientEntity;
 import be.bakmix.eindproject.ingredient.business.repository.IngredientRepository;
 import be.bakmix.eindproject.ingredient.service.dto.Ingredient;
+import be.bakmix.eindproject.ingredient.service.dto.Ingredienttracing;
 import be.bakmix.eindproject.ingredient.service.mapper.IngredientMapper;
 import lombok.AllArgsConstructor;
+import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 import static com.google.common.collect.MoreCollectors.onlyElement;
 
 @Service
-@AllArgsConstructor
 public class IngredientService {
 
     private static List<Ingredient> ingredients = new ArrayList<>();
+
+    private Map ingredientTracingsMap = new HashMap();
+
+    @Autowired
+    private KeycloakRestTemplate keycloakRestTemplate;
 
     @Autowired
     private IngredientRepository ingredientRepository;
@@ -31,13 +35,26 @@ public class IngredientService {
     @Autowired
     private IngredientMapper ingredientMapper;
 
+    @Value("http://localhost:7771/api/ingredienttracings/")
+    private String urlIngredienttracings;
 
+    public IngredientService(IngredientRepository ingredientRepository, IngredientMapper ingredientMapper)
+    {
+        this.ingredientRepository = ingredientRepository;
+        this.ingredientMapper = ingredientMapper;
+    }
 
     public Page<Ingredient> getAll(Integer pageNo, Integer pageSize, String sortBy){
         Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.DESC, sortBy));
-
+        ingredientTracings();
         Page<Ingredient> ingredients = ingredientRepository.findAll(paging).map(ingredientMapper::toDTO);
-
+        for (Ingredient i: ingredients)
+        {
+            if (ingredientTracingsMap.containsKey(i.getId()))
+            {
+                i.setLinked(true); //boolean geeft aan dat ingrediënt gekoppeld is aan orderlijnen
+            }
+        }
         return ingredients;
     }
 
@@ -107,6 +124,12 @@ public class IngredientService {
         return ingredients;
     }
 
+    public Map<Long, Long> ingredientTracings(){ //stuk code om aan te geven dat een ingrediënt gekoppeld is aan orderlijnen
+        Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings, Ingredienttracing[].class);
+        Arrays.stream(ingredienttracings).forEach(i ->
+                ingredientTracingsMap.put(i.getIngredientId(), i.getOrderlineId()));
+        return ingredientTracingsMap;
+    }
 
 
     }

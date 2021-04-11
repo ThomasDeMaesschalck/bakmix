@@ -13,4 +13,5 @@ export class Ingredient {
   ingredienttracingId: number;
   recalled: boolean;
   expiry: string;
+  linked: boolean;
 }

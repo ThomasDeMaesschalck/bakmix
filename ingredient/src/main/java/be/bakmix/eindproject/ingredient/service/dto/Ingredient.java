@@ -17,4 +17,5 @@ public class Ingredient {
     private Boolean available;
     private Boolean recalled;
     private LocalDate expiry;
+    private Boolean linked;
 }
