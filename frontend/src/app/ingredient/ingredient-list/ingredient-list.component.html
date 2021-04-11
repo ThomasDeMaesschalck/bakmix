@@ -35,7 +35,7 @@
           <th class="border-top-0 d-none d-sm-table-cell" scope="col">Aankooplocatie</th>
           <th class="border-top-0 d-none d-sm-table-cell" scope="col">Lot</th>
           <th class="border-top-0 d-none d-sm-table-cell" scope="col">Volume</th>
-          <th class="border-top-0" scope="col">Stock</th>
+          <th class="border-top-0 text-center" scope="col">Stock</th>
           <th class="border-top-0" scope="col"></th>
         </tr>
       </thead>
@@ -49,8 +49,8 @@
           <td class="d-none d-sm-table-cell">{{item.lotNumber}}</td>
           <td class="d-none d-sm-table-cell">{{item.volume}}</td>
 
-          <td *ngIf="item.available == true"><i (click)="switchIngredientStatus(item)" title="Is beschikbaar" role="button" class="fas fa-circle greeniconcolor"></i></td>
-          <td *ngIf="item.available == false"><i class="far fa-circle rediconcolor" title="Is op"></i></td>
+          <td *ngIf="item.available == true" class="text-center"><i (click)="switchIngredientStatus(item)" title="Is beschikbaar" role="button" class="fas fa-circle greeniconcolor"></i></td>
+          <td *ngIf="item.available == false" class="text-center"><i class="far fa-circle rediconcolor" title="Is op"></i></td>
 
           <td style="white-space: nowrap">
             <a [routerLink]="['../ingredients', item.id ]" class="btn btn-secondary" title="Bewerken" ><i class="fas fa-edit"></i></a>&nbsp;

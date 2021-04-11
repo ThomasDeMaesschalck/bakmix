@@ -26,7 +26,7 @@
                   <th class="border-top-0" scope="col">#</th>
                   <th class="border-top-0" scope="col">Name</th>
                   <th class="border-top-0" scope="col" style="width:120px"></th>
-                  <th class="border-top-0" scope="col">Status</th>
+                  <th class="border-top-0 text-center" scope="col">Status</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,9 +37,9 @@
                   <td style="white-space: nowrap">
                     <button *ngIf="order.status != 3" type="submit" class="btn btn-primary" (click)="removeTracing(ingredient.ingredienttracingId)">Ontkoppelen</button>
                   </td>
-                  <td>
-                    <button *ngIf="ingredient.available == true" (click)="switchIngredientStatus(ingredient)" class="btn btn-dark mr-1">Is nu opgebruikt</button>
-                    <button *ngIf="ingredient.available == false" (click)="switchIngredientStatus(ingredient)" class="btn btn-success mr-1">Wel beschikbaar</button>
+                  <td class="text-center align-middle">
+                <i *ngIf="ingredient.available == true" (click)="switchIngredientStatus(ingredient)" title="Is beschikbaar" role="button" class="fas fa-circle greeniconcolor"></i>
+                <i *ngIf="ingredient.available == false"  (click)="switchIngredientStatus(ingredient)" class="far fa-circle rediconcolor" role="button" title="Is op"></i>
                   </td>
                 </tr>
                 </tbody>

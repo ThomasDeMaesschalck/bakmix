@@ -28,7 +28,7 @@
                   <td>{{orderItem.customer.firstName}}</td>
                   <td>{{getStatusType(orderItem.status)}}</td>
                   <td style="white-space: nowrap">
-                    <a [routerLink]="['../orders', orderItem.id ]" class="btn btn-secondary"><i class="fas fa-receipt"></i></a>&nbsp;
+                    <a [routerLink]="['../orders', orderItem.id ]" class="btn btn-secondary" title="Bekijken"><i class="fas fa-receipt"></i></a>&nbsp;
                   </td>
                 </tr>
                 </tbody>
@@ -46,7 +46,7 @@
         <div class="row">
     <h2 class="h4 ml-3"><a routerLink="/ingredients">Voorraad ingrediënten</a></h2>
           <div class="pl-3">
-        <a [routerLink]="['../ingredients', 'new' ]" class="btn btn-primary">Nieuw</a>
+        <a [routerLink]="['../ingredients', 'new' ]" title="Nieuwe ingave" aria-label="Nieuwe ingave" class="btn btn-primary">Nieuw</a>
           </div>
         </div>
 
@@ -70,7 +70,7 @@
                 <td>{{ingredient.uniqueCode}}</td>
                 <td class="text-break">{{ingredient.brand}} {{ingredient.type}}</td>
                 <td>
-                  <a (click)="setIngredientUnavailable(ingredient)" class="btn btn-outline-danger btn-block mr-1">Stock <i class="fas fa-minus-circle"></i></a>
+                  <a (click)="setIngredientUnavailable(ingredient)" title="Onbeschikbaar zetten" class="btn btn-outline-danger btn-block mr-1">Stock <i class="fas fa-minus-circle"></i></a>
 
 
                 </td>
@@ -97,12 +97,12 @@
         <tr *ngFor="let ingredientItem of ingredientList" [class.active]="ingredientItem === selectedIngredient">
           <td>{{ingredientItem.uniqueCode}}</td>
           <td class="text-break">{{ingredientItem.brand}} {{ingredientItem.type}} ({{ingredientItem.purchaseDate}})</td>
-          <td *ngIf="!ingredientItem.available"><i class="fa fa-ban rediconcolor" aria-hidden="true"></i></td>
-          <td *ngIf="ingredientItem.available"><i class="fa fa-check-circle greeniconcolor" aria-hidden="true"></i></td>
+          <td *ngIf="!ingredientItem.available"><i class="fa fa-ban rediconcolor" title="Niet beschikbaar" aria-hidden="true"></i></td>
+          <td *ngIf="ingredientItem.available"><i class="fa fa-check-circle greeniconcolor" title="Op voorraad" aria-hidden="true"></i></td>
           <td>
-            <a [routerLink]="['../ingredients', ingredientItem.id ]" class="btn btn-secondary mr-1"><i class="far fa-edit"></i></a>
+            <a [routerLink]="['../ingredients', ingredientItem.id ]" class="btn btn-secondary mr-1" title="Bewerken"><i class="far fa-edit"></i></a>
 
-            <a [routerLink]="['../tracing', ingredientItem.uniqueCode ]" class="btn btn-secondary"><i class="fas fa-search"></i></a>&nbsp;
+            <a [routerLink]="['../tracing', ingredientItem.uniqueCode ]" class="btn btn-secondary" title="Tracen"><i class="fas fa-search"></i></a>&nbsp;
 
           </td>
         </tr>
