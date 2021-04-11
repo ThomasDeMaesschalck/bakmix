@@ -13,6 +13,7 @@ import {Orderstatus} from '../../order/orderstatus';
 })
 export class HomeListComponent implements OnInit {
 
+  public feedback: any = {};
   selectedIngredient: Ingredient;
   filter = new IngredientFilter();
 
@@ -21,6 +22,7 @@ export class HomeListComponent implements OnInit {
     private orderService: OrderService) {
   }
   ngOnInit(): void {
+    this.feedback = {};
     this.searchIngredients();
     this.searchOrders();
     this.searchExpired();
@@ -52,6 +54,19 @@ export class HomeListComponent implements OnInit {
 
   searchExpired(): void {
     this.ingredientService.loadExpired();
+  }
+
+  setIngredientUnavailable(ingredient: Ingredient): void{
+    this.ingredientService.switchIngredientAvailability(ingredient).subscribe(() => {
+        this.feedback = {type: 'success', message: 'Status gewijzigd!'};
+        setTimeout(() => {
+          this.ngOnInit();
+        }, 1000);
+      },
+      err => {
+        this.feedback = {type: 'warning', message: 'Fout bij status wijzigen'};
+      }
+    );
   }
 
   get expiredList(): Ingredient[] {

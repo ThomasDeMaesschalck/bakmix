@@ -54,6 +54,7 @@
 
 
           <div *ngIf="expiredList.length > 0" class="table-responsive">
+            <div *ngIf="feedback" class="alert alert-{{feedback.type}} m-2">{{ feedback.message }}</div>
 
 
             <table  class="alert-danger table table-centered table-hover mb-0" id="datatableExpired">
@@ -69,7 +70,7 @@
                 <td>{{ingredient.uniqueCode}}</td>
                 <td class="text-break">{{ingredient.brand}} {{ingredient.type}}</td>
                 <td>
-                  <a [routerLink]="['../ingredients', ingredient.id ]" class="btn btn-secondary mr-1"><i class="far fa-edit"></i></a>
+                  <a (click)="setIngredientUnavailable(ingredient)" class="btn btn-outline-danger btn-block mr-1">Stock <i class="fas fa-minus-circle"></i></a>
 
 
                 </td>
