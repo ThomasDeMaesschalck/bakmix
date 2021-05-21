@@ -28,6 +28,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
+/**
+ * REST API endpoints for the PDF microservice
+ */
 @CrossOrigin
 @Controller
 @RequestMapping("/api")
@@ -44,6 +47,11 @@ public class PdfResource {
     private PdfService pdfService;
 
 
+    /**
+     * Generates a PDF label and sends it to the browser.
+     * @param id The id of the order that needs a label generation.
+     * @return The PDF.
+     */
     @RequestMapping(value = "/pdflabel", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_PDF_VALUE)
     @RolesAllowed("bakmix-admin")
@@ -60,6 +68,15 @@ public class PdfResource {
     }
 
 
+    /**
+     * Generate a PDF invoice and sends it to the browser.
+     * Processes a Thymeleaf template and converts it to a PDF.
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     * @param id Id of the Order that needs a PDF invoice
+     * @return The PDF invoice
+     * @throws IOException
+     */
     @RequestMapping(value = "/pdfinvoice", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_PDF_VALUE)
     @RolesAllowed("bakmix-admin")

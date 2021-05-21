@@ -11,9 +11,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service layer of the PDF microservice
+ */
 @Service
 public class PdfService {
 
+    /**
+     * Keycloak rest template. Used for authenticated communication with other secured REST APIs.
+     */
     @Autowired
     private KeycloakRestTemplate keycloakRestTemplate;
 
@@ -37,6 +43,12 @@ public class PdfService {
 
     @Value("http://localhost:7779/api/customers/")
     private String urlCustomers;
+
+    /**
+     * Retrieve an Order and set its Orderlines.
+     * @param id The id of the Order.
+     * @return The processed Order.
+     */
 
     public Order getById(Long id) {
 

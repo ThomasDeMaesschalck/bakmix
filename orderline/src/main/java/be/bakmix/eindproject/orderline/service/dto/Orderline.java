@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
+/**
+ * Orderline DTO
+ */
 @Data
 public class Orderline {
     private Long id;

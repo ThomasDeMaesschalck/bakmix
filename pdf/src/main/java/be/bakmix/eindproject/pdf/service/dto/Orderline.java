@@ -5,6 +5,9 @@ import lombok.Data;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * Orderline DTO with Product and Ingredient list
+ */
 @Data
 public class Orderline {
     private Long id;

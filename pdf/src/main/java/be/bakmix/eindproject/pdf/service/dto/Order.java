@@ -7,6 +7,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Order DTO with Customer and Orderline
+ */
 @Data
 public class Order {
     private Long id;

@@ -16,18 +16,34 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+/**
+ * Service layer of the Product microservice
+ */
 @Service
 @AllArgsConstructor
 public class ProductService {
 
+    /**
+     * List of products
+     */
     private static List<Product> products = new ArrayList<>();
 
+    /**
+     * The product repository
+     */
     @Autowired
     private ProductRepository productRepository;
 
+    /**
+     * The product mapping class
+     */
     @Autowired
     private ProductMapper productMapper;
 
+    /**
+     * Get a List of all products
+     * @return List of products
+     */
     public List<Product> getAll(){
         List<Product> products = StreamSupport
                 .stream(productRepository.findAll().spliterator(), false)
@@ -36,6 +52,11 @@ public class ProductService {
         return products;
     }
 
+    /**
+     * Get a product by id
+     * @param id The id of the Product
+     * @return The requested Product
+     */
     public Product getById(Long id){
         Optional<ProductEntity> productEntityOptional = productRepository.findById(id);
         if(productEntityOptional.isPresent()){
