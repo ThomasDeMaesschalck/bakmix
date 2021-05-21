@@ -7,6 +7,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Order DTO. Includes Customer and Orderline(s).
+ */
 @Data
 public class Order {
     private Long id;
@@ -14,7 +17,7 @@ public class Order {
     private LocalDate date;
     private Long status;
     private BigDecimal discount;
-    private  BigDecimal shippingCost;
+    private BigDecimal shippingCost;
     private BigDecimal subTotal;
     private BigDecimal vatTotal;
     private BigDecimal total;

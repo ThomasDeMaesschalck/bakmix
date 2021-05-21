@@ -17,6 +17,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Generate the REST API endpoints for the Order microservice
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/api")
@@ -24,9 +27,20 @@ import java.util.List;
 @Log4j2
 public class OrderResource {
 
+    /**
+     * The order service layer
+     */
     @Autowired
     private OrderService orderService;
 
+    /**
+     * Get a Page of orders
+     * @param index Boolean that is set to true when certain information is not necessary. Speeds up loading.
+     * @param pageNo The page number
+     * @param pageSize The page size
+     * @param sortBy The sorting filter
+     * @return The requested Page of orders
+     */
     @GetMapping("/orders")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<Page<Order>> getAll(@RequestParam(defaultValue = "0") Boolean index, @RequestParam(defaultValue = "0") Integer pageNo,
@@ -36,6 +50,12 @@ public class OrderResource {
         log.info("Retrieved all orders");
         return ResponseEntity.ok(orders);
     }
+
+    /**
+     * Get a specific Order from the database
+     * @param id The Order id
+     * @return The requested Order
+     */
 
     @GetMapping("/orders/{id}")
     @RolesAllowed("bakmix-admin")
@@ -50,6 +70,12 @@ public class OrderResource {
         return ResponseEntity.ok(order);
     }
 
+    /**
+     * Adjust a persisted Order. Used to update the Order status.
+     * @param id The id of the Order
+     * @param orderDetails The Order details that need to be adjusted.
+     * @return
+     */
     @PutMapping("/orders/{id}")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<Order> replaceOrder(@PathVariable Long id, @Valid @RequestBody Order orderDetails) {
@@ -61,6 +87,11 @@ public class OrderResource {
         return ResponseEntity.ok(order);
     }
 
+    /**
+     * Get an Orderline with all linked ingredients.
+     * @param id The id of the orderline
+     * @return The processed orderline
+     */
     @GetMapping("/orders/orderlinewithlinkedingredients/{id}")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<Orderline> getOrderlineWithLinkedIngredientsById(@PathVariable Long id){
@@ -74,6 +105,11 @@ public class OrderResource {
         return ResponseEntity.ok(orderline);
     }
 
+    /**
+     * Get a List of ingredients that can be linked to an orderline
+     * @param id The id of the orderline
+     * @return The processed orderline
+     */
     @GetMapping("/orders/availableingredientsfororderline/{id}")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<List<Ingredient>> getAvailableIngredientsForOrderline(@PathVariable Long id){
@@ -87,6 +123,12 @@ public class OrderResource {
         return ResponseEntity.ok(ingredients);
     }
 
+    /**
+     * Get a List of orders that contain a specific Ingredient.
+     * This is used to issue a product recall, to find order(lines) that contain an unsafe ingredient.
+     * @param id The uniqueCode of the Ingredient
+     * @return A List of processed Order DTOs.
+     */
     @GetMapping("/tracing/{id}")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<List<Order>> getAllIngredienttracedOrders(@PathVariable String id){

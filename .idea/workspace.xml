@@ -6,17 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/MailApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/MailApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/config/ResourceServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/MailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Ingredienttracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Ingredienttracing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Orderline.java" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Orderline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/RecallMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/RecallMail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/TrackingMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto/TrackingMail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/OrderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/OrderApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/business/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/business/OrderEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/business/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/business/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Ingredienttracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Ingredienttracing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Orderline.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Orderline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/dto/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/mapper/OrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/web/rest/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/web/rest/OrderResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +33,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Thomas De Maesschalck &lt;thomas.dm@dvhardware.net&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -246,14 +252,7 @@
       <workItem from="1620231352307" duration="918000" />
       <workItem from="1620589069810" duration="197000" />
       <workItem from="1620764105392" duration="164000" />
-      <workItem from="1621529303603" duration="13335000" />
-    </task>
-    <task id="LOCAL-00001" summary="orderline service made">
-      <created>1616103800403</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1616103800403</updated>
+      <workItem from="1621529303603" duration="15227000" />
     </task>
     <task id="LOCAL-00002" summary="orderline added product">
       <created>1616275153992</created>
@@ -591,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621621736866</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Javadoc for MAil">
+      <created>1621628162003</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1621628162005</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +617,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Foreach lambdas en streams" />
     <MESSAGE value="pagination working op ingredients" />
     <MESSAGE value="Added code om verzonden orders niet wijzigbaar te maken" />
     <MESSAGE value="Performance verbetering index page" />
@@ -636,6 +641,7 @@
     <MESSAGE value="UI enhancements" />
     <MESSAGE value="Javadoc part 1" />
     <MESSAGE value="Javadoc for three microservices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Javadoc for three microservices" />
+    <MESSAGE value="Javadoc for MAil" />
+    <option name="LAST_COMMIT_MESSAGE" value="Javadoc for MAil" />
   </component>
 </project>
