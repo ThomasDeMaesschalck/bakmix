@@ -21,6 +21,9 @@ import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper
 import org.springframework.security.web.authentication.session.NullAuthenticatedSessionStrategy;
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
 
+/**
+ * Configuration class for Keycloak authentication. Ensures an authenticated user can access the microservice via the frontend.
+ */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(jsr250Enabled = true)

@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
+/**
+ * Ingredient DTO
+ */
 @Data
 public class Ingredient {
     private Long id;

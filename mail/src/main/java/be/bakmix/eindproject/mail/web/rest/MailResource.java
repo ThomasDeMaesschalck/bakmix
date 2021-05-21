@@ -14,6 +14,9 @@ import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * Resource layer of the Mail microservice. Generates the REST API endpoints.
+ */
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
@@ -21,10 +24,20 @@ import java.util.List;
 @Log4j2
 public class MailResource {
 
+    /**
+     * The Mail microservice service layer
+     */
     @Autowired
     private MailService mailService;
 
 
+    /**
+     * API for sending a tracking e-mail to customers.
+     * @param id The id of the Order
+     * @param trackingMail Properties that need to be inserted into the tracking email template
+     * @return TrackingMail
+     * @throws Exception
+     */
     @RequestMapping(method = RequestMethod.POST,path = "/trackingmail")
     @ResponseBody
     @RolesAllowed({"bakmix-admin"})
@@ -34,6 +47,12 @@ public class MailResource {
         return trackingMail;
     }
 
+    /**
+     * API for sending a recall e-mail to one or more customer(s).
+     * @param id The uniqueCode of the recalled ingredient
+     * @return ResponseEntity
+     * @throws Exception
+     */
     @GetMapping("/sendrecall/")
     @RolesAllowed({"bakmix-admin"})
     public ResponseEntity<List<Order>> sendRecallEmail(@RequestParam String id) throws Exception{

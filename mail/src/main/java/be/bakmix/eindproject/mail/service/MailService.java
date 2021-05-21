@@ -18,12 +18,21 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.util.*;
 
+/**
+ * Service layer of the Mail microservice
+ */
 @Service
 @AllArgsConstructor
 public class MailService {
 
+    /**
+     * List of Orders
+     */
     private List<Order> orders = new ArrayList<>();
 
+    /**
+     * Keycloak rest template, used for pulling in data via REST from other microservices
+     */
     @Autowired
     private KeycloakRestTemplate keycloakRestTemplate;
 
@@ -58,9 +67,17 @@ public class MailService {
     @Autowired
     private JavaMailSender javaMailSender;
 
+    /**
+     * Default constructor
+     */
     public MailService() {
     }
 
+    /**
+     * Retrieve an Order via the Order microservice and set the Orderlines via the Orderline microservice
+     * @param id The id of the Order that needs to be retrieved
+     * @return The Order with its Orderlines
+     */
     public Order getById(Long id) {
         Order order = keycloakRestTemplate.getForObject(urlOrders + id, Order.class);
         Customer customer = keycloakRestTemplate.getForObject(urlCustomers + order.getCustomerId(), Customer.class);
@@ -70,6 +87,14 @@ public class MailService {
         return order;
     }
 
+    /**
+     * Send an e-mail to a customer with a tracking code
+     * @param id The id of the Order that is being processed
+     * @param trackingMail Content properties of the tracking e-mail
+     * @throws MessagingException
+     * @throws IOException
+     * @throws TemplateException
+     */
     public void sendTrackingEmail(Long id, TrackingMail trackingMail) throws MessagingException, IOException, TemplateException {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
@@ -83,6 +108,13 @@ public class MailService {
         javaMailSender.send(mimeMessage);
     }
 
+    /**
+     * Method to compose the content of the tracking e-mail. Uses trackingcodemail template, located in resources folder.
+     * @param trackingMail Properties that need to be inserted in the tracking e-mail template
+     * @return A processed String that contains the right details for the tracking e-mail
+     * @throws IOException
+     * @throws TemplateException
+     */
     public String getTrackingEmailContent(TrackingMail trackingMail) throws IOException, TemplateException {
         StringWriter stringWriter = new StringWriter();
         Map<String, Object> model = new HashMap<>();
@@ -91,6 +123,15 @@ public class MailService {
         return stringWriter.getBuffer().toString();
     }
 
+    /**
+     * Send e-mails to customers subject to a recall action.
+     * This method iterates over a List of Orders and retrieves the customer details plus the affected orderlines.
+     * @param id The uniqueCode of the recalled Ingredient
+     * @return List of orders
+     * @throws MessagingException
+     * @throws IOException
+     * @throws TemplateException
+     */
     public List<Order> sendRecallEmail(String id) throws MessagingException, IOException, TemplateException {
         orders.clear();
         Order[] tracedOrders = keycloakRestTemplate.getForObject(urlTracedOrders + id, Order[].class);
@@ -120,6 +161,13 @@ public class MailService {
         return orders;
     }
 
+    /**
+     * Method to compose the content of the recall e-mail that gets send to a customer. Uses the recallmail template, found in the resources folder.
+     * @param recallMail Properties that need to be inserted in the template.
+     * @return A String consisting of the processed template.
+     * @throws IOException
+     * @throws TemplateException
+     */
     public String getRecallEmailContent(RecallMail recallMail) throws IOException, TemplateException {
         StringWriter stringWriter = new StringWriter();
         Map<String, Object> model = new HashMap<>();
