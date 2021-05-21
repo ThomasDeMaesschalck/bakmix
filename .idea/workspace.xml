@@ -5,11 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/CustomersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/CustomersApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/CustomerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/config/ResourceServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/dto/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/dto/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/mapper/CustomerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/web/rest/CustomerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/web/rest/CustomerResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer-list/customer-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/customer/customer-list/customer-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderstatus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderstatus.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/product/product-list/product-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/product/product-list/product-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/img/bakmix.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/img/bakmix.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/IngredientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/IngredientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/business/IngredientEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/business/IngredientEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/business/repository/IngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/business/repository/IngredientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/config/ResourceServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/dto/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/dto/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/dto/Ingredienttracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/dto/Ingredienttracing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/mapper/IngredientMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/mapper/IngredientMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/exceptions/IngredientNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/exceptions/IngredientNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/web/rest/IngredienttracingResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/web/rest/IngredienttracingResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +86,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/frontend/node_modules/protractor" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -99,19 +121,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.PdfApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="E2E Tests (frontend)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/frontend/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -212,20 +221,20 @@
       <item itemvalue="JavaScript Debug.Angular Application (frontend)" />
       <item itemvalue="npm.Angular CLI Server (frontend)" />
       <item itemvalue="Protractor.E2E Tests (frontend)" />
-      <item itemvalue="Spring Boot.PdfApplication" />
-      <item itemvalue="Spring Boot.OrderApplication" />
       <item itemvalue="Spring Boot.IngredienttracingApplication" />
-      <item itemvalue="Spring Boot.OrderlineApplication" />
       <item itemvalue="Spring Boot.MailApplication" />
+      <item itemvalue="Spring Boot.OrderApplication" />
+      <item itemvalue="Spring Boot.OrderlineApplication" />
+      <item itemvalue="Spring Boot.PdfApplication" />
+      <item itemvalue="Spring Boot.CustomersApplication" />
       <item itemvalue="Spring Boot.IngredientApplication" />
       <item itemvalue="Spring Boot.ProductApplication" />
-      <item itemvalue="Spring Boot.CustomersApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.IngredientApplication" />
         <item itemvalue="Spring Boot.CustomersApplication" />
         <item itemvalue="Spring Boot.ProductApplication" />
+        <item itemvalue="Spring Boot.IngredientApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +251,17 @@
       <workItem from="1616873607371" duration="4378000" />
       <workItem from="1616879288294" duration="14432000" />
       <workItem from="1616932504509" duration="211962000" />
-      <workItem from="1618128222045" duration="5785000" />
+      <workItem from="1618128222045" duration="9771000" />
+      <workItem from="1618339413320" duration="615000" />
+      <workItem from="1618341152100" duration="13702000" />
+      <workItem from="1619455636735" duration="16396000" />
+      <workItem from="1619733350790" duration="36000" />
+      <workItem from="1619762356522" duration="85000" />
+      <workItem from="1619984701349" duration="1875000" />
+      <workItem from="1620231352307" duration="918000" />
+      <workItem from="1620589069810" duration="197000" />
+      <workItem from="1620764105392" duration="164000" />
+      <workItem from="1621529303603" duration="9714000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -566,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618130698376</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="UI enhancements">
+      <created>1618140823250</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1618140823250</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +612,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Working version" />
     <MESSAGE value="Implemented mail and send UI" />
     <MESSAGE value="Search working" />
     <MESSAGE value="Foreach lambdas en streams" />
@@ -611,6 +636,7 @@
     <MESSAGE value="Expiry check working" />
     <MESSAGE value="Expiry ui improvements" />
     <MESSAGE value="First feature-ready version" />
-    <option name="LAST_COMMIT_MESSAGE" value="First feature-ready version" />
+    <MESSAGE value="UI enhancements" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI enhancements" />
   </component>
 </project>

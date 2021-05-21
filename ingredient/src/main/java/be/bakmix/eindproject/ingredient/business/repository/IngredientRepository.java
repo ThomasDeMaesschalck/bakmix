@@ -8,6 +8,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Spring Boot repository of Ingredient objects. Implements paging support.
+ */
 @Repository
 public interface IngredientRepository extends PagingAndSortingRepository<IngredientEntity, Long> {
 }

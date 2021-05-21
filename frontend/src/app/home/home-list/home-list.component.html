@@ -28,7 +28,7 @@
                   <td>{{orderItem.customer.firstName}}</td>
                   <td>{{getStatusType(orderItem.status)}}</td>
                   <td style="white-space: nowrap">
-                    <a [routerLink]="['../orders', orderItem.id ]" class="btn btn-secondary" title="Bekijken"><i class="fas fa-receipt"></i></a>&nbsp;
+                    <a [routerLink]="['../orders', orderItem.id ]" class="btn btn-secondary" title="Bekijken"><i class="fas fa-paper-plane"></i></a>&nbsp;
                   </td>
                 </tr>
                 </tbody>
@@ -89,7 +89,7 @@
         <tr>
           <th class="border-top-0" scope="col"><i class="fas fa-cookie-bite ml-1"></i></th>
           <th class="border-top-0" scope="col">Ingrediënt</th>
-          <th class="border-top-0" scope="col">Stock</th>
+          <th class="border-top-0 text-center" scope="col">Stock</th>
           <th class="border-top-0 " scope="col" style="width:125px"></th>
         </tr>
         </thead>
@@ -97,8 +97,8 @@
         <tr *ngFor="let ingredientItem of ingredientList" [class.active]="ingredientItem === selectedIngredient">
           <td>{{ingredientItem.uniqueCode}}</td>
           <td class="text-break">{{ingredientItem.brand}} {{ingredientItem.type}} ({{ingredientItem.purchaseDate}})</td>
-          <td *ngIf="!ingredientItem.available"><i class="fa fa-ban rediconcolor" title="Niet beschikbaar" aria-hidden="true"></i></td>
-          <td *ngIf="ingredientItem.available"><i class="fa fa-check-circle greeniconcolor" title="Op voorraad" aria-hidden="true"></i></td>
+          <td *ngIf="!ingredientItem.available" class="text-center"><i class="fa fa-ban rediconcolor" title="Niet beschikbaar" aria-hidden="true"></i></td>
+          <td *ngIf="ingredientItem.available" class="text-center"><i class="fa fa-check-circle greeniconcolor" title="Op voorraad" aria-hidden="true"></i></td>
           <td>
             <a [routerLink]="['../ingredients', ingredientItem.id ]" class="btn btn-secondary mr-1" title="Bewerken"><i class="far fa-edit"></i></a>
 

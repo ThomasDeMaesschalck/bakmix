@@ -19,24 +19,48 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+/**
+ * Service class for the Customer microservice.
+ */
 @Service
 @AllArgsConstructor
 public class CustomerService {
 
+    /**
+     * List of customers
+     */
     private static List<Customer> customers = new ArrayList<>();
 
+    /**
+     * The Customer repository
+     */
     @Autowired
     private CustomerRepository customerRepository;
 
+    /**
+     * Customer mapper, mapping from Customer to Customer Entity and the other way around
+     */
     @Autowired
     private CustomerMapper customerMapper;
 
+    /**
+     * Retrieves a Page of customers from the database.
+     * @param pageNo The page number
+     * @param pageSize The size of the page
+     * @param sortBy Sorting filter
+     * @return Returns the requested Page of Customers
+     */
     public Page<Customer> getAll(Integer pageNo, Integer pageSize, String sortBy){
         Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.DESC, sortBy));
         Page<Customer> customers = customerRepository.findAll(paging).map(customerMapper::toDTO);
         return customers;
     }
 
+    /**
+     * Get a specific customer from the database.
+     * @param id The id of the Customer
+     * @return If found the requested Customer is returned
+     */
     public Customer getById(Long id){
         Optional<CustomerEntity> customerEntityOptional = customerRepository.findById(id);
         if(customerEntityOptional.isPresent()){

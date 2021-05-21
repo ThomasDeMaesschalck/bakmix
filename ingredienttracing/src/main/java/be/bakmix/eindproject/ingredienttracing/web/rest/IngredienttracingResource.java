@@ -1,6 +1,5 @@
 package be.bakmix.eindproject.ingredienttracing.web.rest;
 
-import be.bakmix.eindproject.ingredienttracing.business.IngredienttracingEntity;
 import be.bakmix.eindproject.ingredienttracing.service.IngredienttracingService;
 import be.bakmix.eindproject.ingredienttracing.service.dto.Ingredienttracing;
 import be.bakmix.eindproject.ingredienttracing.web.rest.exceptions.IngredienttracingNotFoundException;

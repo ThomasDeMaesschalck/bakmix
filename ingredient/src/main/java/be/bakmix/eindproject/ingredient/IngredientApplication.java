@@ -3,6 +3,9 @@ package be.bakmix.eindproject.ingredient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Starter class for the Ingredient microservice
+ */
 @SpringBootApplication
 public class IngredientApplication {
 

@@ -4,6 +4,9 @@ import lombok.Data;
 import java.time.LocalDate;
 
 
+/**
+ * Ingredient DTO
+ */
 @Data
 public class Ingredient {
     private Long id;
@@ -17,5 +20,9 @@ public class Ingredient {
     private Boolean available;
     private Boolean recalled;
     private LocalDate expiry;
+
+    /**
+     * Set to true by the service class if the Ingredient has been linked to an orderline
+     */
     private Boolean linked;
 }

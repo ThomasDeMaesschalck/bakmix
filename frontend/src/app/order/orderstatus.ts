@@ -1,6 +1,6 @@
 export enum Orderstatus {
   Nieuw,
   Onvolledig ,
-  Verwerkt,
+  'Klaar voor verzending',
   Verzonden
 }

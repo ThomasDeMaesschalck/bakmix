@@ -2,6 +2,9 @@ package be.bakmix.eindproject.customers.service.dto;
 
 import lombok.Data;
 
+/**
+ * DTO for the Customer object
+ */
 @Data
 public class Customer {
     private Long id;

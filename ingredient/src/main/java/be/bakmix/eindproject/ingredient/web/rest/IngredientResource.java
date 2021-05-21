@@ -18,6 +18,9 @@ import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * Ingredient resource class. Creates the REST API endpoints.
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/api")
