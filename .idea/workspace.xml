@@ -5,33 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/CustomersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/CustomersApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/CustomerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/repository/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/config/ResourceServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/dto/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/dto/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/mapper/CustomerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/web/rest/CustomerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/web/rest/CustomerResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer-list/customer-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/customer/customer-list/customer-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderstatus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderstatus.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/product/product-list/product-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/product/product-list/product-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/img/bakmix.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/img/bakmix.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/IngredientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/IngredientApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/business/IngredientEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/business/IngredientEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/business/repository/IngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/business/repository/IngredientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/config/ResourceServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/dto/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/dto/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/dto/Ingredienttracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/dto/Ingredienttracing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/mapper/IngredientMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/mapper/IngredientMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/exceptions/IngredientNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/exceptions/IngredientNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/web/rest/IngredienttracingResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/web/rest/IngredienttracingResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/IngredientResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/IngredientResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/business/IngredienttracingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/business/IngredienttracingEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/business/repository/IngredienttracingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/business/repository/IngredienttracingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/config/ResourceServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/dto/Ingredienttracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/dto/Ingredienttracing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/mapper/IngredienttracingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/mapper/IngredienttracingMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +242,7 @@
       <workItem from="1620231352307" duration="918000" />
       <workItem from="1620589069810" duration="197000" />
       <workItem from="1620764105392" duration="164000" />
-      <workItem from="1621529303603" duration="9714000" />
+      <workItem from="1621529303603" duration="11008000" />
     </task>
     <task id="LOCAL-00001" summary="orderline service made">
       <created>1616103800403</created>
@@ -592,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618140823250</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Javadoc part 1">
+      <created>1621620296033</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1621620296033</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +600,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implemented mail and send UI" />
     <MESSAGE value="Search working" />
     <MESSAGE value="Foreach lambdas en streams" />
     <MESSAGE value="pagination working op ingredients" />
@@ -637,6 +624,7 @@
     <MESSAGE value="Expiry ui improvements" />
     <MESSAGE value="First feature-ready version" />
     <MESSAGE value="UI enhancements" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI enhancements" />
+    <MESSAGE value="Javadoc part 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Javadoc part 1" />
   </component>
 </project>

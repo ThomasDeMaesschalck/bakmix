@@ -13,6 +13,9 @@ import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * Resource layer to create the REST API endpoints for this microservice
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/api")
@@ -20,9 +23,16 @@ import java.util.List;
 @Log4j2
 public class IngredienttracingResource {
 
+    /**
+     * The service layer
+     */
     @Autowired
     private IngredienttracingService ingredienttracingService;
 
+    /**
+     * Get a List of all ingredienttracings
+     * @return The List of ingredienttracings
+     */
     @GetMapping("/ingredienttracings")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<List<Ingredienttracing>> getAll() {
@@ -31,18 +41,11 @@ public class IngredienttracingResource {
         return ResponseEntity.ok(ingredienttracings);
     }
 
-  //  @GetMapping("/ingredienttracings/{id}")
-  //  public ResponseEntity<Ingredienttracing> getById(@PathVariable Long id){
- //       Ingredienttracing ingredienttracing = ingredienttracingService.getById(id);
-   //     if(ingredienttracing == null){
- //          log.error("Failed to find ingredienttracing number " + id);
-
-    //        return ResponseEntity.notFound().build();
- //       }
-    //    log.info("Retrieved ingredienttracing number " + id);
-  //      return ResponseEntity.ok(ingredienttracing);
- //   }
-
+    /**
+     * Get a list of ingredienttracings for a specific orderline
+     * @param id The id of the Orderline
+     * @return All ingredienttracings for the specified orderline id
+     */
     @GetMapping("/ingredienttracings/{id}") //works by orderlineId
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<List<Ingredienttracing>> getByOrderlineId(@PathVariable Long id){
@@ -56,6 +59,11 @@ public class IngredienttracingResource {
         return ResponseEntity.ok(ingredienttracing);
     }
 
+    /**
+     * Save an ingredienttracing
+     * @param ingredienttracing The ingredienttracing that needs to be persisted
+     * @return ReponseEntity
+     */
     @PostMapping("/ingredienttracings")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredienttracing> createIngredienttracing(@Valid @RequestBody Ingredienttracing ingredienttracing)
@@ -65,6 +73,11 @@ public class IngredienttracingResource {
         return ResponseEntity.ok(ingredienttracing);
     }
 
+    /**
+     * Delete an ingredienttracing from the DB.
+     * @param id The id of the ingredienttracing that needs to be deleted
+     * @return ResponseEntity
+     */
     @DeleteMapping("/ingredienttracings/{id}")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredienttracing> deleteIngredienttracing(@PathVariable Long id) {

@@ -15,17 +15,34 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+/**
+ * Service layer of the Ingredienttracing microservice
+ */
 @Service
 @AllArgsConstructor
 public class IngredienttracingService {
+
+    /**
+     * List of tracings
+     */
     private static List<Ingredienttracing> ingredienttracings = new ArrayList<>();
 
+    /**
+     * The ingredienttracing repository
+     */
     @Autowired
     private IngredienttracingRepository ingredienttracingRepository;
 
+    /**
+     * The ingredienttracing mapping class
+     */
     @Autowired
     private IngredienttracingMapper ingredienttracingMapper;
 
+    /**
+     * Retrieve a List of all persisted ingredienttracings
+     * @return List of all ingredienttracings
+     */
     public List<Ingredienttracing> getAll(){
         List<Ingredienttracing> ingredienttracings = StreamSupport
                 .stream(ingredienttracingRepository.findAll().spliterator(), false)
@@ -34,14 +51,11 @@ public class IngredienttracingService {
         return ingredienttracings;
     }
 
-    public Ingredienttracing getById(Long id){
-        Optional<IngredienttracingEntity> ingredienttracingEntityOptional = ingredienttracingRepository.findById(id);
-        if(ingredienttracingEntityOptional.isPresent()){
-            return ingredienttracingMapper.toDTO(ingredienttracingEntityOptional.get());
-        }
-        return null;
-    }
-
+    /**
+     * Get all tracings for a specific Orderline
+     * @param id The id of the Orderline
+     * @return A List of ingredienttracings for the specified Orderline id.
+     */
     public List<Ingredienttracing> getByOrderlineId(Long id){
         List<Ingredienttracing> ingredienttracings = StreamSupport
                 .stream(ingredienttracingRepository.findAll().spliterator(), false)
@@ -52,12 +66,20 @@ public class IngredienttracingService {
         return ingredienttracings;
     }
 
+    /**
+     * Save an Ingredienttracing to the DB.
+     * @param ingredienttracing The ingredienttracing that needs to be persisted
+     */
     public void save(Ingredienttracing ingredienttracing) {
         IngredienttracingEntity ingredientToSave = ingredienttracingMapper.toEntity(ingredienttracing);
         ingredienttracingRepository.save(ingredientToSave);
     }
 
-
+    /**
+     * Delete an Ingredienttracing
+     * @param id The Ingredienttracing id that needs to be deleted
+     * @return Boolean true if successful
+     */
     public boolean delete(Long id) {
 
         Optional<IngredienttracingEntity> ingredienttracingEntityOptional = ingredienttracingRepository.findById(id);

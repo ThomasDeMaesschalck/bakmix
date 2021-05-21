@@ -29,9 +29,17 @@ import java.util.List;
 public class IngredientResource {
 
 
+    /**
+     * The ingredient service
+     */
     @Autowired
     private IngredientService ingredientService;
 
+
+    /**
+     * Get a list of all ingredients, without pagination
+     * @return Returns a List of ingredients
+     */
     @GetMapping("/ingredients")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<List<Ingredient>> getAll() {
@@ -40,7 +48,13 @@ public class IngredientResource {
         return ResponseEntity.ok(ingredient);
     }
 
-
+    /**
+     * Get a page of ingredients
+     * @param pageNo The page number
+     * @param pageSize The page size
+     * @param sortBy Sort filter
+     * @return Returns the requested Page of ingredients
+     */
     @GetMapping("/ingredientspaginated/")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<Page<Ingredient>> getAllPaginated(@RequestParam(defaultValue = "0") Integer pageNo,
@@ -51,6 +65,11 @@ public class IngredientResource {
         return ResponseEntity.ok(ingredient);
     }
 
+    /**
+     * Get a specific ingredient
+     * @param id The database id of this ingredient
+     * @return The requested Ingredient
+     */
     @GetMapping("/ingredients/{id}")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredient> getById(@PathVariable Long id){
@@ -64,6 +83,11 @@ public class IngredientResource {
         return ResponseEntity.ok(ingredient);
     }
 
+    /**
+     * Search a specific ingredient based on uniqueCode
+     * @param uniqueId The unique code of the Ingredient
+     * @return The requested Ingredient
+     */
     @GetMapping("/ingredients/uniquecode/{uniqueId}")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredient> findByUniqueId(@PathVariable String uniqueId){
@@ -77,6 +101,11 @@ public class IngredientResource {
         return ResponseEntity.ok(result);
     }
 
+    /**
+     * Persist an ingredient
+     * @param ingredient The ingredient that needs to be persisted
+     * @return The saved ingredient
+     */
     @PostMapping("/ingredients")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredient> createContact(@Valid @RequestBody Ingredient ingredient)
@@ -85,6 +114,13 @@ public class IngredientResource {
         log.info("Saved ingredient " + ingredient);
         return ResponseEntity.ok(ingredient);
     }
+
+    /**
+     * Update an existing ingredient
+     * @param id The Id of the ingredient that is updated
+     * @param ingredienDetails The new ingredient details
+     * @return The saved ingredient
+     */
     @PutMapping("/ingredients/{id}")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredient> replaceIngredient(@PathVariable Long id, @Valid @RequestBody Ingredient ingredienDetails) {
@@ -105,6 +141,11 @@ public class IngredientResource {
      return ResponseEntity.ok(ingredient);
     }
 
+    /**
+     * Delete an ingredient from the DB
+     * @param id The id of the ingredient that needs to be deleted
+     * @return ResponseEntity
+     */
     @DeleteMapping("/ingredients/{id}")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<Ingredient> deleteContact(@PathVariable String id) {
@@ -117,6 +158,10 @@ public class IngredientResource {
         return ResponseEntity.noContent().build();
     }
 
+    /**
+     * Retrieve a list of expired ingredients. Service layer checks whether expiry date is before the current system date.
+     * @return The List of expired ingredients
+     */
     @GetMapping("/expiredingredients")
     @RolesAllowed("bakmix-admin")
     public ResponseEntity<List<Ingredient>> getAlExpired() {
