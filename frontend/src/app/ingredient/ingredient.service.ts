@@ -1,4 +1,4 @@
-import { Ingredient } from './ingredient';
+import { Ingredient } from '../models/ingredient';
 import { IngredientFilter } from './ingredient-filter';
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, of, ReplaySubject} from 'rxjs';

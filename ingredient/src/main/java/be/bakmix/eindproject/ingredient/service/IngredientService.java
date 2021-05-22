@@ -73,6 +73,7 @@ public class IngredientService {
     /**
      * Get the requested Page of Ingredients from the database.
      * Gets all the ingredients from the database and adjusts linked boolean to true if the ingredient is found in an existing tracing.
+     * Boolean linked is used in the view to disable the delete button as it's not possible to remove ingredients that are used in one or more orderlines.
      * @param pageNo The page number
      * @param pageSize The page size
      * @param sortBy The sort filter
@@ -86,7 +87,7 @@ public class IngredientService {
         {
             if (ingredientTracingsMap.containsKey(i.getId()))
             {
-                i.setLinked(true); //boolean geeft aan dat ingrediënt gekoppeld is aan orderlijnen
+                i.setLinked(true);
             }
         }
         return ingredients;

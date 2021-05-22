@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import {Ingredient} from '../ingredient/ingredient';
-import {Ingredienttracing} from './ingredienttracing';
+import {Ingredient} from '../models/ingredient';
+import {Ingredienttracing} from '../models/ingredienttracing';
 import {Router} from '@angular/router';
-import {Order} from '../order/order';
+import {Order} from '../models/order';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 

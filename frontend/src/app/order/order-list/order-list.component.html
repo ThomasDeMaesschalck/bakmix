@@ -17,11 +17,16 @@
             </tr>
             </thead>
             <tbody>
+
+            <tr *ngIf="orderList.length === 0"><td><br><br>Nog geen orders</td></tr>
+
+
             <tr *ngFor="let orderItem of orderList">
 
               <td>{{orderItem.id}}</td>
               <td>{{orderItem.customer.firstName}} {{orderItem.customer.lastName}}</td>
-              <td>{{getStatusType(orderItem.status)}}</td>
+              <td *ngIf="orderItem.status < 3"><span class="status-badge notready">{{getStatusType(orderItem.status)}}</span></td>
+              <td *ngIf="orderItem.status == 3"><span class="status-badge ok">{{getStatusType(orderItem.status)}}</span></td>
               <td style="white-space: nowrap">
                 <a [routerLink]="['../orders', orderItem.id ]" class="btn btn-secondary">Bekijk</a>&nbsp;
               </td>

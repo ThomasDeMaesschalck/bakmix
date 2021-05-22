@@ -6,30 +6,53 @@
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/OrderlineApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/OrderlineApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/business/OrderlineEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/business/OrderlineEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/business/repository/OrderlineRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/business/repository/OrderlineRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/OrderlineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/OrderlineService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/dto/Orderline.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/dto/Orderline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/dto/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/dto/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/mapper/OrderlineMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/mapper/OrderlineMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/web/rest/OrderlineResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/web/rest/OrderlineResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/PdfApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/PdfApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/PdfService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/PdfService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Ingredienttracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Ingredienttracing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Orderline.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Orderline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/dto/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/util/GeneratePdf.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/util/GeneratePdf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/ProductApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/ProductApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/business/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/business/ProductEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/business/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/business/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/service/dto/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/service/dto/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/service/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/service/mapper/ProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer-list/customer-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/customer/customer-list/customer-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/customer/customer.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/customer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/model.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/ingredient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/model.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/ingredienttracing.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-mail/tracing-mail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-mail/tracing-mail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-view/tracing-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-view/tracing-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/mail/mail.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/mail/mail.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/mail/trackingmail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/trackingmail.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/orderline.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pdf/pdf.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pdf/pdf.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/product/model.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/product/product-list/product-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/product/product-list/product-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/product/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/product/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/product.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/dto/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/dto/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mail/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderline/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +106,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mail/src/main/java/be/bakmix/eindproject/mail/service/dto" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/src/app/models" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -102,11 +125,11 @@
       <recent name="C:\bakmixeindproject\pdf\src\main\java\be\bakmix\eindproject\pdf\service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\bakmixeindproject\frontend\src\app\models" />
       <recent name="C:\bakmixeindproject\pdf\src\main\resources\static\" />
       <recent name="C:\bakmixeindproject\pdf\src\main\resources\static\images" />
       <recent name="C:\bakmixeindproject\pdf\src\main\resources\static" />
       <recent name="C:\bakmixeindproject\pdf\src\main\resources" />
-      <recent name="C:\bakmixeindproject\pdf\src\main\resources\static\img\" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="be.bakmix.eindproject.ingredient.service.dto" />
@@ -124,6 +147,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.PdfApplication">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="E2E Tests (frontend)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/frontend/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -235,9 +271,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.CustomersApplication" />
-        <item itemvalue="Spring Boot.ProductApplication" />
         <item itemvalue="Spring Boot.IngredientApplication" />
+        <item itemvalue="Spring Boot.ProductApplication" />
+        <item itemvalue="Spring Boot.CustomersApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -264,14 +300,8 @@
       <workItem from="1620231352307" duration="918000" />
       <workItem from="1620589069810" duration="197000" />
       <workItem from="1620764105392" duration="164000" />
-      <workItem from="1621529303603" duration="16654000" />
-    </task>
-    <task id="LOCAL-00003" summary="first version of order microservice">
-      <created>1616324759627</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1616324759628</updated>
+      <workItem from="1621529303603" duration="27157000" />
+      <workItem from="1621709527401" duration="6439000" />
     </task>
     <task id="LOCAL-00004" summary="homepage angular first version">
       <created>1616334895039</created>
@@ -609,7 +639,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621630104038</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Javadoc for all microservices">
+      <created>1621631276007</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1621631276008</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,7 +666,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added code om verzonden orders niet wijzigbaar te maken" />
     <MESSAGE value="Performance verbetering index page" />
     <MESSAGE value="Overal pagination" />
     <MESSAGE value="Datepicker working" />
@@ -654,6 +690,7 @@
     <MESSAGE value="Javadoc for three microservices" />
     <MESSAGE value="Javadoc for MAil" />
     <MESSAGE value="Javadoc for Order" />
-    <option name="LAST_COMMIT_MESSAGE" value="Javadoc for Order" />
+    <MESSAGE value="Javadoc for all microservices" />
+    <option name="LAST_COMMIT_MESSAGE" value="Javadoc for all microservices" />
   </component>
 </project>

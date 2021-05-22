@@ -1,5 +1,5 @@
-import {Product} from '../product/product';
-import {Ingredient} from '../ingredient/ingredient';
+import {Product} from './product';
+import {Ingredient} from './ingredient';
 
 export class Orderline {
   id: number;

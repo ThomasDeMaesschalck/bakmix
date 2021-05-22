@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerFilter } from '../customer-filter';
 import { CustomerService } from '../customer.service';
-import { Customer } from '../customer';
+import { Customer } from '../../models/customer';
 import {Observable} from "rxjs";
 
 @Component({

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {Order} from "../order";
+import {Order} from "../../models/order";
 import {ActivatedRoute, Router} from "@angular/router";
 import {OrderService} from "../order.service";
 import {map, switchMap} from "rxjs/operators";
 import {of} from "rxjs";
 import {NgForm} from "@angular/forms";
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {Trackingmail} from "../../mail/trackingmail";
+import {Trackingmail} from "../../models/trackingmail";
 import {MailService} from "../../mail/mail.service";
 
 const headers = new HttpHeaders().set('Accept', 'application/json');

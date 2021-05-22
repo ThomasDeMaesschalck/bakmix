@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Order} from '../../order/order';
+import {Order} from '../../models/order';
 import {ActivatedRoute, Router} from '@angular/router';
 import {OrderService} from '../../order/order.service';
-import {Ingredient} from "../../ingredient/ingredient";
+import {Ingredient} from "../../models/ingredient";
 import {IngredientService} from "../../ingredient/ingredient.service";
 import {MailService} from "../../mail/mail.service";
 

@@ -2,3 +2,16 @@
 .greeniconcolor {color:green;}
 .rediconcolor {color:darkred;}
 .bakmixorange{color: #ED8031}
+
+.status-badge {
+  border-radius: 2px;
+  padding: .25em .5rem;
+ }
+
+.status-badge.ok {
+  background: #C8E6C9;
+  color: #256029; }
+
+.status-badge.notready {
+  color: #000000; }
+

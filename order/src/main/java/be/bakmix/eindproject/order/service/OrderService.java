@@ -83,7 +83,7 @@ public class OrderService {
      * For each Order, the method sets the Customer and Orderlines.
      * For each orderline, the linked ingredients are set.
      * Order status check is performed and updated if necessary
-     * @param index True if request is made for displaying content on the index page of the application. Some logic gets bypassed: avoids loading unnecessary information to speed up processing.
+     * @param index True if request is made for displaying content on the index and order page of the application. Some logic gets bypassed: avoids loading unnecessary information to speed up processing.
      * @param pageNo The page number
      * @param pageSize The page size
      * @param sortBy Sorting filter
@@ -101,7 +101,7 @@ public class OrderService {
                 }
         );
 
-        if(!index) { //performance enhancement voor de index pagina
+        if(!index) { //performance enhancement for index pages
             orders.forEach(order ->
             {
                 Orderline[] orderlines = keycloakRestTemplate.getForObject(urlOrderlines + order.getId(), Orderline[].class);

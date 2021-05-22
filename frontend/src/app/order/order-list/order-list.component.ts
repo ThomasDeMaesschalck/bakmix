@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Order} from '../order';
+import {Order} from '../../models/order';
 import {OrderService} from '../order.service';
 import {Orderstatus} from "../orderstatus";
 import {Observable} from "rxjs";
@@ -31,7 +31,7 @@ export class OrderListComponent implements OnInit {
   }
 
   search(): void {
-    this.orderService.load(false, this.filter);
+    this.orderService.load(true, this.filter);
     this.total$ = this.orderService.size$;
   }
 

@@ -22,7 +22,8 @@ public class Ingredient {
     private LocalDate expiry;
 
     /**
-     * Set to true by the service class if the Ingredient has been linked to an orderline
+     * Set to true by the service class if the Ingredient has been linked to at least one orderline.
+     * Used by the frontend to ensure linked ingredients can't be removed from the database.
      */
     private Boolean linked;
 }

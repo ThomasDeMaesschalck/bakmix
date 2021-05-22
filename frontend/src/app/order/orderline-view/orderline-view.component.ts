@@ -3,12 +3,12 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {map, switchMap} from "rxjs/operators";
 import {Observable, of} from "rxjs";
 import {OrderlineService} from '../orderline.service';
-import {Orderline} from '../orderline';
+import {Orderline} from '../../models/orderline';
 import {IngredienttracingService} from '../../ingredienttracing/ingredienttracing.service';
-import {Ingredient} from '../../ingredient/ingredient';
-import {Ingredienttracing} from '../../ingredienttracing/ingredienttracing';
+import {Ingredient} from '../../models/ingredient';
+import {Ingredienttracing} from '../../models/ingredienttracing';
 import {IngredientService} from '../../ingredient/ingredient.service';
-import {Order} from '../order';
+import {Order} from '../../models/order';
 import {OrderService} from '../order.service';
 
 @Component({

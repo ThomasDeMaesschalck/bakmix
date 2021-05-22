@@ -1,4 +1,4 @@
-import { Customer } from './customer';
+import { Customer } from '../models/customer';
 import { CustomerFilter } from './customer-filter';
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';

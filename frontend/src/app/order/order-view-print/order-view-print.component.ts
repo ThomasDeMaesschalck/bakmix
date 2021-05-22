@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {OrderService} from '../order.service';
-import {Order} from '../order';
+import {Order} from '../../models/order';
 import {map, switchMap} from 'rxjs/operators';
 import {of} from 'rxjs';
 import {PdfService} from '../../pdf/pdf.service';

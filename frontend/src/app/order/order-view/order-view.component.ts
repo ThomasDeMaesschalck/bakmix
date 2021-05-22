@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Ingredient} from '../../ingredient/ingredient';
-import {Order} from '../order';
+import {Ingredient} from '../../models/ingredient';
+import {Order} from '../../models/order';
 import {ActivatedRoute, Router} from '@angular/router';
 import {IngredientService} from '../../ingredient/ingredient.service';
 import {OrderService} from '../order.service';

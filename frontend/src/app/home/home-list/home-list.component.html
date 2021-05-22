@@ -22,13 +22,16 @@
                 </tr>
                 </thead>
                 <tbody>
+                <tr *ngIf="orderList.length === 0"><td>Nog geen orders</td></tr>
+
                 <tr *ngFor="let orderItem of orderList">
 
                   <td>{{orderItem.id}}</td>
                   <td>{{orderItem.customer.firstName}}</td>
-                  <td>{{getStatusType(orderItem.status)}}</td>
+                  <td *ngIf="orderItem.status < 3"><span class="status-badge notready">{{getStatusType(orderItem.status)}}</span></td>
+                  <td *ngIf="orderItem.status == 3"><span class="status-badge ok">{{getStatusType(orderItem.status)}}</span></td>
                   <td style="white-space: nowrap">
-                    <a [routerLink]="['../orders', orderItem.id ]" class="btn btn-secondary" title="Bekijken"><i class="fas fa-paper-plane"></i></a>&nbsp;
+                    <a [routerLink]="['../orders', orderItem.id ]" class="btn btn-secondary" title="Bekijken"><i class="fas fa-dolly"></i></a>&nbsp;
                   </td>
                 </tr>
                 </tbody>
@@ -94,6 +97,7 @@
         </tr>
         </thead>
         <tbody>
+        <tr *ngIf="ingredientList.length === 0"><td>Nog geen ingegeven ingrediënten</td></tr>
         <tr *ngFor="let ingredientItem of ingredientList" [class.active]="ingredientItem === selectedIngredient">
           <td>{{ingredientItem.uniqueCode}}</td>
           <td class="text-break">{{ingredientItem.brand}} {{ingredientItem.type}} ({{ingredientItem.purchaseDate}})</td>

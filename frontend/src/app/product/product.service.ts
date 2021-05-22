@@ -1,4 +1,4 @@
-import { Product } from './product';
+import { Product } from '../models/product';
 import { ProductFilter } from './product-filter';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';

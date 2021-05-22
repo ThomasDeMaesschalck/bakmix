@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {Trackingmail} from './trackingmail';
-import {Order} from '../order/order';
+import {Trackingmail} from '../models/trackingmail';
+import {Order} from '../models/order';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 

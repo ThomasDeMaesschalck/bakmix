@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Ingredient} from '../../ingredient/ingredient';
+import {Ingredient} from '../../models/ingredient';
 import {IngredientService} from '../../ingredient/ingredient.service';
 import {IngredientFilter} from '../../ingredient/ingredient-filter';
-import {Order} from '../../order/order';
+import {Order} from '../../models/order';
 import {OrderService} from '../../order/order.service';
 import {Orderstatus} from '../../order/orderstatus';
 

@@ -1,4 +1,4 @@
-import {Customer} from '../customer/customer';
+import {Customer} from './customer';
 import {Orderline} from './orderline';
 
 export class Order {
