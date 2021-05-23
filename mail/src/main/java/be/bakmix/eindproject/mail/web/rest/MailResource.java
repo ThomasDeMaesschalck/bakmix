@@ -28,7 +28,7 @@ public class MailResource {
      * The Mail microservice service layer
      */
     @Autowired
-    private MailService mailService;
+    private final MailService mailService;
 
 
     /**

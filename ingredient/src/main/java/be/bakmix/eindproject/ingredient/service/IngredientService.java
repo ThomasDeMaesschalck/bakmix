@@ -93,11 +93,10 @@ public class IngredientService {
      */
 
     public List<Ingredient> getAllNoPagination(){
-        List<Ingredient> ingredients = StreamSupport
+        return StreamSupport
                 .stream(ingredientRepository.findAll().spliterator(), false)
-                .map(i -> ingredientMapper.toDTO(i))
+                .map(ingredientMapper::toDTO)
                 .collect(Collectors.toList());
-        return ingredients;
     }
 
     /**
@@ -148,14 +147,12 @@ public class IngredientService {
 
     public boolean findDuplicateUniqueIdBoolean(String uniqueId)
     {
-        boolean duplicate = false;
         List<Ingredient> checkDuplicate = getAllNoPagination().stream().filter(i -> i.getUniqueCode().equals(uniqueId)).collect(Collectors.toList());
         if(checkDuplicate.size() > 0)
         {
-            duplicate = true;
-           return duplicate;
+           return true;
         }
-        return duplicate;
+        return false;
     }
 
     /**
@@ -184,9 +181,9 @@ public class IngredientService {
         LocalDate today = LocalDate.now();
         List<Ingredient> ingredients =  StreamSupport
                 .stream(ingredientRepository.findAll().spliterator(), false)
-                .filter(i -> i.getAvailable())
+                .filter(IngredientEntity::getAvailable)
                 .filter(i -> !i.getExpiry().isAfter(today))
-                .map(i -> ingredientMapper.toDTO(i))
+                .map(ingredientMapper::toDTO)
                 .collect(Collectors.toList());
         return ingredients;
     }

@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {Order} from "../../models/order";
-import {ActivatedRoute, Router} from "@angular/router";
-import {OrderService} from "../order.service";
-import {map, switchMap} from "rxjs/operators";
-import {of} from "rxjs";
-import {NgForm} from "@angular/forms";
-import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {Trackingmail} from "../../models/trackingmail";
-import {MailService} from "../../mail/mail.service";
+import {Order} from '../../models/order';
+import {ActivatedRoute, Router} from '@angular/router';
+import {OrderService} from '../order.service';
+import {map, switchMap} from 'rxjs/operators';
+import {of} from 'rxjs';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {Trackingmail} from '../../models/trackingmail';
+import {MailService} from '../../mail/mail.service';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
@@ -54,7 +53,7 @@ export class OrderViewSendComponent implements OnInit {
   onSubmit() {
     this.feedback = {type: 'success', message: 'Even geduld... mail aan het sturen'};
     setTimeout(() => {this.feedback = {}; }, 5000);
-     this.mailService.sendTrackingMail(this.order, this.trackingMail).subscribe(
+    this.mailService.sendTrackingMail(this.order, this.trackingMail).subscribe(
        (trackingmail) => {
          this.trackingMail = this.trackingMail;
          this.feedback = {type: 'success', message: 'Mail zenden gelukt!'};

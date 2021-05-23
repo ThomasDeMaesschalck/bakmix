@@ -2,7 +2,7 @@ import { Product } from '../models/product';
 import { ProductFilter } from './product-filter';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 

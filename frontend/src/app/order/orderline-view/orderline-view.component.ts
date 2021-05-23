@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {map, switchMap} from "rxjs/operators";
-import {Observable, of} from "rxjs";
+import {map, switchMap} from 'rxjs/operators';
+import {of} from 'rxjs';
 import {OrderlineService} from '../orderline.service';
 import {Orderline} from '../../models/orderline';
 import {IngredienttracingService} from '../../ingredienttracing/ingredienttracing.service';

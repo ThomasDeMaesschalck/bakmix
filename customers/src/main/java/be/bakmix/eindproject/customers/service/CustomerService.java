@@ -13,8 +13,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 
@@ -46,8 +44,7 @@ public class CustomerService {
      */
     public Page<Customer> getAll(Integer pageNo, Integer pageSize, String sortBy){
         Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.DESC, sortBy));
-        Page<Customer> customers = customerRepository.findAll(paging).map(customerMapper::toDTO);
-        return customers;
+        return customerRepository.findAll(paging).map(customerMapper::toDTO);
     }
 
     /**
@@ -57,10 +54,7 @@ public class CustomerService {
      */
     public Customer getById(Long id){
         Optional<CustomerEntity> customerEntityOptional = customerRepository.findById(id);
-        if(customerEntityOptional.isPresent()){
-            return customerMapper.toDTO(customerEntityOptional.get());
-        }
-        return null;
+        return customerEntityOptional.map(customerMapper::toDTO).orElse(null);
     }
 
 }

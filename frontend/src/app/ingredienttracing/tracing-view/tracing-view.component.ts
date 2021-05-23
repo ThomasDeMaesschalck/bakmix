@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {OrderService} from '../../order/order.service';
-import {Orderline} from '../../models/orderline';
-import {map, switchMap} from 'rxjs/operators';
-import {of} from 'rxjs';
 import {Order} from '../../models/order';
-import {IngredientService} from "../../ingredient/ingredient.service";
-import {Ingredient} from "../../models/ingredient";
+import {IngredientService} from '../../ingredient/ingredient.service';
+import {Ingredient} from '../../models/ingredient';
 
 @Component({
   selector: 'app-tracing-view',

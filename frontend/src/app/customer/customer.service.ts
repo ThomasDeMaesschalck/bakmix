@@ -2,8 +2,8 @@ import { Customer } from '../models/customer';
 import { CustomerFilter } from './customer-filter';
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import {map} from "rxjs/operators";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
@@ -18,7 +18,7 @@ export class CustomerService {
 
   findById(id: string): Observable<Customer> {
     const url = `${this.api}${id}`;
-    const params = { id: id };
+    const params = { id };
     return this.http.get<Customer>(url, {params, headers});
   }
 

@@ -27,7 +27,7 @@ public class IngredienttracingResource {
      * The service layer
      */
     @Autowired
-    private IngredienttracingService ingredienttracingService;
+    private final IngredienttracingService ingredienttracingService;
 
     /**
      * Get a List of all ingredienttracings

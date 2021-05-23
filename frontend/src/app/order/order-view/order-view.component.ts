@@ -1,11 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Ingredient} from '../../models/ingredient';
 import {Order} from '../../models/order';
 import {ActivatedRoute, Router} from '@angular/router';
-import {IngredientService} from '../../ingredient/ingredient.service';
 import {OrderService} from '../order.service';
-import {map, switchMap} from "rxjs/operators";
-import {Observable, of} from "rxjs";
+import {map, switchMap} from 'rxjs/operators';
+import {Observable, of} from 'rxjs';
 import {Orderstatus} from '../orderstatus';
 
 @Component({

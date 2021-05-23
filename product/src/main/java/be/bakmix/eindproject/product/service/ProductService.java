@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -39,11 +38,10 @@ public class ProductService {
      * @return List of products
      */
     public List<Product> getAll(){
-        List<Product> products = StreamSupport
+        return StreamSupport
                 .stream(productRepository.findAll().spliterator(), false)
-                .map(e -> productMapper.toDTO(e))
+                .map(productMapper::toDTO)
                 .collect(Collectors.toList());
-        return products;
     }
 
     /**

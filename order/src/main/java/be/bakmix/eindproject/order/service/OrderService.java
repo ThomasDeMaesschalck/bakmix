@@ -72,7 +72,8 @@ public class OrderService {
 
     /**
      * Get a Page of Orders
-     * For each Order, the method sets the Customer.
+     * For each Order, the method retrieves and sets the Customer.
+     * Other properties like Orderline are not retrieved as this information is not needed by the frontend implementation.
      * @param pageNo The page number
      * @param pageSize The page size
      * @param sortBy Sorting filter
@@ -85,7 +86,8 @@ public class OrderService {
 
         orders.forEach(order -> {
                     Customer customer = keycloakRestTemplate.getForObject(urlCustomers + order.getCustomerId(), Customer.class);
-                    order.setCustomerId(customer.getId());
+            assert customer != null;
+            order.setCustomerId(customer.getId());
                     order.setCustomer(customer);
                 }
         );
@@ -111,11 +113,13 @@ public class OrderService {
 
              Orderline[] orderlines = keycloakRestTemplate.getForObject(urlOrderlines+order.getId(), Orderline[].class);
 
+            assert orderlines != null;
             for(Orderline orderline: orderlines)
             {
                  Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
                 List<Ingredient> ingredients = new ArrayList<>();
 
+                assert ingredienttracings != null;
                 for(Ingredienttracing ingredienttracing: ingredienttracings)
                 {
                     Long ingredientId = ingredienttracing.getIngredientId();
@@ -193,13 +197,16 @@ public class OrderService {
 
              Orderline orderline = keycloakRestTemplate.getForObject(urlOrderlinesById+id, Orderline.class);
 
-                 Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
+        assert orderline != null;
+        Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
                 List<Ingredient> ingredients = new ArrayList<>();
 
-                Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
+        assert ingredienttracings != null;
+        Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
                     Long ingredientId = ingredienttracing.getIngredientId();
                      Ingredient ingredient = keycloakRestTemplate.getForObject(urlIngredients+ingredientId, Ingredient.class);
-                    ingredient.setIngredienttracingId(ingredienttracing.getId());
+            assert ingredient != null;
+            ingredient.setIngredienttracingId(ingredienttracing.getId());
                     ingredients.add(ingredient);
                     orderline.setIngredients(ingredients);
                 });
@@ -218,16 +225,16 @@ public class OrderService {
 
          Ingredient[] ingredients = keycloakRestTemplate.getForObject(urlIngredients, Ingredient[].class);
 
-       List<Ingredient> ingredientsList = Arrays.asList(ingredients);
+        assert ingredients != null;
+        List<Ingredient> ingredientsList = Arrays.asList(ingredients);
 
          Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings + id, Ingredienttracing[].class);
 
-        ingredientsList = ingredientsList.stream().filter(i -> i.getAvailable() == true).collect(Collectors.toList());
+        ingredientsList = ingredientsList.stream().filter(Ingredient::getAvailable).collect(Collectors.toList());
 
         List<Ingredient> finalIngredientsList = ingredientsList;
-        Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
-            finalIngredientsList.removeIf(ingredient -> ingredient.getId().equals(ingredienttracing.getIngredientId()));
-        });
+        assert ingredienttracings != null;
+        Arrays.stream(ingredienttracings).forEach(ingredienttracing -> finalIngredientsList.removeIf(ingredient -> ingredient.getId().equals(ingredienttracing.getIngredientId())));
 
         return ingredientsList;
     }
@@ -243,7 +250,7 @@ public class OrderService {
     public List<Order> getAllIngredienttracedOrders(String id){
         List<Order> orders = StreamSupport
                 .stream(orderRepository.findAll().spliterator(), false)
-                .map(e -> orderMapper.toDTO(e))
+                .map(orderMapper::toDTO)
                 .collect(Collectors.toList());
 
         orders.forEach(order -> {
@@ -252,20 +259,23 @@ public class OrderService {
             List<Orderline> filteredOrderlines = new ArrayList<>();
             boolean found = false;
 
+            assert orderlines != null;
             Arrays.stream(orderlines).forEach(orderline -> {
 
             });
             for(Orderline orderline: orderlines)
             {
                  Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
-                List<Ingredient> ingredients = new ArrayList();
+                List<Ingredient> ingredients = new ArrayList<>();
 
+                assert ingredienttracings != null;
                 for(Ingredienttracing ingredienttracing: ingredienttracings)
                 {
                     Long ingredientId = ingredienttracing.getIngredientId();
                      Ingredient ingredient = keycloakRestTemplate.getForObject(urlIngredients+ingredientId, Ingredient.class);
                     ingredients.add(ingredient);
                     orderline.setIngredients(ingredients);
+                    assert ingredient != null;
                     if (ingredient.getUniqueCode().equals(id))
                     {
                         found = true;
@@ -284,6 +294,7 @@ public class OrderService {
 
         ordersFiltered.forEach(order -> {
              Customer customer = keycloakRestTemplate.getForObject(urlCustomers+order.getCustomerId(), Customer.class);
+            assert customer != null;
             order.setCustomerId(customer.getId());
             order.setCustomer(customer);
         });

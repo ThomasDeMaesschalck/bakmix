@@ -2,10 +2,8 @@ import { Order } from '../models/order';
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import {Ingredient} from '../models/ingredient';
-import {isEmpty, map} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 import {OrderFilter} from './order-filter';
-import {assertNotNull} from "@angular/compiler/src/output/output_ast";
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 

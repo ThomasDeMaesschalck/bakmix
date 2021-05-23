@@ -1,5 +1,3 @@
-import DateTimeFormat = Intl.DateTimeFormat;
-
 export class Ingredient {
   id: number;
   uniqueCode: string;

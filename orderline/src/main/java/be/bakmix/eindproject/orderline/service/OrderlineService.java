@@ -61,7 +61,7 @@ import java.util.stream.StreamSupport;
     public List<Orderline> getAll(){
         List<Orderline> orderlines = StreamSupport
                 .stream(orderlineRepository.findAll().spliterator(), false)
-                .map(e -> orderlineMapper.toDTO(e))
+                .map(orderlineMapper::toDTO)
                 .collect(Collectors.toList());
 
         orderlines.forEach(orderline -> {
@@ -82,7 +82,7 @@ import java.util.stream.StreamSupport;
         List<Orderline> orderlines = StreamSupport
                 .stream(orderlineRepository.findAll().spliterator(), false)
                 .filter(o -> o.getOrderId() == id)
-                .map(e -> orderlineMapper.toDTO(e))
+                .map(orderlineMapper::toDTO)
                 .collect(Collectors.toList());
 
         orderlines.forEach(orderline -> {

@@ -39,7 +39,7 @@ public class IngredienttracingService {
     public List<Ingredienttracing> getAll(){
         List<Ingredienttracing> ingredienttracings = StreamSupport
                 .stream(ingredienttracingRepository.findAll().spliterator(), false)
-                .map(e -> ingredienttracingMapper.toDTO(e))
+                .map(ingredienttracingMapper::toDTO)
                 .collect(Collectors.toList());
         return ingredienttracings;
     }
@@ -53,7 +53,7 @@ public class IngredienttracingService {
         List<Ingredienttracing> ingredienttracings = StreamSupport
                 .stream(ingredienttracingRepository.findAll().spliterator(), false)
                 .filter(i -> i.getOrderlineId() == id)
-                .map (e -> ingredienttracingMapper.toDTO(e))
+                .map (ingredienttracingMapper::toDTO)
                 .collect(Collectors.toList());
 
         return ingredienttracings;

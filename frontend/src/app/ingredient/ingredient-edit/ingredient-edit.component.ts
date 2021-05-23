@@ -1,11 +1,11 @@
-import {Component, Injectable, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { IngredientService } from '../ingredient.service';
 import { Ingredient } from '../../models/ingredient';
 import { map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import {NgbDateParserFormatter, NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
+import {NgbDateParserFormatter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-ingredient-edit',
