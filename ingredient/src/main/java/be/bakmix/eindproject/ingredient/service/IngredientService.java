@@ -27,7 +27,7 @@ public class IngredientService {
     /**
      * HashMap used for checking whether an ingredient is linked to an orderline. HashMap as duplicate keys are not needed.
      */
-    private Map ingredientTracingsMap = new HashMap();
+    private Map<Long, Long> ingredientTracingsMap = new HashMap<>();
 
     /**
      * Rest template with keycloak implementation, used to access the Ingredienttracing microservice
@@ -191,13 +191,11 @@ public class IngredientService {
     /**
      * Call the Ingredienttracing microservice to retrieve all tracings. This method generates a Map that's used by the getAll method to check
      * whether an ingredient is linked to orderlines. A Map is used because an ingredient can have multiple tracing entries. Duplicates are irrelevant for the end purpose.
-     * @return A map of ingredienttracings
      */
-    public Map<Long, Long> ingredientTracings(){ //stuk code om aan te geven dat een ingrediënt gekoppeld is aan orderlijnen
+    public void ingredientTracings(){ //stuk code om aan te geven dat een ingrediënt gekoppeld is aan orderlijnen
         Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings, Ingredienttracing[].class);
         Arrays.stream(ingredienttracings).forEach(i ->
                 ingredientTracingsMap.put(i.getIngredientId(), i.getOrderlineId()));
-        return ingredientTracingsMap;
     }
 
 

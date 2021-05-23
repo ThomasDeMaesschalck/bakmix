@@ -58,7 +58,7 @@ public class IngredientResource {
                                                             @RequestParam(defaultValue = "10") Integer pageSize,
                                                             @RequestParam(defaultValue = "id") String sortBy) {
         Page<Ingredient> ingredient = ingredientService.getAll(pageNo, pageSize, sortBy);
-        log.info("Retrieved all ingredients");
+        log.info("Retrieved Page of ingredients");
         return ResponseEntity.ok(ingredient);
     }
 
