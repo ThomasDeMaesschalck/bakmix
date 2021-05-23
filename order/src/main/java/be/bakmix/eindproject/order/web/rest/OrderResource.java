@@ -29,11 +29,10 @@ public class OrderResource {
      * The order service layer
      */
     @Autowired
-    private OrderService orderService;
+    private final OrderService orderService;
 
     /**
      * Get a Page of orders
-     * @param index Boolean that is set to true when certain information is not necessary. Speeds up loading.
      * @param pageNo The page number
      * @param pageSize The page size
      * @param sortBy The sorting filter
@@ -41,10 +40,10 @@ public class OrderResource {
      */
     @GetMapping("/orders")
     @RolesAllowed("bakmix-admin")
-    public ResponseEntity<Page<Order>> getAll(@RequestParam(defaultValue = "0") Boolean index, @RequestParam(defaultValue = "0") Integer pageNo,
+    public ResponseEntity<Page<Order>> getAll(@RequestParam(defaultValue = "0") Integer pageNo,
                                               @RequestParam(defaultValue = "10") Integer pageSize,
                                               @RequestParam(defaultValue = "id") String sortBy) {
-        Page<Order> orders = orderService.getAll(index, pageNo, pageSize, sortBy);
+        Page<Order> orders = orderService.getAll(pageNo, pageSize, sortBy);
         log.info("Retrieved all orders");
         return ResponseEntity.ok(orders);
     }

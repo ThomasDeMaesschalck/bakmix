@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -21,22 +20,17 @@ import java.util.stream.StreamSupport;
 @AllArgsConstructor
 public class IngredienttracingService {
 
-    /**
-     * List of tracings
-     */
-    private static List<Ingredienttracing> ingredienttracings = new ArrayList<>();
-
-    /**
+      /**
      * The ingredienttracing repository
      */
     @Autowired
-    private IngredienttracingRepository ingredienttracingRepository;
+    private final IngredienttracingRepository ingredienttracingRepository;
 
     /**
      * The ingredienttracing mapping class
      */
     @Autowired
-    private IngredienttracingMapper ingredienttracingMapper;
+    private final IngredienttracingMapper ingredienttracingMapper;
 
     /**
      * Retrieve a List of all persisted ingredienttracings

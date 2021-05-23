@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -22,22 +21,17 @@ import java.util.stream.StreamSupport;
 @Service
  public class OrderlineService {
 
-    /**
-     * List of orderlines
-     */
-    private static List<Orderline> orderlines = new ArrayList<>();
-
-    /**
+     /**
      * Orderline repository
      */
     @Autowired
-    private OrderlineRepository orderlineRepository;
+    private final OrderlineRepository orderlineRepository;
 
     /**
      * Orderline mapper class
      */
     @Autowired
-    private OrderlineMapper orderlineMapper;
+    private final OrderlineMapper orderlineMapper;
 
     /**
      * Keycloak rest template. Used for authenticated communication with other REST APIs.

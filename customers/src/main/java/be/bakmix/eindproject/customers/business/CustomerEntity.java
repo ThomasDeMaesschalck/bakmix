@@ -3,7 +3,6 @@ package be.bakmix.eindproject.customers.business;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 /**
  * Entity class for the Customer object.

@@ -25,11 +25,6 @@ import static com.google.common.collect.MoreCollectors.onlyElement;
 public class IngredientService {
 
     /**
-     * List of ingredients
-     */
-    private static List<Ingredient> ingredients = new ArrayList<>();
-
-    /**
      * HashMap used for checking whether an ingredient is linked to an orderline. HashMap as duplicate keys are not needed.
      */
     private Map ingredientTracingsMap = new HashMap();
@@ -44,13 +39,13 @@ public class IngredientService {
      * The repository of ingredients
      */
     @Autowired
-    private IngredientRepository ingredientRepository;
+    private final IngredientRepository ingredientRepository;
 
     /**
      * The ingredient mapping class
      */
     @Autowired
-    private IngredientMapper ingredientMapper;
+    private final IngredientMapper ingredientMapper;
 
     /**
      * URL of the Ingredienttracing microservice API

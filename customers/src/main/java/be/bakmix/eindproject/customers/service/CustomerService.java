@@ -26,21 +26,16 @@ import java.util.Optional;
 public class CustomerService {
 
     /**
-     * List of customers
-     */
-    private static List<Customer> customers = new ArrayList<>();
-
-    /**
      * The Customer repository
      */
     @Autowired
-    private CustomerRepository customerRepository;
+    private final CustomerRepository customerRepository;
 
     /**
      * Customer mapper, mapping from Customer to Customer Entity and the other way around
      */
     @Autowired
-    private CustomerMapper customerMapper;
+    private final CustomerMapper customerMapper;
 
     /**
      * Retrieves a Page of customers from the database.

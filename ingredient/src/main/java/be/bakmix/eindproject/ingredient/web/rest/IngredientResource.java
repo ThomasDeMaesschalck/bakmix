@@ -30,7 +30,7 @@ public class IngredientResource {
      * The ingredient service
      */
     @Autowired
-    private IngredientService ingredientService;
+    private final IngredientService ingredientService;
 
 
     /**

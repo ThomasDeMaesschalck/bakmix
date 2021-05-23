@@ -26,7 +26,7 @@ CustomerResource {
      * The Customer service class
      */
     @Autowired
-    private CustomerService customerService;
+    private final CustomerService customerService;
 
     /**
      * This class is used by the frontend to retrieve a Page of Customers from the database.

@@ -23,21 +23,16 @@ import java.util.stream.StreamSupport;
 public class ProductService {
 
     /**
-     * List of products
-     */
-    private static List<Product> products = new ArrayList<>();
-
-    /**
      * The product repository
      */
     @Autowired
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     /**
      * The product mapping class
      */
     @Autowired
-    private ProductMapper productMapper;
+    private final ProductMapper productMapper;
 
     /**
      * Get a List of all products

@@ -31,7 +31,7 @@ export class OrderListComponent implements OnInit {
   }
 
   search(): void {
-    this.orderService.load(true, this.filter);
+    this.orderService.load(this.filter);
     this.total$ = this.orderService.size$;
   }
 

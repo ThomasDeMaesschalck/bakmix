@@ -27,21 +27,16 @@ import java.util.stream.StreamSupport;
 public class OrderService {
 
     /**
-     * List of orders
-     */
-    private static List<Order> orders = new ArrayList<>();
-
-    /**
      * The Order repository
      */
     @Autowired
-    private OrderRepository orderRepository;
+    private final OrderRepository orderRepository;
 
     /**
      * The Order mapper class
      */
     @Autowired
-    private OrderMapper orderMapper;
+    private final OrderMapper orderMapper;
 
     /**
      * Keycloak resttemplate. For authenticated communication via REST API with other microservices.
@@ -77,16 +72,13 @@ public class OrderService {
 
     /**
      * Get a Page of Orders
-     * For each Order, the method sets the Customer and Orderlines.
-     * For each orderline, the linked ingredients are set.
-     * Order status check is performed and updated if necessary
-     * @param index True if request is made for displaying content on the index and order page of the application. Some logic gets bypassed: avoids loading unnecessary information to speed up processing.
+     * For each Order, the method sets the Customer.
      * @param pageNo The page number
      * @param pageSize The page size
      * @param sortBy Sorting filter
      * @return The requested Page of orders
      */
-    public Page<Order> getAll(boolean index, Integer pageNo, Integer pageSize, String sortBy){
+    public Page<Order> getAll(Integer pageNo, Integer pageSize, String sortBy){
         Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.DESC, sortBy));
 
         Page<Order> orders = orderRepository.findAll(paging).map(orderMapper::toDTO);
@@ -97,29 +89,6 @@ public class OrderService {
                     order.setCustomer(customer);
                 }
         );
-
-        if(!index) { //performance enhancement for index pages
-            orders.forEach(order ->
-            {
-                Orderline[] orderlines = keycloakRestTemplate.getForObject(urlOrderlines + order.getId(), Orderline[].class);
-
-                Arrays.stream(orderlines).forEach(orderline -> {
-                    Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings + orderline.getId(), Ingredienttracing[].class);
-                    List<Ingredient> ingredients = new ArrayList<>();
-
-                    Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
-                        Long ingredientId = ingredienttracing.getIngredientId();
-                         Ingredient ingredient = keycloakRestTemplate.getForObject(urlIngredients + ingredientId, Ingredient.class);
-                        ingredients.add(ingredient);
-                        orderline.setIngredients(ingredients);
-                    });
-
-                });
-
-                order.setOrderlines(Arrays.asList(orderlines));
-                orderStatusCheck(order);
-            });
-        }
         return orders;
     }
 

@@ -31,8 +31,8 @@ export class OrderService {
     return this.http.get<Order[]>(url, {params, headers});
   }
 
-  load(index: boolean, filter: OrderFilter): void {
-    this.find(index, filter).subscribe(result => {
+  load(filter: OrderFilter): void {
+    this.find(filter).subscribe(result => {
         this.orderList = result;
       },
       err => {
@@ -41,22 +41,13 @@ export class OrderService {
     );
   }
 
-  find(index: boolean, filter: OrderFilter): Observable<Order[]> {
+  find(filter: OrderFilter): Observable<Order[]> {
     let params: any;
-    if (index === true) {
-      params = {
-        'index': 'true',
+    params = {
         id: filter.id,
         pageSize: filter.size,
         pageNo: filter.page
       };
-    } else {
-      params = {
-        id: filter.id,
-        pageSize: filter.size,
-        pageNo: filter.page
-      };
-    }
     return this.http.get<Order[]>(this.api, {params, headers}).pipe(
       map((response: any) => {
           this.size$.next(response.totalElements);

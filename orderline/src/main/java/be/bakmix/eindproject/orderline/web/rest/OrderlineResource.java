@@ -25,7 +25,7 @@ public class OrderlineResource {
      * The service layer
      */
     @Autowired
-    private OrderlineService orderlineService;
+    private final OrderlineService orderlineService;
 
     /**
      * Get all orderlines

@@ -19,7 +19,7 @@ import java.util.List;
 public class ProductResource {
 
     @Autowired
-    private ProductService productService;
+    private final ProductService productService;
 
     @GetMapping("/products")
     @RolesAllowed({"bakmix-admin"})

@@ -46,7 +46,7 @@ export class HomeListComponent implements OnInit {
   }
 
   searchOrders(): void {
-    this.orderService.load(true, this.filter);
+    this.orderService.load(this.filter);
   }
   getStatusType(status: number): string{
     return Orderstatus[status];

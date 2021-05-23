@@ -6,22 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/CustomerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/business/repository/CustomerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/web/rest/CustomerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/web/rest/CustomerResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/business/repository/IngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/business/repository/IngredientRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/IngredientResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/IngredientResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/business/IngredienttracingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/business/IngredienttracingEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/business/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/business/repository/OrderRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/web/rest/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/web/rest/OrderResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/OrderlineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/OrderlineService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/web/rest/OrderlineResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/web/rest/OrderlineResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/PdfService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/service/PdfService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/web/rest/ProductResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/web/rest/ProductResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,14 +276,7 @@
       <workItem from="1620589069810" duration="197000" />
       <workItem from="1620764105392" duration="164000" />
       <workItem from="1621529303603" duration="27157000" />
-      <workItem from="1621709527401" duration="10257000" />
-    </task>
-    <task id="LOCAL-00005" summary="angular order">
-      <created>1616356932530</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1616356932530</updated>
+      <workItem from="1621709527401" duration="14049000" />
     </task>
     <task id="LOCAL-00006" summary="angular order verder gedaan">
       <created>1616364089732</created>
@@ -616,7 +614,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621716956340</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="UI updates">
+      <created>1621760218943</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1621760218943</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,7 +641,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Overal pagination" />
     <MESSAGE value="Datepicker working" />
     <MESSAGE value="Fixed ingredient list page size bug" />
     <MESSAGE value="Fancier UI" />
@@ -661,6 +665,7 @@
     <MESSAGE value="Javadoc for Order" />
     <MESSAGE value="Javadoc for all microservices" />
     <MESSAGE value="Fixex and enhancements&#10;Switched to docker for mysql" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixex and enhancements&#10;Switched to docker for mysql" />
+    <MESSAGE value="UI updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI updates" />
   </component>
 </project>
