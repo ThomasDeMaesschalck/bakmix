@@ -28,7 +28,7 @@
               <td *ngIf="orderItem.status < 3"><span class="status-badge notready">{{getStatusType(orderItem.status)}}</span></td>
               <td *ngIf="orderItem.status == 3"><span class="status-badge ok">{{getStatusType(orderItem.status)}}</span></td>
               <td style="white-space: nowrap">
-                <a [routerLink]="['../orders', orderItem.id ]" class="btn btn-secondary">Bekijk</a>&nbsp;
+                <a [routerLink]="['../orders', orderItem.id ]" class="btn btn-secondary"><i class="fas fa-dolly"></i> Bekijk</a>&nbsp;
               </td>
             </tr>
             </tbody>

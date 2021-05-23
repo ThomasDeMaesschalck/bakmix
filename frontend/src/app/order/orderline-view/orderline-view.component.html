@@ -24,8 +24,8 @@
                 <thead>
                 <tr>
                   <th class="border-top-0" scope="col">#</th>
-                  <th class="border-top-0" scope="col">Name</th>
-                  <th class="border-top-0" scope="col" style="width:120px"></th>
+                  <th class="border-top-0" scope="col">Naam</th>
+                  <th class="border-top-0 text-center" scope="col">Verwijder</th>
                   <th class="border-top-0 text-center" scope="col">Status</th>
                 </tr>
                 </thead>
@@ -34,8 +34,8 @@
 
                   <td>{{ingredient.uniqueCode}}</td>
                   <td>{{ingredient.brand}} {{ingredient.type}}</td>
-                  <td style="white-space: nowrap">
-                    <button *ngIf="order.status != 3" type="submit" class="btn btn-primary" (click)="removeTracing(ingredient.ingredienttracingId)">Ontkoppelen</button>
+                  <td class="text-center">
+                    <button *ngIf="order.status != 3" type="submit" class="btn btn-outline-danger" (click)="removeTracing(ingredient.ingredienttracingId)"><i class="fas fa-minus"></i></button>
                   </td>
                   <td class="text-center align-middle">
                 <i *ngIf="ingredient.available == true" (click)="switchIngredientStatus(ingredient)" title="Is beschikbaar" role="button" class="fas fa-circle greeniconcolor"></i>
@@ -64,8 +64,8 @@
                 <thead>
                 <tr>
                   <th class="border-top-0" scope="col">#</th>
-                  <th class="border-top-0" scope="col">Name</th>
-                  <th class="border-top-0" scope="col" style="width:120px"></th>
+                  <th class="border-top-0" scope="col">Naam</th>
+                  <th class="border-top-0" scope="col">Koppel</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -73,8 +73,8 @@
 
                   <td>{{ingredientItem.uniqueCode}}</td>
                   <td>{{ingredientItem.brand}} {{ingredientItem.type}}</td>
-                  <td style="white-space: nowrap">
-                    <button type="submit" class="btn btn-primary" (click)="saveTracing(ingredientItem.id, orderline.id)">Toevoegen</button>
+                  <td>
+                    <button type="submit" class="btn btn-primary" (click)="saveTracing(ingredientItem.id, orderline.id)"><i class="fas fa-plus"></i></button>
                     </td>
                 </tr>
                 </tbody>

@@ -47,7 +47,7 @@
                   <td> {{orderline.purchasePrice | number : '1.2-2'}}</td>
                   <td> {{(orderline.qty * orderline.purchasePrice) | number : '1.2-2'}}</td>
                   <td style="white-space: nowrap">
-                    <a [routerLink]="['./orderlines', orderline.id ]"  class="btn btn-secondary" title="Orderlijn bekijken">Bekijken</a>&nbsp;
+                    <a [routerLink]="['./orderlines', orderline.id ]"  class="btn btn-secondary" title="Orderlijn bekijken"><i class="fas fa-plus-square"></i> Bekijken</a>&nbsp;
                   </td>
                 </tr>
                 </tbody>
@@ -85,9 +85,9 @@
 </div>
 
   <div class="row m-4">
-    <a [routerLink]="['print']"  class="btn btn-secondary" title="Printmogelijkheden">Printen label/factuur</a>&nbsp;
-    <a  *ngIf="order.status === 1" class="btn btn-secondary disabled" title="Verzenden kan pas na volledige ingave">Ingrediënten ingave onvolledig, verzending niet mogelijk</a>&nbsp;
-    <a  *ngIf="order.status === 2" [routerLink]="['send']" class="btn btn-secondary">Verzenden</a>&nbsp;
-    <a  *ngIf="order.status === 3" class="btn btn-secondary disabled" title="De mail is reeds verzonden naar deze klant">Is reeds verzonden</a>&nbsp;
+    <a [routerLink]="['print']"  class="btn btn-secondary" title="Printmogelijkheden"><i class="fas fa-file-pdf"></i> Printen label/factuur</a>&nbsp;
+    <a  *ngIf="order.status === 1 || order.status === 0" class="btn btn-secondary disabled" title="Verzenden kan pas na volledige ingave"><i class="fas fa-exclamation"></i> Ingrediënten ingave onvolledig, verzending niet mogelijk</a>&nbsp;
+    <a  *ngIf="order.status === 2" [routerLink]="['send']" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Verzenden</a>&nbsp;
+    <a  *ngIf="order.status === 3" class="btn btn-secondary disabled" title="De mail is reeds verzonden naar deze klant"><i class="fas fa-paper-plane"></i> Is reeds verzonden</a>&nbsp;
   </div>
 </div>

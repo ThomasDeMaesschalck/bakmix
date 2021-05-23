@@ -75,7 +75,7 @@ public class PdfResource {
      * @param response HttpServletResponse
      * @param id Id of the Order that needs a PDF invoice
      * @return The PDF invoice
-     * @throws IOException
+     * @throws IOException Error
      */
     @RequestMapping(value = "/pdfinvoice", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_PDF_VALUE)

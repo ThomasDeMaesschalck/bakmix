@@ -15,10 +15,10 @@
         <input [(ngModel)]="filter.id" id="id" name="id" class="form-control ml-2 mr-2">
       </div>
 
-      <button (click)="search()" [disabled]="!filter.id" class="btn btn-primary">Search</button>
-      <button (click)="ngOnInit()" [disabled]="!f?.valid" class="ml-1 btn btn-primary">Wissen</button>
+      <button (click)="search()" [disabled]="!filter.id" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+      <button (click)="ngOnInit()" [disabled]="!f?.valid" class="ml-1 btn btn-primary"><i class="fas fa-eraser"></i> Wissen</button>
 
-      <a [routerLink]="['../ingredients', 'new' ]" class="ml-1 btn btn-success">Nieuw</a>
+      <a [routerLink]="['../ingredients', 'new' ]" class="ml-1 btn btn-success"><i class="fas fa-cookie-bite"></i> Nieuw</a>
     </form>
   </div>
 

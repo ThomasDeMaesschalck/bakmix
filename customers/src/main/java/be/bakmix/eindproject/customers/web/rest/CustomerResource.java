@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.RolesAllowed;
-import java.util.List;
 
 /**
  * Resource class for the Customer microservice. Creates REST endpoints.
@@ -20,7 +19,8 @@ import java.util.List;
 @RequestMapping("/api")
 @AllArgsConstructor
 @Log4j2
-public class CustomerResource {
+public class
+CustomerResource {
 
     /**
      * The Customer service class

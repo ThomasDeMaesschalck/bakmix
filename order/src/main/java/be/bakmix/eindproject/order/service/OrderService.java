@@ -49,9 +49,6 @@ public class OrderService {
     @Autowired
     private KeycloakRestTemplate keycloakRestTemplate;
 
-    @Value("http://localhost:7778/api/products/")
-    private String urlProducts;
-
     @Value("http://localhost:7771/api/ingredienttracings/")
     private String urlIngredienttracings;
 
@@ -108,7 +105,7 @@ public class OrderService {
 
                 Arrays.stream(orderlines).forEach(orderline -> {
                     Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings + orderline.getId(), Ingredienttracing[].class);
-                    List<Ingredient> ingredients = new ArrayList();
+                    List<Ingredient> ingredients = new ArrayList<>();
 
                     Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
                         Long ingredientId = ingredienttracing.getIngredientId();
@@ -148,7 +145,7 @@ public class OrderService {
             for(Orderline orderline: orderlines)
             {
                  Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
-                List<Ingredient> ingredients = new ArrayList();
+                List<Ingredient> ingredients = new ArrayList<>();
 
                 for(Ingredienttracing ingredienttracing: ingredienttracings)
                 {
@@ -228,7 +225,7 @@ public class OrderService {
              Orderline orderline = keycloakRestTemplate.getForObject(urlOrderlinesById+id, Orderline.class);
 
                  Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
-                List<Ingredient> ingredients = new ArrayList();
+                List<Ingredient> ingredients = new ArrayList<>();
 
                 Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
                     Long ingredientId = ingredienttracing.getIngredientId();
@@ -283,7 +280,7 @@ public class OrderService {
         orders.forEach(order -> {
 
              Orderline[] orderlines = keycloakRestTemplate.getForObject(urlOrderlines+order.getId(), Orderline[].class);
-            List<Orderline> filteredOrderlines = new ArrayList();
+            List<Orderline> filteredOrderlines = new ArrayList<>();
             boolean found = false;
 
             Arrays.stream(orderlines).forEach(orderline -> {

@@ -6,53 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer-list/customer-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/customer/customer-list/customer-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/customer/customer.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/customer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/customer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/customer/model.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/web/rest/CustomerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/java/be/bakmix/eindproject/customers/web/rest/CustomerResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home-list/home-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-edit/ingredient-edit.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient-list/ingredient-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/ingredient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/ingredient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredient/model.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/ingredienttracing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/ingredienttracing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-mail/tracing-mail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-mail/tracing-mail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-view/tracing-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/ingredienttracing/tracing-view/tracing-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/mail/mail.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/mail/mail.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/mail/trackingmail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/trackingmail.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-list/order-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-print/order-view-print.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view-send/order-view-send.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/order.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/orderline.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pdf/pdf.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pdf/pdf.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/product/model.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/product/product-list/product-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/product/product-list/product-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/product/product.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/product/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/product.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/orderline-view/orderline-view.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/dto/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/dto/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/IngredientResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/IngredientResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderline/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/web/rest/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/web/rest/OrderResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/OrderlineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/OrderlineService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/java/be/bakmix/eindproject/pdf/web/rest/PdfResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/be/bakmix/eindproject/product/service/ProductService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +84,7 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="ts.external.directory.path" value="C:\bakmixeindproject\frontend\node_modules\typescript\lib" />
   </component>
@@ -271,8 +241,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.IngredientApplication" />
         <item itemvalue="Spring Boot.ProductApplication" />
+        <item itemvalue="Spring Boot.IngredientApplication" />
         <item itemvalue="Spring Boot.CustomersApplication" />
       </list>
     </recent_temporary>
@@ -301,14 +271,7 @@
       <workItem from="1620589069810" duration="197000" />
       <workItem from="1620764105392" duration="164000" />
       <workItem from="1621529303603" duration="27157000" />
-      <workItem from="1621709527401" duration="6439000" />
-    </task>
-    <task id="LOCAL-00004" summary="homepage angular first version">
-      <created>1616334895039</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1616334895039</updated>
+      <workItem from="1621709527401" duration="10257000" />
     </task>
     <task id="LOCAL-00005" summary="angular order">
       <created>1616356932530</created>
@@ -646,7 +609,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621631276008</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Fixex and enhancements&#10;Switched to docker for mysql">
+      <created>1621716956304</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1621716956340</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,7 +636,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Performance verbetering index page" />
     <MESSAGE value="Overal pagination" />
     <MESSAGE value="Datepicker working" />
     <MESSAGE value="Fixed ingredient list page size bug" />
@@ -691,6 +660,7 @@
     <MESSAGE value="Javadoc for MAil" />
     <MESSAGE value="Javadoc for Order" />
     <MESSAGE value="Javadoc for all microservices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Javadoc for all microservices" />
+    <MESSAGE value="Fixex and enhancements&#10;Switched to docker for mysql" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixex and enhancements&#10;Switched to docker for mysql" />
   </component>
 </project>

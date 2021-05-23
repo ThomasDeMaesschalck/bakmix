@@ -5,7 +5,6 @@ import be.bakmix.eindproject.ingredient.business.repository.IngredientRepository
 import be.bakmix.eindproject.ingredient.service.dto.Ingredient;
 import be.bakmix.eindproject.ingredient.service.dto.Ingredienttracing;
 import be.bakmix.eindproject.ingredient.service.mapper.IngredientMapper;
-import lombok.AllArgsConstructor;
 import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,7 +30,7 @@ public class IngredientService {
     private static List<Ingredient> ingredients = new ArrayList<>();
 
     /**
-     * HashMap used for checking whether an ingredient is linked to an orderline. HashMap as
+     * HashMap used for checking whether an ingredient is linked to an orderline. HashMap as duplicate keys are not needed.
      */
     private Map ingredientTracingsMap = new HashMap();
 

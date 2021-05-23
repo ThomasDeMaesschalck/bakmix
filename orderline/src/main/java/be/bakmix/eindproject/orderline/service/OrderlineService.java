@@ -5,12 +5,10 @@ import be.bakmix.eindproject.orderline.business.repository.OrderlineRepository;
 import be.bakmix.eindproject.orderline.service.dto.Orderline;
 import be.bakmix.eindproject.orderline.service.dto.Product;
 import be.bakmix.eindproject.orderline.service.mapper.OrderlineMapper;
-import lombok.AllArgsConstructor;
 import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -74,7 +72,7 @@ public class OrderResource {
      * Adjust a persisted Order. Used to update the Order status.
      * @param id The id of the Order
      * @param orderDetails The Order details that need to be adjusted.
-     * @return
+     * @return ResponseEntity Order
      */
     @PutMapping("/orders/{id}")
     @RolesAllowed("bakmix-admin")
