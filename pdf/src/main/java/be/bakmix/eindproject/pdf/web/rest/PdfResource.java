@@ -79,25 +79,9 @@ public class PdfResource {
     public ResponseEntity<?> getPDF(HttpServletRequest request, HttpServletResponse response, @RequestParam Long id) throws IOException {
 
         Order order = pdfService.getById(Long.parseLong(String.valueOf(id)));
-
-        /* Create HTML using Thymeleaf template Engine */
-        WebContext context = new WebContext(request, response, servletContext);
-        context.setVariable("orderEntry", order);
-        String orderHtml = templateEngine.process("order", context);
-
-        /* Setup Source and target I/O streams */
-        ByteArrayOutputStream target = new ByteArrayOutputStream();
-
-        /*Setup converter properties. */
-        ConverterProperties converterProperties = new ConverterProperties();
-        converterProperties.setBaseUri("http://localhost:8080");
-
-        /* Call convert method */
-        HtmlConverter.convertToPdf(orderHtml, target, converterProperties);
-
-        /* extract output as bytes */
-        byte[] bytes = target.toByteArray();
+        byte[] bytes = GeneratePdf.makeInvoice(order, request, response, servletContext, templateEngine);
         log.info("Made invoice for order # " + order.getId());
+
         /* Send the response as downloadable PDF */
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_PDF)
