@@ -5,10 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customers/src/test/java/be/bakmix/eindproject/customers/service/CustomerServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/src/test/java/be/bakmix/eindproject/order/service/OrderServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customers/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/customers/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/IngredientResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/web/rest/IngredientResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/order/order-view/order-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mail/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mail/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/be/bakmix/eindproject/order/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderline/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,16 +118,90 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PdfApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CustomersApplicationTests">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.bakmix.eindproject.customers.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.bakmix.eindproject.customers.service" />
+      <option name="MAIN_CLASS_NAME" value="be.bakmix.eindproject.customers.service.CustomerServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomersApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.bakmix.eindproject.customers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.bakmix.eindproject.customers" />
+      <option name="MAIN_CLASS_NAME" value="be.bakmix.eindproject.customers.CustomersApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.bakmix.eindproject.order.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.bakmix.eindproject.order" />
+      <option name="MAIN_CLASS_NAME" value="be.bakmix.eindproject.order.OrderApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.bakmix.eindproject.order.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.bakmix.eindproject.order.service" />
+      <option name="MAIN_CLASS_NAME" value="be.bakmix.eindproject.order.service.OrderServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceTest.total" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.bakmix.eindproject.order.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.bakmix.eindproject.order.service" />
+      <option name="MAIN_CLASS_NAME" value="be.bakmix.eindproject.order.service.OrderServiceTest" />
+      <option name="METHOD_NAME" value="total" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -132,28 +218,9 @@
     <configuration name="Angular Application (frontend)" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
-    <configuration name="CustomersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="customers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="be.bakmix.eindproject.customers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="be.bakmix.eindproject.customers.CustomersApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IngredientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="ingredient" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="be.bakmix.eindproject.ingredient.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="be.bakmix.eindproject.ingredient.IngredientApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -193,19 +260,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="product" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="be.bakmix.eindproject.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="be.bakmix.eindproject.product.ProductApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Angular CLI Server (frontend)" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/frontend/package.json" />
       <command value="run" />
@@ -225,15 +279,20 @@
       <item itemvalue="Spring Boot.OrderApplication" />
       <item itemvalue="Spring Boot.OrderlineApplication" />
       <item itemvalue="Spring Boot.PdfApplication" />
+      <item itemvalue="JUnit.OrderServiceTest" />
+      <item itemvalue="JUnit.OrderServiceTest.total" />
       <item itemvalue="Spring Boot.CustomersApplication" />
-      <item itemvalue="Spring Boot.IngredientApplication" />
-      <item itemvalue="Spring Boot.ProductApplication" />
+      <item itemvalue="JUnit.CustomerServiceTest" />
+      <item itemvalue="JUnit.OrderApplicationTests" />
+      <item itemvalue="JUnit.CustomersApplicationTests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.IngredientApplication" />
-        <item itemvalue="Spring Boot.CustomersApplication" />
-        <item itemvalue="Spring Boot.ProductApplication" />
+        <item itemvalue="JUnit.CustomersApplicationTests" />
+        <item itemvalue="JUnit.OrderServiceTest" />
+        <item itemvalue="JUnit.OrderApplicationTests" />
+        <item itemvalue="JUnit.CustomerServiceTest" />
+        <item itemvalue="JUnit.OrderServiceTest.total" />
       </list>
     </recent_temporary>
   </component>
@@ -261,14 +320,8 @@
       <workItem from="1620589069810" duration="197000" />
       <workItem from="1620764105392" duration="164000" />
       <workItem from="1621529303603" duration="27157000" />
-      <workItem from="1621709527401" duration="22321000" />
-    </task>
-    <task id="LOCAL-00009" summary="order microservice expanded with ingredienttracing">
-      <created>1616710265413</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1616710265413</updated>
+      <workItem from="1621709527401" duration="22670000" />
+      <workItem from="1621789176388" duration="20268000" />
     </task>
     <task id="LOCAL-00010" summary="orderline angular ingredient weergave">
       <created>1616772642530</created>
@@ -606,7 +659,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621781291540</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="More code cleanup">
+      <created>1621788563705</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1621788563706</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +686,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Pre-keycloak" />
     <MESSAGE value="Keycloak working version" />
     <MESSAGE value="Keycloak working version v2" />
     <MESSAGE value="Keycloak 100% working" />
@@ -651,6 +710,22 @@
     <MESSAGE value="Code optimalizations&#10;Removed redundant code" />
     <MESSAGE value="Code cleanup" />
     <MESSAGE value="Cleaned up PDF microservice" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up PDF microservice" />
+    <MESSAGE value="More code cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="More code cleanup" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Bakmix$OrderServiceTest.ic" NAME="OrderServiceTest Coverage Results" MODIFIED="1621950348796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>be.bakmix.eindproject.order.service.*</FILTER>
+    </SUITE>
   </component>
 </project>

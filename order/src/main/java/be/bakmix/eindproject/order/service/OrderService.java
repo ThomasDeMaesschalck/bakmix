@@ -195,12 +195,10 @@ public class OrderService {
      */
     public Orderline getOrderlineWithLinkedIngredientsById(Long id){
 
-             Orderline orderline = keycloakRestTemplate.getForObject(urlOrderlinesById+id, Orderline.class);
-
+        Orderline orderline = keycloakRestTemplate.getForObject(urlOrderlinesById+id, Orderline.class);
         assert orderline != null;
         Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);
-                List<Ingredient> ingredients = new ArrayList<>();
-
+        List<Ingredient> ingredients = new ArrayList<>();
         assert ingredienttracings != null;
         Arrays.stream(ingredienttracings).forEach(ingredienttracing -> {
                     Long ingredientId = ingredienttracing.getIngredientId();
@@ -228,7 +226,7 @@ public class OrderService {
         assert ingredients != null;
         List<Ingredient> ingredientsList = Arrays.asList(ingredients);
 
-         Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings + id, Ingredienttracing[].class);
+        Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings + id, Ingredienttracing[].class);
 
         ingredientsList = ingredientsList.stream().filter(Ingredient::getAvailable).collect(Collectors.toList());
 
@@ -255,14 +253,11 @@ public class OrderService {
 
         orders.forEach(order -> {
 
-             Orderline[] orderlines = keycloakRestTemplate.getForObject(urlOrderlines+order.getId(), Orderline[].class);
+            Orderline[] orderlines = keycloakRestTemplate.getForObject(urlOrderlines+order.getId(), Orderline[].class);
             List<Orderline> filteredOrderlines = new ArrayList<>();
             boolean found = false;
 
             assert orderlines != null;
-            Arrays.stream(orderlines).forEach(orderline -> {
-
-            });
             for(Orderline orderline: orderlines)
             {
                  Ingredienttracing[] ingredienttracings = keycloakRestTemplate.getForObject(urlIngredienttracings+orderline.getId(), Ingredienttracing[].class);

@@ -35,8 +35,8 @@
                 <tr>
                   <th class="border-top-0" scope="col">Qty</th>
                   <th class="border-top-0" scope="col">Naam</th>
-                  <th class="border-top-0" scope="col">Stukprijs</th>
-                  <th class="border-top-0" scope="col">Totaal</th>
+                  <th class="border-top-0 d-none d-sm-table-cell" scope="col">Stukprijs</th>
+                  <th class="border-top-0 d-none d-sm-table-cell" scope="col">Totaal</th>
                   <th class="border-top-0" scope="col" style="width:120px"></th>
                 </tr>
                 </thead>
@@ -44,8 +44,8 @@
                 <tr   *ngFor="let orderline of order.orderlines">
                   <td>{{orderline.qty}}x </td>
                   <td> {{orderline.product.name}}</td>
-                  <td> {{orderline.purchasePrice | number : '1.2-2'}}</td>
-                  <td> {{(orderline.qty * orderline.purchasePrice) | number : '1.2-2'}}</td>
+                  <td class="d-none d-sm-table-cell"> {{orderline.purchasePrice | number : '1.2-2'}}</td>
+                  <td class="d-none d-sm-table-cell"> {{(orderline.qty * orderline.purchasePrice) | number : '1.2-2'}}</td>
                   <td style="white-space: nowrap">
                     <a [routerLink]="['./orderlines', orderline.id ]"  class="btn btn-secondary" title="Orderlijn bekijken"><i class="fas fa-plus-square"></i> Bekijken</a>&nbsp;
                   </td>
