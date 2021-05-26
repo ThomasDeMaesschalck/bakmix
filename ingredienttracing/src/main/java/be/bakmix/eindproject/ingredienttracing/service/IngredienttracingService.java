@@ -32,7 +32,7 @@ public class IngredienttracingService {
     @Autowired
     private final IngredienttracingMapper ingredienttracingMapper;
 
-    /**
+       /**
      * Retrieve a List of all persisted ingredienttracings
      * @return List of all ingredienttracings
      */

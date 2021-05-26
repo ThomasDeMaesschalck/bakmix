@@ -221,7 +221,5 @@ public class IngredientServiceTest {
 
         List<Ingredient> expiredIngredients = ingredientService.expiredIngredients();
         assertEquals(1, expiredIngredients.size());
-
-
     }
 }
