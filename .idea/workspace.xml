@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/orderline/src/test/java/be/bakmix/eindproject/orderline/service/OrderlineServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/src/test/java/be/bakmix/eindproject/product/service/ProductServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderline/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/OrderlineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/OrderlineService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderline/src/test/java/be/bakmix/eindproject/orderline/OrderlineApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/test/java/be/bakmix/eindproject/product/ProductApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderline/src/test/java/be/bakmix/eindproject/orderline/service/OrderlineServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/test/java/be/bakmix/eindproject/orderline/service/OrderlineServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,14 +315,7 @@
       <workItem from="1620764105392" duration="164000" />
       <workItem from="1621529303603" duration="27157000" />
       <workItem from="1621709527401" duration="22670000" />
-      <workItem from="1621789176388" duration="45081000" />
-    </task>
-    <task id="LOCAL-00011" summary="available ingredient by orderline code">
-      <created>1616778849719</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1616778849719</updated>
+      <workItem from="1621789176388" duration="45960000" />
     </task>
     <task id="LOCAL-00012" summary="working ingredient adding to orderlines">
       <created>1616798335683</created>
@@ -666,7 +653,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621958858087</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Mock tests for orderline service">
+      <created>1622015740168</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1622015740168</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,7 +680,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Keycloak working version v2" />
     <MESSAGE value="Keycloak 100% working" />
     <MESSAGE value="PDF label generation is working" />
     <MESSAGE value="Thymeleaf first version (template nog verbeteren)" />
@@ -711,7 +704,8 @@
     <MESSAGE value="Cleaned up PDF microservice" />
     <MESSAGE value="More code cleanup" />
     <MESSAGE value="JUnit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="JUnit tests" />
+    <MESSAGE value="Mock tests for orderline service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mock tests for orderline service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

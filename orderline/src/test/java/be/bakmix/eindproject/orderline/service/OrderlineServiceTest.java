@@ -52,7 +52,12 @@ public class OrderlineServiceTest {
     List<OrderlineEntity> list;
     Product product;
     OrderlineEntity o1;
+    OrderlineEntity o2;
+    OrderlineEntity o3;
     Orderline o1DTO;
+    Orderline o2DTO;
+    Orderline o3DTO;
+
 
     @Value("http://localhost:7778/api/products/")
     private String urlProducts;
@@ -101,20 +106,114 @@ public class OrderlineServiceTest {
         assertEquals(1, orderlineList.size());
     }
 
-    /* @Test
+     @Test
     public void getById(){
-        productService = new ProductService(productRepository, productMapper);
-        ProductEntity p1 = new ProductEntity();
-        p1.setId(Long.parseLong("5"));
-        p1.setName("Brownies");
+         o1 = new OrderlineEntity();
+         o1.setId(Long.parseLong("1"));
+         o1.setOrderId(Long.parseLong("1"));
+         o1.setQty(Long.parseLong("2"));
+         o1.setPurchasePrice(BigDecimal.valueOf(5.50));
+         o1.setProductId(Long.parseLong("1"));
 
-        given(productRepository.findById(Long.parseLong("5"))).willReturn(java.util.Optional.of(p1));
+        product = new Product();
+        product.setId(Long.parseLong("1"));
+        product.setPrice(BigDecimal.valueOf(10));
+        product.setName("Bloem");
+        product.setVat(6);
 
-        Product product = productService.getById(Long.parseLong("5"));
+        o1DTO = new Orderline();
+        o1DTO.setId(Long.parseLong("1"));
+        o1DTO.setOrderId(Long.parseLong("1"));
+        o1DTO.setQty(Long.parseLong("2"));
+        o1DTO.setPurchasePrice(BigDecimal.valueOf(5.50));
+        o1DTO.setProductId(Long.parseLong("1"));
 
-        assertEquals("Brownies", product.getName());
+
+        Mockito.when(keycloakRestTemplate.getForObject(Mockito.eq(urlProducts+o1.getProductId()), Mockito.eq(Product.class))).thenReturn(product);
+
+        when(orderlineMapper.toDTO(o1)).thenReturn(o1DTO);
+
+        given(orderlineRepository.findById(Long.parseLong("1"))).willReturn(java.util.Optional.ofNullable(o1));
+
+        Orderline orderlineFromTest = orderlineService.getById(Long.parseLong("1"));
+
+
+        assertEquals("Bloem", orderlineFromTest.getProduct().getName());
+
 
     }
-     */
+
+    @Test
+    public void getByOrderId(){
+        List<OrderlineEntity> list = new ArrayList<>();
+        o1 = new OrderlineEntity();
+        o1.setId(Long.parseLong("1"));
+        o1.setOrderId(Long.parseLong("5"));
+        o1.setQty(Long.parseLong("2"));
+        o1.setPurchasePrice(BigDecimal.valueOf(5.50));
+        o1.setProductId(Long.parseLong("1"));
+        list.add(o1);
+
+        o2 = new OrderlineEntity();
+        o2.setId(Long.parseLong("2"));
+        o2.setOrderId(Long.parseLong("5"));
+        o2.setQty(Long.parseLong("2"));
+        o2.setPurchasePrice(BigDecimal.valueOf(5.50));
+        o2.setProductId(Long.parseLong("1"));
+        list.add(o2);
+
+        o3 = new OrderlineEntity();
+        o3.setId(Long.parseLong("3"));
+        o3.setOrderId(Long.parseLong("10"));
+        o3.setQty(Long.parseLong("2"));
+        o3.setPurchasePrice(BigDecimal.valueOf(5.50));
+        o3.setProductId(Long.parseLong("1"));
+        list.add(o3);
+
+        product = new Product();
+        product.setId(Long.parseLong("1"));
+        product.setPrice(BigDecimal.valueOf(10));
+        product.setName("Bloem");
+        product.setVat(6);
+
+        o1DTO = new Orderline();
+        o1DTO.setId(Long.parseLong("1"));
+        o1DTO.setOrderId(Long.parseLong("1"));
+        o1DTO.setQty(Long.parseLong("2"));
+        o1DTO.setPurchasePrice(BigDecimal.valueOf(5.50));
+        o1DTO.setProductId(Long.parseLong("1"));
+
+        o2DTO = new Orderline();
+        o2DTO.setId(Long.parseLong("2"));
+        o2DTO.setOrderId(Long.parseLong("5"));
+        o2DTO.setQty(Long.parseLong("2"));
+        o2DTO.setPurchasePrice(BigDecimal.valueOf(5.50));
+        o2DTO.setProductId(Long.parseLong("1"));
+
+        o3DTO = new Orderline();
+        o3DTO.setId(Long.parseLong("3"));
+        o3DTO.setOrderId(Long.parseLong("10"));
+        o3DTO.setQty(Long.parseLong("2"));
+        o3DTO.setPurchasePrice(BigDecimal.valueOf(5.50));
+        o3DTO.setProductId(Long.parseLong("1"));
+
+
+        Mockito.when(keycloakRestTemplate.getForObject(Mockito.eq(urlProducts+o1.getProductId()), Mockito.eq(Product.class))).thenReturn(product);
+
+        when(orderlineMapper.toDTO(o1)).thenReturn(o1DTO);
+        when(orderlineMapper.toDTO(o2)).thenReturn(o2DTO);
+        //when(orderlineMapper.toDTO(o3)).thenReturn(o3DTO);
+
+
+        given(orderlineRepository.findAll()).willReturn(list);
+
+
+        List<Orderline> orderlinesFromTest = orderlineService.getByOrderId(Long.parseLong("5"));
+
+
+        assertEquals(2, orderlinesFromTest.size());
+
+
+    }
 
 }
