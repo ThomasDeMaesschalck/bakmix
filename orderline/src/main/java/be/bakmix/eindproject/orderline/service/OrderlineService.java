@@ -47,10 +47,11 @@ import java.util.stream.StreamSupport;
      * @param orderlineRepository Orderline repo
      * @param orderlineMapper Orderline mapper
      */
-    public OrderlineService(OrderlineRepository orderlineRepository, OrderlineMapper orderlineMapper)
+    public OrderlineService(OrderlineRepository orderlineRepository, OrderlineMapper orderlineMapper, KeycloakRestTemplate keycloakRestTemplate)
     {
         this.orderlineRepository = orderlineRepository;
         this.orderlineMapper = orderlineMapper;
+        this.keycloakRestTemplate = keycloakRestTemplate;
     }
 
     /**
@@ -110,4 +111,5 @@ import java.util.stream.StreamSupport;
         }
         return null;
     }
+
 }
