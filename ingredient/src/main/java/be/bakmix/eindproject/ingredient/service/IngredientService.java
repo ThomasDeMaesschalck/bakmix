@@ -57,11 +57,13 @@ public class IngredientService {
      * Constructor class
      * @param ingredientRepository The ingredient repository
      * @param ingredientMapper The ingredient mapper
+     * @param keycloakRestTemplate The keycloak resttemplate
      */
-    public IngredientService(IngredientRepository ingredientRepository, IngredientMapper ingredientMapper)
+    public IngredientService(IngredientRepository ingredientRepository, IngredientMapper ingredientMapper, KeycloakRestTemplate keycloakRestTemplate)
     {
         this.ingredientRepository = ingredientRepository;
         this.ingredientMapper = ingredientMapper;
+        this.keycloakRestTemplate = keycloakRestTemplate;
     }
 
     /**

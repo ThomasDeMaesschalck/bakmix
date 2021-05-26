@@ -46,6 +46,7 @@ import java.util.stream.StreamSupport;
      * Constructor.
      * @param orderlineRepository Orderline repo
      * @param orderlineMapper Orderline mapper
+     * @param keycloakRestTemplate Keycloak RestTemplate
      */
     public OrderlineService(OrderlineRepository orderlineRepository, OrderlineMapper orderlineMapper, KeycloakRestTemplate keycloakRestTemplate)
     {

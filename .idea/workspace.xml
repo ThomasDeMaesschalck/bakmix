@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ingredient/src/test/java/be/bakmix/eindproject/ingredient/service/IngredientServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/main/java/be/bakmix/eindproject/ingredient/service/IngredientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/OrderlineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/main/java/be/bakmix/eindproject/orderline/service/OrderlineService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orderline/src/test/java/be/bakmix/eindproject/orderline/service/OrderlineServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/test/java/be/bakmix/eindproject/orderline/service/OrderlineServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,44 +108,47 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OrderlineServiceTest">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.IngredientServiceTest">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IngredientServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ingredient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.bakmix.eindproject.ingredient.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.bakmix.eindproject.ingredient.service" />
+      <option name="MAIN_CLASS_NAME" value="be.bakmix.eindproject.ingredient.service.IngredientServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomersApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="customers" />
+    <configuration name="IngredientServiceTest.findByUniqueIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ingredient" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="be.bakmix.eindproject.customers.*" />
+          <option name="PATTERN" value="be.bakmix.eindproject.ingredient.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="be.bakmix.eindproject.customers" />
-      <option name="MAIN_CLASS_NAME" value="be.bakmix.eindproject.customers.CustomersApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="be.bakmix.eindproject.order.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="be.bakmix.eindproject.order.service" />
-      <option name="MAIN_CLASS_NAME" value="be.bakmix.eindproject.order.service.OrderServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="be.bakmix.eindproject.ingredient.service" />
+      <option name="MAIN_CLASS_NAME" value="be.bakmix.eindproject.ingredient.service.IngredientServiceTest" />
+      <option name="METHOD_NAME" value="findByUniqueIdTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -177,21 +184,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="product" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="be.bakmix.eindproject.product.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="be.bakmix.eindproject.product.service" />
-      <option name="MAIN_CLASS_NAME" value="be.bakmix.eindproject.product.service.ProductServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="E2E Tests (frontend)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/frontend/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -207,6 +199,19 @@
     <configuration name="CustomersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="customers" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="be.bakmix.eindproject.customers.CustomersApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IngredientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ingredient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.bakmix.eindproject.ingredient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="be.bakmix.eindproject.ingredient.IngredientApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -265,6 +270,8 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Angular Application (frontend)" />
+      <item itemvalue="JUnit.OrderlineServiceTest" />
+      <item itemvalue="JUnit.OrderlineServiceTest.getAll" />
       <item itemvalue="npm.Angular CLI Server (frontend)" />
       <item itemvalue="Protractor.E2E Tests (frontend)" />
       <item itemvalue="Spring Boot.IngredienttracingApplication" />
@@ -272,21 +279,19 @@
       <item itemvalue="Spring Boot.OrderApplication" />
       <item itemvalue="Spring Boot.OrderlineApplication" />
       <item itemvalue="Spring Boot.PdfApplication" />
-      <item itemvalue="JUnit.OrderServiceTest" />
       <item itemvalue="Spring Boot.CustomersApplication" />
-      <item itemvalue="JUnit.CustomersApplicationTests" />
       <item itemvalue="Spring Boot.ProductApplication" />
-      <item itemvalue="JUnit.ProductServiceTest" />
-      <item itemvalue="JUnit.OrderlineServiceTest" />
-      <item itemvalue="JUnit.OrderlineServiceTest.getAll" />
+      <item itemvalue="Spring Boot.IngredientApplication" />
+      <item itemvalue="JUnit.IngredientServiceTest" />
+      <item itemvalue="JUnit.IngredientServiceTest.findByUniqueIdTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IngredientServiceTest" />
+        <item itemvalue="JUnit.IngredientServiceTest.findByUniqueIdTest" />
         <item itemvalue="JUnit.OrderlineServiceTest" />
+        <item itemvalue="Spring Boot.IngredientApplication" />
         <item itemvalue="JUnit.OrderlineServiceTest.getAll" />
-        <item itemvalue="JUnit.ProductServiceTest" />
-        <item itemvalue="JUnit.OrderServiceTest" />
-        <item itemvalue="JUnit.CustomersApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -315,14 +320,8 @@
       <workItem from="1620764105392" duration="164000" />
       <workItem from="1621529303603" duration="27157000" />
       <workItem from="1621709527401" duration="22670000" />
-      <workItem from="1621789176388" duration="45960000" />
-    </task>
-    <task id="LOCAL-00012" summary="working ingredient adding to orderlines">
-      <created>1616798335683</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1616798335683</updated>
+      <workItem from="1621789176388" duration="48400000" />
+      <workItem from="1622025526186" duration="6607000" />
     </task>
     <task id="LOCAL-00013" summary="ingredient tracing search half werkend">
       <created>1616847258478</created>
@@ -660,7 +659,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622015740168</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Fully tested: Mock tests for orderline service">
+      <created>1622016492531</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1622016492531</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,7 +686,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Keycloak 100% working" />
     <MESSAGE value="PDF label generation is working" />
     <MESSAGE value="Thymeleaf first version (template nog verbeteren)" />
     <MESSAGE value="Invoice logica" />
@@ -705,7 +710,8 @@
     <MESSAGE value="More code cleanup" />
     <MESSAGE value="JUnit tests" />
     <MESSAGE value="Mock tests for orderline service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mock tests for orderline service" />
+    <MESSAGE value="Fully tested: Mock tests for orderline service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fully tested: Mock tests for orderline service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -724,7 +730,7 @@
     <SUITE FILE_PATH="coverage/Bakmix$OrderServiceTest.ic" NAME="OrderServiceTest Coverage Results" MODIFIED="1621968054166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>be.bakmix.eindproject.order.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Bakmix$OrderlineServiceTest.ic" NAME="OrderlineServiceTest Coverage Results" MODIFIED="1621968089747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Bakmix$OrderlineServiceTest.ic" NAME="OrderlineServiceTest Coverage Results" MODIFIED="1622016431904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>be.bakmix.eindproject.orderline.service.*</FILTER>
     </SUITE>
   </component>
