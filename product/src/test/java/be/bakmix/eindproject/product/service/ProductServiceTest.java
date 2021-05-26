@@ -56,7 +56,7 @@ public class ProductServiceTest {
 
         List<Product> productList = productService.getAll();
 
-        assertEquals(2, productList.size());
+        assertEquals(2, productList.size()); //product list size should be 2
     }
 
     @Test
@@ -70,7 +70,7 @@ public class ProductServiceTest {
 
         Product product = productService.getById(Long.parseLong("5"));
 
-        assertEquals("Brownies", product.getName());
+        assertEquals("Brownies", product.getName()); //product name should be Brownies
     }
 
 }

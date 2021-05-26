@@ -124,6 +124,7 @@ public class IngredientServiceTest {
         given(ingredientRepository.findAll(paging)).willReturn(pagedList);
         Page<Ingredient> ingredientsPage = ingredientService.getAll(0, 10, "id");
 
+        //page should have 1 object
         assertEquals(1, ingredientsPage.toList().size());
 
         list.add(i2);
@@ -131,6 +132,7 @@ public class IngredientServiceTest {
         given(ingredientRepository.findAll(paging)).willReturn(pagedList2);
         Page<Ingredient> ingredientsPage2 = ingredientService.getAll(0, 10, "id");
 
+        //size should be 2 now
         assertEquals(2, ingredientsPage2.toList().size());
     }
 
@@ -145,12 +147,14 @@ public class IngredientServiceTest {
         given(ingredientRepository.findAll()).willReturn(list);
         List<Ingredient> listFromService = ingredientService.getAllNoPagination();
 
+        //size should be 1 now
         assertEquals(1, listFromService.size());
 
         list.add(i2);
         given(ingredientRepository.findAll()).willReturn(list);
         List<Ingredient> listFromService2 = ingredientService.getAllNoPagination();
 
+        //size should increase to 2 now
         assertEquals(2, listFromService2.size());
     }
 
@@ -162,6 +166,7 @@ public class IngredientServiceTest {
 
         Ingredient ingredientFromTest = ingredientService.getById(Long.parseLong("1"));
 
+        //check if brand name is indeed Bakshop
         assertEquals("Bakshop", ingredientFromTest.getBrand());
     }
 
@@ -177,9 +182,13 @@ public class IngredientServiceTest {
         when(ingredientMapper.toDTO(i2)).thenReturn(i2DTO);
 
         Ingredient ingredientFromTest = ingredientService.findByUniqueId("AAA");
+
+        //ingredient id should be 1
         assertEquals(1, ingredientFromTest.getId().intValue());
 
         Ingredient ingredientFromTest2 = ingredientService.findByUniqueId("BBB");
+
+        //ingredient id should be 2 here
         assertEquals(2, ingredientFromTest2.getId().intValue());
     }
 
@@ -195,13 +204,14 @@ public class IngredientServiceTest {
         when(ingredientMapper.toDTO(i2)).thenReturn(i2DTO);
 
         boolean check1 = ingredientService.findDuplicateUniqueIdBoolean("AAA");
-        assertEquals(true, check1);
+        assertEquals(true, check1); //should return true
 
         boolean check2 = ingredientService.findDuplicateUniqueIdBoolean("BBB");
-        assertEquals(true, check2);
+        assertEquals(true, check2); //should return true
+
 
         boolean check3 = ingredientService.findDuplicateUniqueIdBoolean("CCC");
-        assertEquals(false, check3);
+        assertEquals(false, check3); //should return false, this is not a duplicate
 
     }
 
@@ -218,7 +228,7 @@ public class IngredientServiceTest {
 //      when(ingredientMapper.toDTO(i2)).thenReturn(i2DTO);
 
         List<Ingredient> expiredIngredients = ingredientService.expiredIngredients();
-        assertEquals(1, expiredIngredients.size());
+        assertEquals(1, expiredIngredients.size()); //there should be one ingredient with a date beyond expiry date
     }
 
     @Test
@@ -226,10 +236,10 @@ public class IngredientServiceTest {
 
         given(ingredientRepository.findById(Long.parseLong("1"))).willReturn(java.util.Optional.ofNullable(i1));
         boolean result =  ingredientService.delete(Long.parseLong("1"));
-        assertEquals(true, result);
+        assertEquals(true, result); //should return true as this element exists
 
         given(ingredientRepository.findById(Long.parseLong("555"))).willReturn(java.util.Optional.ofNullable(null));
         boolean result2 =  ingredientService.delete(Long.parseLong("555"));
-        assertEquals(false, result2);
+        assertEquals(false, result2); //should return false as this element is not present in repository
     }
 }

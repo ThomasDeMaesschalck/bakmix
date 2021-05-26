@@ -7,6 +7,7 @@ import be.bakmix.eindproject.order.service.dto.Product;
 import be.bakmix.eindproject.order.service.mapper.OrderMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
@@ -23,7 +24,7 @@ public class OrderServiceInvoiceLogicTest {
     private Orderline testOrderline2;
     private Product product1;
     private Product product2;
-
+    private KeycloakRestTemplate keycloakRestTemplate;
     private OrderService orderService;
 
     @Autowired
@@ -45,7 +46,7 @@ public class OrderServiceInvoiceLogicTest {
         testOrder2.setDiscount(BigDecimal.valueOf(10));
         testOrder2.setShippingCost(BigDecimal.valueOf(5.50));
 
-        orderService = new OrderService(orderRepository, orderMapper );
+        orderService = new OrderService(orderRepository, orderMapper, keycloakRestTemplate);
 
         testOrderline1 = new Orderline();
         testOrderline1.setId(Long.parseLong("1"));

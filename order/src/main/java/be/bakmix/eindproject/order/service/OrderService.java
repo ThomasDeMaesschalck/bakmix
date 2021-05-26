@@ -63,11 +63,13 @@ public class OrderService {
      * Constructor
      * @param orderRepository The order repository
      * @param orderMapper The order mapper
+     * @param  keycloakRestTemplate The keycloak rest template
      */
-    public OrderService(OrderRepository orderRepository, OrderMapper orderMapper)
+    public OrderService(OrderRepository orderRepository, OrderMapper orderMapper, KeycloakRestTemplate keycloakRestTemplate)
     {
         this.orderRepository = orderRepository;
         this.orderMapper = orderMapper;
+        this.keycloakRestTemplate = keycloakRestTemplate;
     }
 
     /**

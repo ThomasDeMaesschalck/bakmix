@@ -122,7 +122,7 @@ public class OrderlineServiceTest {
 
         List<Orderline> orderlineList = orderlineService.getAll();
 
-        assertEquals(1, orderlineList.size());
+        assertEquals(1, orderlineList.size()); //list size should be 1
     }
 
      @Test
@@ -136,7 +136,7 @@ public class OrderlineServiceTest {
 
         Orderline orderlineFromTest = orderlineService.getById(Long.parseLong("1"));
 
-        assertEquals("Bloem", orderlineFromTest.getProduct().getName());
+        assertEquals("Bloem", orderlineFromTest.getProduct().getName()); //product name of the orderline should be Bloem
     }
 
     @Test
@@ -157,7 +157,7 @@ public class OrderlineServiceTest {
 
         List<Orderline> orderlinesFromTest = orderlineService.getByOrderId(Long.parseLong("5"));
 
-        assertEquals(2, orderlinesFromTest.size());
+        assertEquals(2, orderlinesFromTest.size()); //method should return two of the three orderlines as the other one belongs to a different order
     }
 
 }

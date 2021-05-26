@@ -108,6 +108,7 @@ public class IngredienttracingTest {
         given(ingredienttracingRepository.findAll()).willReturn(list);
         List<Ingredienttracing> listFromService = ingredientTracingService.getAll();
 
+        //There should be three items in the list
         assertEquals(3, listFromService.size());
 
     }
@@ -126,6 +127,7 @@ public class IngredienttracingTest {
         given(ingredienttracingRepository.findAll()).willReturn(list);
         List<Ingredienttracing> listFromService = ingredientTracingService.getByOrderlineId(Long.parseLong("5"));
 
+        //There should be one item in the list
         assertEquals(1, listFromService.size());
 
         list.add(t4);
@@ -133,6 +135,7 @@ public class IngredienttracingTest {
         given(ingredienttracingRepository.findAll()).willReturn(list);
         List<Ingredienttracing> listFromService2 = ingredientTracingService.getByOrderlineId(Long.parseLong("5"));
 
+        //List size should be two now
         assertEquals(2, listFromService2.size());
     }
 
@@ -141,11 +144,11 @@ public class IngredienttracingTest {
     public void deleteTest(){
         given(ingredienttracingRepository.findById(Long.parseLong("1"))).willReturn(java.util.Optional.ofNullable(t1));
         boolean result =  ingredientTracingService.delete(Long.parseLong("1"));
-        assertEquals(true, result);
+        assertEquals(true, result); //should return true as this entity can be deleted
 
         given(ingredienttracingRepository.findById(Long.parseLong("555"))).willReturn(java.util.Optional.ofNullable(null));
         boolean result2 =  ingredientTracingService.delete(Long.parseLong("555"));
-        assertEquals(false, result2);
+        assertEquals(false, result2); //should return false as this entity does not exist in the repository
     }
 
 

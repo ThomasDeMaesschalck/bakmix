@@ -57,6 +57,7 @@ public class CustomerServiceTest {
 
         Page<Customer> customerList = customerService.getAll(0, 10, "id");
 
+        //size should be 1
         assertEquals(1, customerList.toList().size());
     }
 
@@ -71,6 +72,7 @@ public class CustomerServiceTest {
 
         Customer customer = customerService.getById(Long.parseLong("1"));
 
+        //first name should be Thomas
         assertEquals("Thomas", customer.getFirstName());
     }
 
