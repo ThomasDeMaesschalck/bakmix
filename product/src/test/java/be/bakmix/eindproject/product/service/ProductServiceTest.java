@@ -35,7 +35,7 @@ public class ProductServiceTest {
 
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
 
@@ -52,14 +52,11 @@ public class ProductServiceTest {
         list.add(p1);
         list.add(p2);
 
-
         given(productRepository.findAll()).willReturn(list);
 
         List<Product> productList = productService.getAll();
 
         assertEquals(2, productList.size());
-
-
     }
 
     @Test
@@ -74,6 +71,6 @@ public class ProductServiceTest {
         Product product = productService.getById(Long.parseLong("5"));
 
         assertEquals("Brownies", product.getName());
-
     }
+
 }

@@ -8,18 +8,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
-import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.mockito.*;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.*;
 
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -139,7 +134,18 @@ public class IngredienttracingTest {
         List<Ingredienttracing> listFromService2 = ingredientTracingService.getByOrderlineId(Long.parseLong("5"));
 
         assertEquals(2, listFromService2.size());
+    }
 
+
+    @Test
+    public void deleteTest(){
+        given(ingredienttracingRepository.findById(Long.parseLong("1"))).willReturn(java.util.Optional.ofNullable(t1));
+        boolean result =  ingredientTracingService.delete(Long.parseLong("1"));
+        assertEquals(true, result);
+
+        given(ingredienttracingRepository.findById(Long.parseLong("555"))).willReturn(java.util.Optional.ofNullable(null));
+        boolean result2 =  ingredientTracingService.delete(Long.parseLong("555"));
+        assertEquals(false, result2);
     }
 
 

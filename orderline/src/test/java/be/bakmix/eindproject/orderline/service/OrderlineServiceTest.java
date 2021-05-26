@@ -52,10 +52,8 @@ public class OrderlineServiceTest {
     Orderline o2DTO;
     Orderline o3DTO;
 
-
     @Value("http://localhost:7778/api/products/")
     private String urlProducts;
-
 
     @Before
     public void setUp() {
@@ -122,7 +120,6 @@ public class OrderlineServiceTest {
 
         given(orderlineRepository.findAll()).willReturn(list);
 
-
         List<Orderline> orderlineList = orderlineService.getAll();
 
         assertEquals(1, orderlineList.size());
@@ -139,10 +136,7 @@ public class OrderlineServiceTest {
 
         Orderline orderlineFromTest = orderlineService.getById(Long.parseLong("1"));
 
-
         assertEquals("Bloem", orderlineFromTest.getProduct().getName());
-
-
     }
 
     @Test
@@ -164,7 +158,6 @@ public class OrderlineServiceTest {
         List<Orderline> orderlinesFromTest = orderlineService.getByOrderId(Long.parseLong("5"));
 
         assertEquals(2, orderlinesFromTest.size());
-
     }
 
 }

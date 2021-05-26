@@ -18,8 +18,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.*;
 
-
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -221,5 +219,17 @@ public class IngredientServiceTest {
 
         List<Ingredient> expiredIngredients = ingredientService.expiredIngredients();
         assertEquals(1, expiredIngredients.size());
+    }
+
+    @Test
+    public void deleteTest(){
+
+        given(ingredientRepository.findById(Long.parseLong("1"))).willReturn(java.util.Optional.ofNullable(i1));
+        boolean result =  ingredientService.delete(Long.parseLong("1"));
+        assertEquals(true, result);
+
+        given(ingredientRepository.findById(Long.parseLong("555"))).willReturn(java.util.Optional.ofNullable(null));
+        boolean result2 =  ingredientService.delete(Long.parseLong("555"));
+        assertEquals(false, result2);
     }
 }

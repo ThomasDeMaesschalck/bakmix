@@ -6,12 +6,10 @@ import be.bakmix.eindproject.customers.service.dto.Customer;
 import be.bakmix.eindproject.customers.service.mapper.CustomerMapper;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.*;
@@ -22,7 +20,6 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -39,7 +36,7 @@ public class CustomerServiceTest {
 
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
 
@@ -61,8 +58,6 @@ public class CustomerServiceTest {
         Page<Customer> customerList = customerService.getAll(0, 10, "id");
 
         assertEquals(1, customerList.toList().size());
-
-
     }
 
     @Test
@@ -77,6 +72,6 @@ public class CustomerServiceTest {
         Customer customer = customerService.getById(Long.parseLong("1"));
 
         assertEquals("Thomas", customer.getFirstName());
-
     }
+
 }

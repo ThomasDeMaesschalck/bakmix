@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b3b950-4611-49b7-83b6-e39a06dff513" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ingredienttracing/src/test/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/src/test/java/be/bakmix/eindproject/order/service/OrderServiceInvoiceLogicTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers/src/test/java/be/bakmix/eindproject/customers/service/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/customers/src/test/java/be/bakmix/eindproject/customers/service/CustomerServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredient/src/test/java/be/bakmix/eindproject/ingredient/IngredientApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ingredient/src/test/java/be/bakmix/eindproject/ingredient/service/IngredientServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredient/src/test/java/be/bakmix/eindproject/ingredient/service/IngredientServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredienttracing/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/main/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/test/java/be/bakmix/eindproject/ingredienttracing/IngredienttracingApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingredienttracing/src/test/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ingredienttracing/src/test/java/be/bakmix/eindproject/ingredienttracing/service/IngredienttracingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/test/java/be/bakmix/eindproject/order/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/test/java/be/bakmix/eindproject/order/service/OrderServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderline/src/test/java/be/bakmix/eindproject/orderline/service/OrderlineServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderline/src/test/java/be/bakmix/eindproject/orderline/service/OrderlineServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/test/java/be/bakmix/eindproject/product/service/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/test/java/be/bakmix/eindproject/product/service/ProductServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +113,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IngredienttracingTest">
+  <component name="RunManager" selected="JUnit.IngredientServiceTest">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -288,9 +294,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IngredientServiceTest" />
         <item itemvalue="JUnit.IngredienttracingTest" />
         <item itemvalue="JUnit.IngredienttracingTest.getAllTest" />
-        <item itemvalue="JUnit.IngredientServiceTest" />
         <item itemvalue="JUnit.IngredientServiceTest.findByUniqueIdTest" />
         <item itemvalue="JUnit.OrderlineServiceTest" />
       </list>
@@ -322,14 +328,7 @@
       <workItem from="1621529303603" duration="27157000" />
       <workItem from="1621709527401" duration="22670000" />
       <workItem from="1621789176388" duration="48400000" />
-      <workItem from="1622025526186" duration="8859000" />
-    </task>
-    <task id="LOCAL-00014" summary="backend tracing working">
-      <created>1616852998423</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1616852998424</updated>
+      <workItem from="1622025526186" duration="11073000" />
     </task>
     <task id="LOCAL-00015" summary="backend tracing working">
       <created>1616853067864</created>
@@ -667,7 +666,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622040980914</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Tests for Ingredienttracing service">
+      <created>1622044671300</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1622044671300</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,7 +693,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Thymeleaf first version (template nog verbeteren)" />
     <MESSAGE value="Invoice logica" />
     <MESSAGE value="Invoice pdf werkende" />
     <MESSAGE value="Email backend tracking werkende" />
@@ -712,7 +717,8 @@
     <MESSAGE value="Mock tests for orderline service" />
     <MESSAGE value="Fully tested: Mock tests for orderline service" />
     <MESSAGE value="Tests for Ingredient service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests for Ingredient service" />
+    <MESSAGE value="Tests for Ingredienttracing service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tests for Ingredienttracing service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
